@@ -1,0 +1,246 @@
+En el capítulo anterior vimos que, a temperaturas suficientemente bajas o densidades altas, la aproximación clásica dejaba de ser válida para el estudio de las propiedades termodinámicas de los gases.
+La experiencia confirma esta predicción teórica, y así se observa, por ejemplo, en el caso de hidrógeno y del helio, que a bajas temperaturas las discrepancias entre los resultados experimentales y los predichos por la teoría clásica se vuelven muy importantes.
+Hay que señalar que esta discrepancia no es meramente cuantitativa, sino que se presentan efectos que requieren una descripción mecánico-cuántica del modelo considerado para su simple explicación cualitativa.
+
+En este capítulo vamos a estudiar algunos de estos efectos en el caso de gases ideales.
+Es decir, de acuerdo con la nomenclatura introducida en el capítulo anterior, vamos a estudiar gases ideales fuertemente degenerados. Como veremos, los desarrollos y las propiedades que se obtienen son muy distintas en el caso de fermiones y en el caso de bosones, por lo que estudiaremos ambos por separado.
+
+\newpage
+\section{Gas de Fermi-Dirac. Cálculo de valores medios a T=0K.}
+
+El número de fermiones en un estado de partícula $r$ viene dado de acuerdo con \eqref{eq:n_r_1} por
+\begin{equation}\label{eq:n_r_t8}
+	\expval{n_r} = \frac{1}{e^{\beta\varepsilon_r + \alpha} + 1}
+\end{equation}
+
+Sabemos, además, que el número de estados de traslación de una partícula en el intervalo de energía comprendido entre $\varepsilon$ y $\varepsilon+d\varepsilon$ viene dado por \eqref{eq:D_vareps}.
+Este número no coincide, sin embargo, con el número de estados de un electrón en el intervalo de energía considerado, En efecto, la especificación del estado de un electrón ---y de toda partícula con espín--- exige conocer también su estado de espín, o sea la orientación del mismo.
+En el caso de electrones, que tienen espín $\sfrac{1}{2}$, son posibles dos orientaciones o rotados de espín.
+Como estamos considerando un sistema aislado, la energía de un electrón será independiente de la orientación de su espín, resultando que con cada estado de traslación son posibles dos estados de espín que corresponden a la misma energía.\footnote{Evidentemente, como ocurre para el momento cinético ordinario, para partículas que no tengan espín $\sfrac{1}{2}$, el número de estados de espín por cada estado de traslación no será 2, sino en general $2s + 1$, siendo $s$ el valor del número cuántico de espín.}
+
+En resumen, el número de estados electrónicos con energía comprendida entre $\varepsilon$ y $\varepsilon+d\varepsilon$ será
+\begin{equation}
+	D(\varepsilon) d\varepsilon = 2\frac{4\pi V}{h^3} (2m^3)^{1/2} \varepsilon^{1/2} d\varepsilon
+\end{equation}
+
+Conocido el número de estados y el número medio de electrones en cada estado ---que depende solo de la energía del mismo---, podemos calcular la siguiente función:
+\begin{equation}
+	f(\varepsilon) d\varepsilon \equiv \parbox{28em}{número medio de electrones que en el sistema de volumen $V$ \\tiene una energía comprendida entre $\varepsilon$ y $\varepsilon+d\varepsilon$} 
+\end{equation}
+y que vendrá dada por
+\begin{equation}\label{eq:f_e}
+	f(\varepsilon) d\varepsilon = D(\varepsilon)\expval{n_r} d\varepsilon = \frac{8\pi V}{h^3} (2m^3)^{1/2} \frac{\varepsilon^{1/2}}{e^{\beta(\varepsilon_r -\mu)} + 1} \dd{\varepsilon}
+\end{equation}
+
+\begin{wrapfigure}{r}{0.35\textwidth}
+	\centering
+	\hspace{1.8cm}
+	\input{./graph/FDt7.tex}
+	\vspace{-1cm}
+\end{wrapfigure}
+Notemos que para escribir esta expresión, hemos considerado a $\varepsilon_r$ en \eqref{eq:n_r_t8} como un parámetro continuo.
+La justificación para ello es la proximidad de los niveles energéticos, que fue de hecho lo que nos permitió también definir una densidad de estados por unidad de intervalo de energía.
+
+A partir de \eqref{eq:f_e} podemos escribir para el número de electrones que constituyen el sistema y para la energía media del gas las expresiones
+\begin{align}
+	N &= \int_{0}^{\infty} \dd{\varepsilon} f(\varepsilon) = \frac{8\pi V}{h^3} (2m^3)^{1/2} \int_{0}^{\infty} \dd{\varepsilon} \frac{\varepsilon^{1/2}}{e^{\beta\varepsilon_r + \alpha} + 1} \label{eq:N_FD}\\
+	\expval{E} &= \int_{0}^{\infty} \dd{\varepsilon} \varepsilon f(\varepsilon) = \frac{8\pi V}{h^3} (2m^3)^{1/2} \int_{0}^{\infty} \dd{\varepsilon} \frac{\varepsilon^{3/2}}{e^{\beta\varepsilon_r + \alpha} + 1}
+\end{align}
+
+Nosotros consideraremos siempre un sistema cerrado, de manera que la primera de estas ecuaciones es precisamente la que define el valor del nivel de Fermi $\mu_F$.
+
+Si particularizamos estas dos ecuaciones para $T = 0 K$ resulta, en virtud de lo que acabamos de decir
+\begin{align}
+	N &=  \frac{8\pi V}{h^3} (2m^3)^{1/2} \int_{0}^{\mu_F} \dd{\varepsilon} \varepsilon^{1/2} = \frac{16\pi V}{3h^3} (2m^3)^{1/2} \mu_F^{3/2}\\
+	\expval{E} &=  \frac{8\pi V}{h^3} (2m^3)^{1/2} \int_{0}^{\mu_F} \dd{\varepsilon} \varepsilon^{3/2} = \frac{16\pi V}{5h^3} (2m^3)^{1/2} \mu_F^{5/2}
+\end{align}
+
+De la primera de estas ecuaciones se obtiene para la energía de Fermi
+\begin{equation}
+	\mu_F = \frac{h^2}{8m} \left( \frac{3N}{\pi V}\right)^{3/2}
+\end{equation}
+mientras que de la comparación de ambas resulta
+\begin{equation}
+	\expval{E} = \frac{3}{5} N \mu_F
+\end{equation}
+
+\textit{[TBC]}
+
+\section{Propiedades termodinámicas}
+
+\section{Gas de Fermi-Dirac para T<0K. Cálculo de valores medios}
+
+\section{Gas de Bose-Einstein degenerado. Condensación de Bose-Einstein}
+
+Pasemos a considerar un gas ideal de bosones degenerado.
+Como ya dijimos al principio de este capítulo, el comportamiento, en condiciones de degeneración, de un gas de Bose es muy distinto al de un gas de Fermi.
+Esta diferencia es previsible, pues en un gas de Bose, al disminuir la temperatura, las partículas pueden agruparse en los estados de menor energía, mientras que en un gas de Fermi existen, incluso en el límite $T \rightarrow 0$, partículas en niveles relativamente altos de energía, debido al principio de exclusión de Pauli.
+Más concretamente, sabemos que en el cero absoluto el límite superior de energías es la energía de Fermi.
+
+El número medio de partículas en un estado cuántico $r$ es en el caso de bosones
+\begin{equation}\label{eq:n_r_BE}
+	\expval{n_r} = \frac{1}{e^{\beta(\varepsilon_r -\mu)} - 1}
+\end{equation}
+y, por lo tanto, si el sistema contiene N partículas debe cumplirse
+\begin{equation}\label{eq:N_BE}
+	N = \sum_r \frac{1}{e^{\beta(\varepsilon_r -\mu)} - 1}
+\end{equation}
+
+Recordemos que por considerar un sistema cerrado esta ecuación es precisamente la que nos determina el potencial químico $\mu$.
+
+Supongamos ahora que el nivel más bajo de energía accesible a una partícula es $\varepsilon = 0$.\footnote{Esto no es una hipótesis, sino que coincide con nuestros resultados. En efecto, la energía asociada con el movimiento de traslación es la única energía que poseen las partículas de un gas ideal aislado. Cuando consideramos un sistema suficientemente grande es claro que el nivel más bajo de energía tiende a cero.}
+A partir de \eqref{eq:n_r_BE} obtenemos que
+\begin{equation}\label{eq:mu_t_BE}
+	\mu(T) \leq 0
+\end{equation}
+ya que en otro caso existirán estados ---en particular el o los correspondientes a $\varepsilon_r = 0$--- para los que $\varepsilon_r -\mu < 0$ y $\exp[\beta(\varepsilon_r -\mu)] < 1$, de manera que resultaría $\expval{n_r} < 0$, que no tiene sentido.
+De hecho, para obtener \eqref{eq:n_r_BE} nos fue necesario admitir que se cumplía \eqref{eq:cond_FD}, que se convierte en \eqref{eq:mu_t_BE}, al considerar que el valor mínimo de $\varepsilon_r$ es cero.
+
+Vamos a tratar de estudiar el gas de Bose degenerado de manera análoga a como hemos realizado el análisis del gas de Fermi.
+Para ello consideremos la expresión que se obtiene al explicitar en \eqref{eq:N_BE} la suma respecto de los estados de traslación, o sea la expresión análoga a \eqref{eq:N_FD}
+\begin{align}\label{eq:N_2_BE}
+	N &= \int_0^{\infty} \dd{\varepsilon} f(\varepsilon) = \int_0^{\infty} \dd{\varepsilon} D(\varepsilon) \expval{n_r}(\varepsilon) \nonumber \\
+	&= g \frac{4\pi V}{h^3} (2m^3)^{1/2} \int_0^{\infty} \dd{\varepsilon} \frac{\varepsilon^{1/2}}{e^{\beta(\varepsilon -\mu)} - 1}
+\end{align}
+
+Las diferencias existentes respecto a \eqref{eq:N_FD} son dos: la sustitución de la distribución de Fermi por la de Bose y del factor 2 asociado a los electrones, para los que $s = 1/2$, por un factor de degeneración más genérico $g = 2s + 1$.
+
+Si para una densidad dada del gas, $\sfrac{N}{V}$, disminuimos la temperatura ---aumentamos $\beta$--- las diferencias $\varepsilon -\mu$ tendrán que disminuir para que la integral que aparece en \eqref{eq:N_2_BE} puede conservar su valor.
+Como $\varepsilon -\mu = \abs{\varepsilon} + \abs{\mu}$, resulta que, al disminuir la temperatura disminuye en valor absoluto $\mu$, que es negativo.
+Como acabamos de ver que $\mu$ no puede ser positivo, resultará que $\mu$ irá aumentando hasta alcanzar el valor límite $\mu = 0$. La temperatura $T_0$ a la cual se alcanza este valor vendrá definida por la igualdad $\beta_0 = 1/k_BT_0$
+\begin{align}
+	N &= g \frac{4\pi V}{h^3} (2m^3)^{1/2} \int_0^{\infty} \frac{\varepsilon^{1/2}}{e^{\beta_0\varepsilon } - 1} \nonumber \\
+	&= g \frac{4\pi V}{h^3} (2m^3)^{1/2} \beta_0^{-3/2} \int_0^{\infty} \dd{z} \frac{z^{1/2}}{e^z - 1}
+\end{align}
+donde hemos efectuado el cambio de variable $z = \varepsilon\beta_0$.
+La integral que aparece en esta está resulta en el \hyperref[Anx5]{Anexo 5}, que nos permite escribir la anterior ecuación en la forma
+\begin{equation}\label{eq:N/V_BE}
+	\frac{N}{V} = \frac{2\pi \sqrt{\pi}}{h^3} (2m^3)^{1/2} \zeta(\sfrac{3}{2}) \beta_0^{-3/2}
+\end{equation}
+de donde se obtiene
+\begin{equation}\label{eq:T_0_BE}
+	T_0 = \frac{h^2}{2\pi mk_B} \left[ \frac{N}{gV\zeta(\sfrac{3}{2})} \right]^{2/3} = 3,31 \frac{\hbar^2}{km^{5/3}} \left[ \frac{Nm}{g} \right]^{2/3} 
+\end{equation}
+
+Resulta entonces que para temperaturas inferiores a $T_0$ la expresión \eqref{eq:N_2_BE} no tiene sentido, pues es imposible encontrar un valor de $\mu$ que la satisfaga ---evidentemente, para $\mu > 0$ la integral es divergente, pues el denominador tiende a cero cuando $\varepsilon$ tiende a $\mu$---.
+
+Veamos otro modo de interpretar los resultados obtenidos.
+Podemos imaginar ahora que mantenemos constante la temperatura, aumentando el número de partículas del sistema.
+De acuerdo con \eqref{eq:N_2_BE}, aumento de $N$ exigirá una disminución de $\exp[\beta(\varepsilon_r -\mu)]$ y, por lo tanto, un aumento de $\mu$ que es negativo como sabemos.
+¿Hasta qué valor podemos aumentar $N$ de modo que se satisfaga \eqref{eq:N_2_BE}? Pues hasta alcanzar el valor límite $\mu = 0$.
+Es decir, que el valor del número máximo de partículas que según \eqref{eq:N_2_BE} podría tener el sistema a una temperatura $T$ vendría dado por
+\begin{equation}\label{eq:N/V_max_BE}
+	\frac{N_{max}}{V} = \frac{2\pi \sqrt{\pi}}{h^3} (2m^3)^{1/2} \zeta(\sfrac{3}{2}) \beta^{-3/2}
+\end{equation}
+
+Resultaría, según esto, que en un gas de bosones el número de partículas estaría acotado y, además, sería proporcional a $T^{3/2}$, lo que en particular implicaría que no podría existir un gas de bosones en el límite $T \rightarrow 0$.
+Tratemos de entender lo que ha sucedido y volvamos a \eqref{eq:n_r_BE} y \eqref{eq:N_BE}, haciendo tender $T$ a cero. Es evidente que
+$$\expval{n_r}(\varepsilon_r - \mu) \rightarrow 0$$
+y
+$$N = g\expval{n_r} = g \frac{1}{e^{-\beta\mu} - 1}$$
+
+En esta última ecuación siempre podría ajustarse $\mu$ de manera que se cumpliese la igualdad por pequeña que fuese T ---$\beta$ grande---.
+En particular, mientras no sea T idénticamente cero es evidente que $\mu \rightarrow 0$ lleva a $N \rightarrow \infty$.
+
+Resulta entonces que la.s dificultades han aparecido al pasar de \eqref{eq:N_BE} a \eqref{eq:N_2_BE}, es decir, al introducir la densidad de estados $D(\varepsilon)$ que es todo lo que necesitamos para pasar de una a otra.
+En este paso se ha utilizado el valor
+\begin{equation}\label{eq:D_vareps_BE}
+	D(\varepsilon) dd{\varepsilon} = g \frac{4\pi V\sqrt{2m^3}}{h^3} (2m^3)^{1/2} \varepsilon^{1/2} dd{\varepsilon}
+\end{equation}
+que se obtiene al sustituir los niveles discretos de energía por una distribución continua sobre toda la recta real.
+Si en esta ecuación tomamos el límite $\varepsilon \rightarrow 0$, Y debido al factor $\varepsilon^{1/2}$, obtenemos
+$$\lim\limits_{\varepsilon \rightarrow 0} D(\varepsilon) = 0$$
+y análogamente en el caso del número de partículas por unidad de intervalo de energía:
+$$\lim\limits_{\varepsilon \rightarrow 0} f(\varepsilon) = 0$$
+
+Así, pues, al admitir el paso a un espectro continuo en el sentido considerado hasta ahora, estamos implícitamente admitiendo que el número medio de partículas en el estado ---o los estados--- de energía $\varepsilon \rightarrow 0$ es nulo.
+Este hecho no tiene importancia en la estadística de Fermi, donde en cada estado puede haber como máximo una partícula, ni en la estadística de Bose a temperaturas altas, en que el número de partículas en $\varepsilon \rightarrow 0$ es muchísimo menor que el número total de partículas que contiene el sistema.
+Sin embargo, en el caso de un gas de Bose a temperaturas suficientemente bajas, la existencia de un estado de traslación que corresponde a $\varepsilon = 0$ es de fundamental importancia puesto que, como hemos visto antes, las partículas tienden a agruparse precisamente en ese nivel energético.
+
+Para solucionar esta dificultad hemos de escribir el sumatorio \eqref{eq:N_BE} en la forma
+\begin{equation}\label{eq:N_3_BE}
+	N = g \frac{1}{e^{-\beta\mu} - 1} + \sum_{\substack{r\\(\varepsilon_r \neq 0)}} \frac{1}{e^{\beta(\varepsilon_r -\mu)} - 1}
+\end{equation}
+
+El segundo sumando del esta expresión es el que puede aproximarse por una integral, de manera que en lugar de \eqref{eq:N_2_BE} la expresión correcta será
+\begin{equation}\label{eq:N_4_BE}
+	N = N_0 + N' 
+\end{equation}
+donde $N_0$ representa el número de partículas en el nivel fundamental $(\varepsilon = 0)$ y $N'$ el número de partículas en estados excitados ---$\varepsilon > 0$---. Es decir,
+\begin{equation}
+	N_0 = g \frac{1}{e^{-\beta\mu} - 1}
+\end{equation}
+\begin{equation}
+	N' = g \frac{4\pi V\sqrt{2m^3}}{h^3} (2m^3)^{1/2} \int_{0}^{\infty} \frac{\varepsilon^{1/2}}{e^{\beta(\varepsilon -\mu)} - 1}
+\end{equation}
+
+El estudio de las propiedades de un gas de Bose degenerado sobre todo el rango de temperaturas es muy complicado y requiere el empleo del cálculo numérico, por lo que nos vamos a limitar aquí a una discursión cualitativa.
+
+a) Consideremos el gas de Bose a una cierta densidad $\sfrac{N}{V}$ y a una temperatura $T \gg T_0$, siendo $T_0$ la temperatura definida por \eqref{eq:T_0_BE}.
+A partir de \eqref{eq:N/V_BE} y \eqref{eq:N/V_max_BE} obtenemos que
+\begin{equation}\label{eq:N/N_max}
+	\frac{N_{max}}{N} = \left( \frac{T}{T_0} \right)^{3/2}
+\end{equation}
+que en la zona que estamos considerando es mucho mayor que la unidad.
+Es decir, que para $T \gg T_0$ el número máximo de partículas que pueden existir en estados excitados es mucho mayor, que $N$.
+Resulta entonces que prácticamente todas las partículas se encuentran en estados excitados, lo que corresponde a $\abs{\mu} \gg T_0$ y
+\begin{equation}
+	N_0 = g \frac{1}{e^{-\beta\mu} - 1} \ll 1
+\end{equation}
+
+b) Disminuyamos ahora la temperatura, manteniendo $\sfrac{N}{V}$ constante.
+Al alcanzar $T = T_0$ se hace $N = N'_{max}$.
+Hay que observar ahora claramente que $N = N'_{max}$ no implica que $\mu$ sea nulo.
+Ambas cosas eran equivalentes cuando no considerábamos ---erróneamente--- el estado fundamental, pero una vez introducida la descomposición \eqref{eq:N_4_BE}, aunque sea $N = N'_{max}$ el potencial químico será todavía distinto a cero ---aunque muy pequeño--- y el número de partículas en estados excitados será menor que $N'_{max}$
+
+c) Si seguimos disminuyendo la temperatura por trabajo de $T_0$, $N'_{max}$ continuará disminuyendo y en consecuencia el número de partículas en el estado fundamental irá aumentando.
+Para temperaturas menores que $T_0$ puede escribirse
+\begin{equation}
+	N_0 = N - N' \simeq N - N'_{max}
+\end{equation}
+o utilizando \eqref{eq:N/N_max}
+\begin{equation}
+	N_0 = N  \left[ 1 - \left( \frac{T}{T_0} \right)^{3/2} \right]
+\end{equation}
+
+\begin{wrapfigure}[6]{l}{0.4\textwidth}
+	\centering
+	\input{./graph/N_0_N.tex}
+	\vspace{-0.65cm}
+\end{wrapfigure}
+
+Además, a estas temperaturas el potencial químico $\mu$ es ya prácticamente nulo.
+Cuando más se disminuye la temperatura más y más partículas se agrupan en el nivel fundamental ---$\varepsilon = 0$---.
+En la figura se representa el comportamiento de $\sfrac{N_0}{N}$ frente a $\sfrac{T}{T_0}$.
+
+\newpage
+Este fenómeno recibe el nombre de \emph{condensación de Bose-Einstein}, denominándose a $T_0$ \emph{temperatura de condensación}, ya que en cierto sentido recuerda el proceso de condensación de un vapor en la fase líquida.
+Sin embargo, estos dos procesos son conceptualmente muy diferentes.
+En la condensación normal de un gas, las partículas se agrupan en un cierto volumen que depende de la densidad del líquido y de la cantidad de gas condensado, lo que se traduce en una acumulación de puntos representativos en el espacio de las fases en una zona correspondiente a un intervalo limitado de posiciones.
+Por el contrario, en la condensación de Base-Einstein, la agrupación tiene lugar en el espacio de momentos, concretamente alrededor del valor $p = 0$.
+
+\section{Propiedades del gas de Bose para T<T\textsubscript{0}}
+
+Para temperaturas inferiores a $T_0$ sabemos que $\mu$ es muy pequeño de forma que puede escribirse con buena aproximación
+\begin{equation}
+	\expval{E} = g \frac{4\pi V}{h^3} (2m^3)^{1/2} \int_0^{\infty} \dd{\varepsilon} \frac{\varepsilon^{1/2}}{e^{ \beta\epsilon} - 1}
+\end{equation}
+donde hemos tenido en cuenta que las $N_0$ partículas existentes en el estado fundamental poseen una energía nula.
+Haciendo el cambio de variable $z = \beta\varepsilon$ obtenemos
+\begin{equation}
+	\expval{E} = g \frac{4\pi V}{h^3} (2m^3)^{1/2} \beta^{-5/2} \int_0^{\infty} \dd{z} \frac{z^{3/2}}{e^z - 1}
+\end{equation}
+que podemos resolver con el \hyperref[Anx5]{Anexo 5}
+\begin{equation}
+	\expval{E} = g \frac{4\pi V}{h^3} (2m^3)^{1/2} \, \beta^{-5/2} \, \Gamma\left( \sfrac{5}{2} \right) \zeta\left( \sfrac{5}{2} \right) 
+\end{equation}
+
+Si recordamos ahora la definición de $T_0$, podemos reescribirla como
+\begin{equation}
+	\expval{E} = \frac{5}{2} Nk_BT \left( \frac{T}{T_0} \right)^{3/2} \frac{\zeta\left( \sfrac{5}{2} \right)}{\zeta\left( \sfrac{3}{2} \right)} \approx 0.770 Nk_BT \left( \frac{T}{T_0} \right)^{3/2}
+\end{equation}
+
+A partir de esta expresión obtenemos para la capacidad calorífica a volumen constante
+\begin{equation}
+	c_V = \pdv{\expval{E}}{V} = 1.925 \left( \frac{T}{T_0} \right)^{3/2}
+\end{equation}

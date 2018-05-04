@@ -1,0 +1,130 @@
+En este capítulo vamos a analizar dos problemas aparentemente dispares, el estudio estadístico de la radiación electromagnética y las propiedades termodinámicas de los sólidos, pero que, desde el punto de vista físico y de la manera de abordarlos, tienen mucho en común:
+\begin{enumerate}
+	\item En ambos casos, la base del problema físico es un fenómeno ondulatorio: oscilaciones del campo electromagnético, en el caso de la radiación, y vibraciones alrededor de sus posiciones de equilibrio de los átomos que conforman el cristal.
+
+	\item La descripción cuántica de los dos fenómenos se puede hacer en términos del sencillo oscilador armónico y de sus niveles de energía discretos. Desde un punto de vista práctico, la suma sobre los estados discretos de energía puede aproximarse por una integral sobre una distribución continua de frecuencias y, en las dos situaciones la densidad de estados es, esencialmente, la misma.
+	
+	\item Desde un punto de vista cuántico fundamental, la descripción del estado del sistema se puede hacer mediante el concepto de «cuasi-partícula»: el fotón en el caso de la radiación y el fonón en el de los sólidos, bosones en los dos casos. El sistema se puede considerar como un gas ideal de fotones o de fonones, según el caso, que obedecen a la estadística de Base-Einstein con potencial químico nulo.
+
+	\item Desde un punto de vista histórico, la solución correcta a los dos problemas se enmarca en los comienzos de la moderna Teoría Cuántica, cuando las ideas de cuantificación de la energía fueron introducidas, a comienzos del siglo XX. La comprobación experimental de las predicciones teóricas supuso un importante impulso para la aceptación de las nuevas ideas.
+\end{enumerate}
+
+\newpage
+\section{Radiación electromagnética}
+
+Como es sabido, se conoce con el nombre genérico de radiación a una de las formas posibles de propagación de la energía, una de cuyas características esenciales es que no necesita la presencia de un medio material.
+
+La teoría clásica considera a la radiación como un fenómeno ondulatorio regido por las ecuaciones de Maxwell del Electromagnetismo, es decir, como un conjunto de ondas planas electromagnéticas.
+Es importante señalar que estas ondas electromagnéticas son transversales, es decir, que la perturbación se produce en un plano perpendicular a la dirección de propagación, punto sobre el que más adelante volveremos.
+Esta teoría se basa en la observación de que las ondas electromagnéticas se propagan a la velocidad de la luz, que es un ejemplo típico de radiación, y en que, además, no necesitan medio material para propagarse, al contrario de lo que sucede en las ondas elásticas.
+Mediante esta teoría se puede justificar la existencia y propiedades de fenómenos bien conocidos, como la interferencia y la difracción.
+Los distintos procesos de radiación, tales como la propagación de la luz, emisión de rayos X o la transmisión de señales de radio, aparecen entonces como casos concretos del fenómeno general de la radiación, en el sentido de que corresponden a valores distintos de la frecuencia, pero teniendo en común el que se propagan con la velocidad de la luz.
+Dicho de otro modo, cada proceso de radiación puede caracterizarse simplemente por su longitud de onda $\lambda$, o lo que es equivalente, por su frecuencia $\nu$
+\begin{equation}\label{eq:freq_t8}
+	\nu = \frac{c}{\lambda}
+\end{equation}
+o su frecuencia angular $\omega$
+\begin{equation}
+	\omega = 2\pi\nu
+\end{equation}
+
+Las longitudes de onda asociadas con los fenómenos de radiación que se presentan en la naturaleza, se distribuyen en un amplísimo márgen que va desde valores del orden de $\lambda = 10^{-14}$m e inferiores, para los rayos gamma, hasta $\lambda = 10^{-6}$m y superiores correspondientes ondas de radiofrecuencia.
+La denominada radiación térmica, que puede ser detectada por nuestros sentidos, corresponde a los valores de $\lambda$ comprendidos entre $10^{-7}$ y $10^{-4}$m, e incluye una parte de la radiación ultravioleta y de la infrarroja.
+
+El primer intento de explicar las propiedades de la radiación a partir de un modelo estadístico se debió a Rayleigh y Jeans, quienes consideraron a la radiación contenida en un recinto en equilibrio a la temperatura $T$ como una superposición de ondas planas electromagnéticas y utilizaron las técnicas de la Mecánica Estadística Clásica.
+De este modo, obtuvieron para la densidad espectral de energía, o sea para la energía media asociada con las ondas electromagnéticas cuya frecuencia angular estuviese comprendida entre $\omega$ y $\omega + d\omega$, la expresión
+\begin{equation}\label{eq:E_med_t8}
+	\expval{E}(\omega) \dd{\omega}= V \frac{k_B T}{\pi^2 c^3} \omega^2 \dd{\omega}
+\end{equation}
+donde $V$ es el volumen del recinto considerado. Para valores pequeños de $\omega$ esta expresión presenta un comportamiento acorde con los datos experimentales, pero a altas frecuencias el valor de $\expval{E}(\omega)$ determinado experimentalmente presenta un descenso exponencial con $\omega$, mientras que la expresión \eqref{eq:E_med_t8} predice un aumento proporcional a $\omega^2$ para todos los valores de $\omega$.
+De hecho, es fácil prever que la expresión \eqref{eq:E_med_t8} no puede se correcta para valores grandes de la frecuencia angular $\omega$. En efecto, de acuerdo con ella, resulta que la energía total de radiación contenida en un recinto vendrá dada por
+\begin{equation}\label{eq:E_tot_t8}
+	\expval{E}_{total} =\int_{0}^{\infty} \dd{\omega} \expval{E}(\omega) \propto \eval{\omega^3}_{0}^{\infty} \rightarrow \infty
+\end{equation}
+es decir, tiende a infinito. Esto es una consecuencia directa del hecho de que
+\begin{equation}
+	\lim\limits_{\omega\rightarrow\infty} \expval{E}(\omega) \neq 0
+\end{equation}
+
+Este resultado anómalo, y durante mucho tiempo inexplicable, se conoce con el nombre de \emph{catástrofe ultravioleta}, por tener su origen en el comportamiento de \eqref{eq:E_med_t8} para valores grandes de $\omega$, o sea, para valores pequeños de $\lambda$, que es la zona del espectro donde se sitúa la radiación ultravioleta.
+Hoy día se sabe que las causas de la anomalía están en la incapacidad intrínseca de la Mecánica Clásica para dar una explicación teórica correcta del fenómeno de radiación.
+Más aún, los orígenes históricos de la Mecánica Cuántica pueden situarse en este problema concreto.
+En efecto, fue precisamente en la solución empírica a este problema dada por Planck, cuando se introdujo por primera vez, en Física una cuantificación de la energía. 
+La expresión obtenida por Planck no presentaba la catástrofe ultravioleta, y además concordaba con los resultados experimentales. Este éxito llevó a intentar un análisis semejante de otras paradojas existentes en Mecánica Clásica, lo que condujo al desarrollo de ia Mecánica Cuántica.
+
+Pasemos ahora directamente a un tratamiento cuántico del problema.
+Para ello necesitamos utilizar algunos conceptos fundamentales y bien conocidos de Mecánica Cuántica.
+
+Sabemos que la teoría cuántica asigna a la materia, de acuerdo con los resultados experimentales, un doble carácter, en virtud del cual presenta tanto propiedades corpusculares o de partículas, como propiedades ondulatorias.
+Es la denominada \emph{dualidad onda-corpúsculo}.
+Así, por ejemplo, la radiación presenta propiedades, como la interferencia o la difracción, que son típicamente ondulatorias, y propiedades que exigen una interpretación corpuscular, corno el efecto fotoeléctrico y el efecto Compton.
+El paso de una. descripción a otra, es decir, de ondas a partículas y viceversa, se efectúa mediante las relaciones de Einstein y de Broglie
+\begin{align}
+	\varepsilon = h\nu = \hbar\omega \label{eq:eps_t8}\\
+	\vb{p} = \frac{h\bm{\kappa}}{2\pi} = \hbar\bm{\kappa} \label{eq:p_t8}
+\end{align}
+
+Aquí $\varepsilon$ y $\mathbf{p}$ son la energía y el ímpetu o cantidad de movimiento de las partículas asociadas, mientras que $\nu$ y $\bm{\kappa}$, representan, respectivamente, la frecuencia y el vector de onda de la onda electromagnética, Este último se define de modo que su dirección coincida con la de propagación de la onda, mientras que su módulo viene dado por
+\begin{equation}\label{eq:valor_kappa_t8}
+	\abs{\bm{\kappa}} = \frac{2\pi}{\lambda} = \frac{\omega}{c}
+\end{equation}
+
+Las partículas asociadas a la radiación electromagnética se denominan \emph{fotones} y es fácil ver que, por poseer una velocidad igual a la de la luz, han de poseer una masa en reposo nula.
+En efecto, a partir de la relación relativista
+\begin{equation}
+	m = \frac{m_0}{\sqrt{1 - \left(\frac{v}{c}\right)^2}}
+\end{equation}
+donde $v$ es la velocidad de la partícula, $m_0$ su masa en reposo y $m$ la masa relativista, se deduce que, si $m_0$ fuese distinta de cero, al ser $v = c$ tendería $m$ a infinito.
+A partir de \eqref{eq:p_t8}, \eqref{eq:valor_kappa_t8}, \eqref{eq:freq_t8} y \eqref{eq:eps_t8} se tiene que
+\begin{equation}
+	\abs{\vb{p}} = \hbar \abs{\bm{\kappa}} = \frac{2\pi \hbar}{\lambda} = \frac{h\nu}{c} = \frac{\varepsilon}{c}
+\end{equation}
+y, por tanto,
+\begin{equation}
+	m = \frac{\abs{\vb{p}}}{c} = \frac{h\nu}{c^2} = \frac{\varepsilon}{c^2}
+\end{equation}
+
+que nos indica qué en general $m$ no es ni nula ni infinita.
+
+Así pues, mientras que en la descripción ondulatoria se considera el campo electrotromagnético como una superposición de ondas planas, en la descripción corpuscular se le considera compuesto por un conjunto de fotones.
+Como ya dijimos al principio, las ondas planas electromagnéticas son transversales.
+Además, la perturbación que se propaga consiste en oscilaciones de los campos eléctrico \textbf{E} y magnético \textbf{H}, los cuales a su vez son perpendiculares entre sí en cada punto de las onda.
+
+Restringiéndonos al campo eléctrico ---el campo magnético en cada punto es función del campo eléctrico en ese mismo punto--- una onda plana tiene la forma\footnote{Como siempre, únicamente tiene significado físico la parte real o la parte imaginaria por separado.}
+\begin{equation}
+	\vb{E}(\vb{r}, t) = \vb{E}_0 e^{i(\bm{\kappa}\cdot\vb{r}-\omega t)}
+\end{equation}
+
+La especificación de una onda plana exige, en principio, la determinación de $\vb{E}_0$, $\bm{\kappa}$ y $\omega$.
+Ahora bien, una vez dado $\bm{\kappa}$, resulta que, por \eqref{eq:valor_kappa_t8}, también está dada su frecuencia,\footnote{ Esta no es una propiedad general de las ondas, sino solo de aquellas en las que la velocidad de todas las ondas planas es la misma ---onda no dispersiva---, como sucede con las ondas electromagnéticas.} luego sólo son independientes $\vb{E}_0$ Y $\bm{\kappa}$.
+Por otro lado, si utilizamos el hecho de que las ondas son transversales, o sea que $\vb{E}_0$ es perpendicular a $\bm{\kappa}$ podemos tomar dos vectores unitarios $\vb{e}_1$ y $\vb{e}_2$ en el plano perpendicular a $\bm{\kappa}$, y escribir
+\begin{equation}
+	\vb{E}(\vb{r}, t) = E_{01} \vb{e}_1 e^{i(\bm{\kappa}\cdot\vb{r}-\omega t)} + E_{02} \vb{e}_2 e^{i(\bm{\kappa}\cdot\vb{r}-\omega t)}
+\end{equation}
+con lo que resulta que, una vez fija la dirección de $\bm{\kappa}$ únicamente son posibles dos direcciones independientes de polarización de \textbf{E}. Cualquier otra dirección es combinación de estas dos.
+
+Cuando se pasa a una descripción corpuscular, a cada onda plana independiente se le asocia un estado de fotón independiente, de acuerdo con las relaciones \eqref{eq:eps_t8} y \eqref{eq:p_t8}.
+La amplitud de la onda mide el número de fotones que se encuentra en el estado asociado.
+Según todo esto, ¿qué será necesario especificar para determinar cada uno de los estados independientes de un fotón?
+Pues su cantidad de movimiento \textbf{p} ---que se obtiene a partir del vector de onda $\bm{\kappa}$--- y su estado de polarización, teniendo en cuenta que, una vez fijado \textbf{p} o $\bm{\kappa}$, sólo son posibles dos orientaciones independientes.
+Es decir, que a cada valor de \textbf{p} corresponde dos estados independientes de un fotón con las dos polarizaciones posibles.
+
+Veamos qué propiedades deben tener los fotones:
+\begin{enumerate}
+	\item Como las ondas planas son indistinguibles, los fotones han de ser partículas cuánticamente idénticas, diferenciándose únicamente por el estado en que se encuentran.
+	
+	\item Dado que las amplitudes con que aparecen las ondas planas en una superposición son totalmente arbitrarias, deducimos que el número de fotones existentes en un estado dado puede ser tan grande como queramos, y en consecuencia, los fotones obedecerán a la estadística de Bose-Einstein, es decir, serán \emph{bosones}.
+	
+	\item Una característica de las ondas electromagnéticas es que son absorbidas y emitidas por la materia.
+	Los fotones aparecerán y desaparecerán cuando la radiación sea, respectivamente, emitida y absorbida por la materia.
+	En consecuencia, su número, incluso en un sistema cerrado, no será constante.
+	
+	\item Veamos ahora si los fotones se comportan o no como un gas ideal, es decir, si existen interacciones entre ellos.
+	La respuesta está en el principio de superposición o, lo que es equivalente, en el carácter lineal de la ecuación que gobierna el comportamiento de las ondas ---ecuación de onda---, y puede verse claramente mediante un sencillo 	razonamiento. En efecto, sabemos que cuando dos ondas se encuentran en una cierta región del espacio, no se distorsionan, sino que actúan aditivamente, de manera que, por ejemplo, el campo eléctrico resultante en cada punto es la suma de los campos 	eléctricos asociados a cada una de las ondas en ese punto.
+	Concluimos entonces que los fotones no interaccionan entre sí, aunque, como inmediatamente veremos, sí que lo hacen con otros cuerpos extraños que encuentren en su camino.
+\end{enumerate}
+
+En resumen, se obtiene la conclusión de que \emph{un gas de fotones constituye un gas ideal de Bose.}
+Este resultado puede entenderse como un postulado basado en las propiedades del campo electromagnéticos, es decir, en las ecuaciones de Maxwell.
+
+\section{Distribución de Plank : Ley de Rayleigh-Jeans y ley de Wien}

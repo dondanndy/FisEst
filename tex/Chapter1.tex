@@ -1,0 +1,443 @@
+El objeto de la Mecánica Estadística consiste en deducir e interpretar las leyes que rigen el comportamiento de los sistemas macroscópicos a partir de una descripción microscópica de los mismos. Es decir que la Mecánica Estadística considera a los sistemas constituidos por un gran número de partículas ---átomos o moléculas--- cuyo comportamiento viene regido por las leyes de la Mecánica, y trata de obtener a partir de esa descripción las leyes fenomenológicas de la Termodinámica, el Magnetismo, etc.
+A primera vista puede parecer que el camino para realizar este programa consistiría en tratar de resolver las ecuaciones del movimiento para el conjunto de partículas que componen el sistema. Sin embargo, la posibilidad de realizar tal cálculo explícito resulta ilusoria si recordamos que un sistema macroscópico contiene un número de partículas que es el del orden de $10^{23}$.
+
+Por otro lado, es fácil prever que una resolución exacta del problema mecánico resultaría, en el caso de ser posible, innecesaria para nuestros fines.
+Desde un punto de vista matemático, el estado dinámico de un sistema constituido por $N$ partículas exige para su especificación el conocimiento de las posiciones y velocidades de cada una de ellas, es decir, en general $6N$ parámetros distintos, mientras que el estado macroscópico de un sistema se caracteriza por un pequeño número de parámetros.
+Resulta entonces evidente que al pasar de la escala microscópica a la macroscópica se efectúa una contracción en la descripción del sistema, seleccionando parte de la información contenida en la descripción microscópica.
+
+\newpage
+\section{Descripción macroscópica y microscópica}
+
+El modelo microscópico o atomístico de un sistema físico se construye teniendo en cuenta la estructura de las partículas que lo componen, las fuerzas de interacción entre ellas y por último el ordenamiento espacial de las mismas en el caso de sólidos cristalinos.
+Estos datos se deducen parcialmente a partir de los resultados experimentales y se completan mediante las hipótesis adecuadas.
+
+Hay que señalar que, en la mayor parte de los casos, resulta imposible trabajar con modelos muy cercanos a los sistemas reales, es decir que presenten con gran aproximación todas las propiedades de estos últimos sistemas, debido a su gran complejidad matemática.
+Resulta entonces útil obtener información a partir de modelos simplifica dos que presenten al menos cualitativamente alguna de las propiedades de un sistema real.
+Estos modelos son utilizados de hecho con frecuencia en todas las partes de la
+Física (movimiento de un sólido sin rozamiento, fluidos sin viscosidad, etc.).
+
+Entre la descripción macroscópica del estado de un sistema físico y la descripción del estado de un modelo asociado existen diferencias muy importantes. La descripción macroscópica de un sistema se hace mediante un número muy reducido de parámetros; concretamente la Termodinámica admite que un estado de equilibrio queda totalmente especificado, por ejemplo, mediante los valores de los parámetros externos del sistema y de la temperatura.
+Por el contrario, admitiendo que las partículas que componen el sistema obedecen las leyes de la mecánica clásica, sabemos que para especificar el estado microscópico del sistema nos serán necesarias $f$ coordenadas generalizadas y
+$f$ momentos generalizados, siendo $f$ el número de grados de libertad del sistema.
+Si tenemos en cuenta que para sistemas poco densos, como son los gases, el número de partículas que componen un sistema macroscópico es del orden $10^{23}$, podremos estimar la gran cantidad de parámetros que son necesarios para
+especificar el estado de un sistema en una descripción microscópica del mismo.
+Resulta claro que la especificación del estado macroscópico de un sistema no puede ser suficiente para la determinación de un estado microscópico, o dicho de otra manera existe un gran número de estados microscópicos compatibles con un estado macroscópico dado. A partir de ahora denominaremos a los estados definidos macroscópicamente \emph{macroestados} y a los definidos sobre una escala microscópica \emph{microestados}.
+
+Planteemos ahora la cuestión siguiente: dado el macroestado de un sistema, ¿en cuál de todos los posibles microestados compatibles con él se encuentra el sistema?
+Evidentemente ni la Mecánica ni la Termodinámica pueden contestar a esta pregunta.
+El punto de vista adoptado por la Mecánica Estadística consiste en atribuir unas ciertas probabilidades a priori a cada uno de los microestados accesibles al sistema es decir, compatibles con el macroestado dado.
+Como siempre, la justificación última de la distribución de probabilidades postulada radicará en la comparación de los resultados obtenidos a partir de ella con los resultados de las experiencias macroscópicas.
+
+Dado que estamos utilizando una descripción clásica del sistema y que en la Mecánica Clásica las coordenadas generalizadas $q_i$ y los momentos generalizados $p_i$ son variables continuas, lo que la Mecánica Estadística va a postular para cada sistema macroscópico es una función densidad de probabilidad para las variables coordenadas
+\begin{equation}\label{rho_t1}
+	\rho({q_i},{p_i}; t) = \rho(q,p; t)
+\end{equation}
+de manera que, por la definición de densidad de probabilidad,
+\begin{equation}
+	\rho({q_i},{p_i}; t)dq_1\cdots dq_f dp_1\cdots dp_f \equiv \rho(q,p; t) dqdp
+\end{equation}
+represente la probabilidad de que en un instante $t$ dado, las coordenadas y momentos del sistema tengan valores comprendidos en los intervalos
+$$(q_1, q_1 + dq_1), (q_2, q_2 + dq_2), ... , (q_f, q_f + dq_f)$$
+y
+$$(p_1, p_1 + dp_1), (p_2, p_2 + dp_2), ... , (p_f, p_f + dp_f)$$
+respectivamente. De acuerdo con esta definición, p(q, P; t) deberá, en todo instante,
+cumplir la condición de normalización
+\begin{equation}
+	\int dqdp \rho(q,p; t) = 1
+\end{equation}
+
+Desde luego la función \eqref{rho_t1} que se postule debe ser nula para aquellos valores de $p$, $q$ y $t$ que llevan a un microestado no compatible con el macroestado en que se encuentra el sistema en el instante $t$.
+
+\section{Postulados de la física estadística. Colectividad microcanónica}
+
+A partir de ahora y mientras no se indique explícitamente lo contrario nos vamos a limitar a sistemas que se encuentran en equilibrio. 
+Por \emph{equilibrio} en Mecánica Estadística se entiende que la función de distribución de probabilidades $\rho$ es independiente del tiempo.
+Esta definición implica directamente que al pasar a una descripción macroscópica todos los parámetros que definen el estado del sistema serán independientes del tiempo, de acuerdo con el concepto de equilibrio termodinámico.
+
+La razón por la cual nos limitamos de momento a sistemas en equilibrio es que para ellos existe una formulación sistemática de la Mecánica Estadística que desarrollaremos en los próximos capítulos, mientras que tal formulación aún no se ha alcanzado para sistemas que no están en equilibrio. No obstante, el Capítulo 11 se dedicará al estudio elemental de sistemas de esta última clase.
+
+Consideremos un \emph{sistema aislado}, es decir un sistema que no puede intercambiar ni materia ni energía con sus alrededores, y por lo tanto poseerá una energía rigurosamente constante.
+Parece que estas condiciones son las más sencillas por lo que a relación con sus alrededores o su entorno se refiere, y por ello tomaremos el sistema aislado como punto de partida para el desarrollo de la Mecánica Estadística.
+Establecemos entonces el siguiente postulado sobre la forma de la función de distribución de probabilidades:
+\vspace{-10pt}
+\begin{center}
+\fbox{
+	\parbox{\textwidth}{
+	\textbf{Primer postulado:} \textit{A un estado de equilibrio macroscópico de un sistema aislado corresponde una descripción microscópica en la que todos los microestados accesibles al sistema son igualmente probables.}
+	}
+}
+\end{center}
+Esta es una de las manera de enunciar el famoso \emph{postulado de igualdad de probabilidades a priori} en Mecánica Estadística Clásica.
+
+Puede parecer un tanto arbitrario al asignar probabilidades iguales a todos los microestados accesibles de un sistema aislado en equilibrio, y de hecho así es parcialmente.
+Sin embargo diversas razones fundamentan esta elección:
+\begin{enumerate}
+	\item No existe nada dentro de las leyes de la Mecánica que nos indique que el sistema deba encontrarse en uno de los microestados accesibles con preferencia a los demás.
+	
+	\item Veremos en seguida que, como consecuencia de los resultados del apartado anterior, si esta igualdad de probabilidades se admite en un instante dado, se mantiene en el transcurso del tiempo de acuerdo con nuestra definición de equilibrio.
+	
+	\item Los resultados que se obtienen a partir de este postulado están de acuerdo con la Termodinámica y la experiencia. Esta es sin duda la razón más importante desde el punto de vista físico y la que justifica plenamente el postulado.
+\end{enumerate}
+
+Veamos ahora cómo se traduce matemáticamente nuestro postulado de igualdad de probabilidades a priori, es decir, veamos la forma que tiene $\rho(q, p)$ en el caso de un sistema aislado en equilibrio.
+
+Supongamos que sabemos que la energía del sistema está comprendida entre $E$ y $E + \Delta E$.
+Clásicamente $\Delta E$ se puede hacer tan pequeño como queramos, es decir se puede tomar el límite $\Delta E \rightarrow 0$.
+Resulta entonces que 
+\vspace{-10pt}
+\begin{center}
+	\fbox{
+		\parbox{\textwidth}{
+			\textbf{Segundo postulado:} \textit{$\rho(q, p)$ ha de ser una distribución de probabilidades de valor constante para todos los microestados en los que $H(q,p)$ está comprendido entre $E$ y $E + \Delta E$ con $\Delta E \rightarrow 0$, y de valor nulo fuera de ese intervalo.}}
+		}
+\end{center}
+
+Recordando las propiedades de la función delta de Dirac, vemos que ese comportamiento lo obtenemos si tomamos
+\begin{equation}\label{eq:rho_1}
+	\rho(q,p) \propto \delta \left[ H(q,p;X_\alpha) - E \right] 
+\end{equation}
+
+La relación exacta vendrá dada por una constante $C$ añadida.
+Para su determinación no tenemos más que echar mano de las propiedades de las densidades de probabilidad.
+Si $\rho$ debe estar normalizada, definimos dicha constante $C$ como
+\begin{equation}\label{eq:Omega_t1}
+	1 = \int dq dp \, C \rho \Rightarrow C = \frac{1}{\int dq dp \ \delta \left[ H(q,p;X_\alpha) - E \right]} \equiv \frac{1}{\Omega(E,N,V)} 
+\end{equation}
+
+Una vez aquí debemos pararnos en la integral del denominador. Dicha integral la entenderemos siempre extendida a todo el espacio fásico, lo cual quiere decir que las restricciones que impongan los parámetros externos se encuentran incluidas en el hamiltoniano, que dependerá de ellos aun cuando de momento no hayamos 'indicado explícitamente esta dependencia en \eqref{eq:rho_1}.
+Un ejemplo servirá para aclarar lo que acabamos de indicar.
+Imaginemos un sistema de partículas encerradas en un volumen $V$.
+La imposibilidad de que las partículas se encuentren en las paredes o en el exterior del sistema puede representarse mediante un término de energía potencial en el hamiltoniano que sea constante ---nulo con un origen adecuado--- en todo el volumen considerado e infinito fuera de él.
+
+La dependencia respecto a los parámetros externos del hamiltoniano implica que también dependerán de ellos $\rho$ y $\Omega$. Con esta observación el significado de $\Omega$ es claro: dado que asignamos una probabilidad constante a los estados accesibles y nula a los no accesibles y $\Omega(E)$ viene a ser una medida del número de microestados accesibles al sistema, es decir compatibles con las condiciones que lo delimitan.
+
+Introduzcamos ahora otra magnitud. Imaginemos que $E_0$ representa el valor más bajo de la energía que puede
+poseer el sistema para un valor dado de los parámetros externos. Definimos
+\begin{align}
+	\Gamma(E,N,V) &= \int_{E_0}^{E} d\mathcal{E} \ \Omega(\mathcal{E},N,V) \nonumber \\
+	&= \int_{E_0}^{E} d\mathcal{E} \int dq dp \ \delta \left[ H(q,p;X_\alpha) - \mathcal{E} \right] \nonumber \\
+	&= \int dq dp \int_{E_0}^{E} d\mathcal{E} \ \delta \left[ H(q,p;X_\alpha) - \mathcal{E} \right]\\
+	&= \mkern-18mu \int\limits_{E_0 \le H \le E} \mkern-18mu dq dp \nonumber
+\end{align}
+
+Y así, $\Gamma$ representa el volumen del espacio fásico entre las hipersuperficies que delimitan $E_0$ y $E$. Se le suele llamar \emph{volumen fásico}.
+
+Consideremos ahora dos hipersuperficies infinitesimalmente próximas, una con energía $E$ y la otra con $E + dE$ Y formemos la diferencia $\Gamma(E + dE) - \Gamma(E)$. Desarrollando $\Gamma(E + dE)$ en serie hasta el primer orden
+$$\Gamma(E + dE,N,V) \approx \Gamma(E,N,V) + \eval{\pdv{\Gamma(E + dE,N,V)}{E}}_{\Delta E = 0} $$
+$$\Gamma(E + dE,N,V) - \Gamma(E,N,V) \approx \eval{\pdv{\Gamma(E + dE,N,V)}{E}}_{\Delta E = 0} = \Omega(E,N,V) dE = \mkern-18mu \int\limits_{E_0 \le H \le E} \mkern-18mu dq dp$$
+
+lo que nos dice que $\Omega(E) dE$ representa el volumen de espacio fásico encerrado entre dos hipersuperficies muy próximas que corresponden a energías $E$ y $E+dE$ constantes.
+Obsérvese que $\Omega(E)$ puede también interpretarse como una medida del área de la hipersuperficie de energía $E$.
+
+\section{Dependencia del volumen fásico y del número de estados respecto a la energía}
+
+En nuestros razonamientos posteriores va a jugar un papel muy importante el hecho de que el número de microestados accesibles al sistema, o dicho de otra forma la región de espacio fásico accesible, es una función rápidamente creciente de la energía. 
+El objeto de este apartado va a ser estudiar explícitamente la dependencia de $\Gamma(E)$ y $\Omega(E)$ respecto de E en un caso particularmente sencillo: el gas monoatómico ideal.
+
+Consideremos un conjunto de $N$ partículas puntuales iguales, no interaccionantes entre sí y encerradas en un volumen $V$. 
+Este sistema constituye el modelo microscópico de un gas ideal monoatómico, Representaremos la masa de cada partícula por $m$ y la energía total del sistema por $E$. 
+Dado que despreciamos las interacciones entre las partículas ---lo que denominamos \emph{gas diluido}---, éstas poseerán únicamente energía cinética y el hamiltoniano del sistema puede escribirse $$H(p,q) = \sum_{i=1}^{N} \frac{d{\vec{p}_{i}}^{\,2}}{2m}$$
+
+A partir de la definición de $\Gamma$, y separando los diferenciales:
+\begin{align}
+	\Gamma(E,N,V) &= \int dq_1 dq_2 \cdots dq_N dp_1 dp_2 \cdots dp_N \nonumber \\
+				  &= \int d{\vec{r}_{1}}^{\,3} d{\vec{r}_{2}}^{\,3} \cdots d{\vec{r}_{N}}^{\,3} d{\vec{p}_{1}}^{\,3} d{\vec{p}_{2}}^{\,3} \cdots d{\vec{p}_{N}}^{\,3} \\
+				  &= V^N \int d{\vec{p}_{1}}^{\,3} d{\vec{p}_{2}}^{\,3} \cdots d{\vec{p}_{N}}^{\,3} \nonumber
+\end{align}
+y con el hamiltoniano definido al principio, donde vemos que $\sum d{\vec{p}_{i}}^{\,2} = 2mE$. 
+La integral que queda en el desarrollo indica el volumen en el espacio fásico, con radio $R = \sqrt{2mE}$.
+Así, tenemos que 
+\begin{equation}
+	\Gamma(E,N,V) = CV^N(2mE)^\frac{3N}{2}
+\end{equation}
+con una constante a determinar que dependerá de la dimensión del volumen del que hablemos. Su desarrollo se encuentra en el \hyperref[Anx1]{Anexo 1}. En nuestro caso, con dimensión $N$ obtenemos 
+\begin{equation}
+	\Gamma(E,N,V) = V^N\frac{\pi^{\frac{3N}{2}}}{\Gamma(\frac{3N}{2}+1)}(2mE)^\frac{3N}{2}
+\end{equation}
+
+Ahora, con la definición de $\Omega$:
+\begin{align}
+	\Omega(E,N,V) &= \eval{\pdv{\Gamma(E,N,V)}{E}}_{N,V} = V^N\frac{\pi^{\frac{3N}{2}}}{\Gamma(\frac{3N}{2}+1)}(2m)^\frac{3N}{2}\frac{3N}{2}E^{\frac{3N}{2}-1}  \nonumber\\
+				  &= V^N\frac{\pi^{\frac{3N}{2}}}{\Gamma(\frac{3N}{2}+1)}(2m)^\frac{3N}{2}\frac{3N}{2}\frac{2m}{2mE} \\
+				  &= \Gamma(E,N,V)\frac{3N}{2E}  \nonumber
+\end{align}
+
+Tomando logaritmos
+\begin{equation}
+	\ln \Omega(E,N,V) = \ln \Gamma(E,N,V) + \ln (3N) - \ln (2E)
+\end{equation}
+y despreciando los últimos términos por la gran velocidad de crecimiento de $\Omega$ y $\Gamma$ con $E$ tenemos que, para estados microscópicos podemos aproximar
+\begin{equation}
+	\boxed{\ln \Omega(E,N,V) \approx \ln \Gamma(E,N,V)}
+\end{equation}
+
+\section{Invarianza adiabática del volumen fásico}
+
+Vamos ahora a estudiar cómo varía en un proceso adiabático de este tipo el volumen fásico $\Gamma$, que sabemos es función de la energía del sistema y de los parámetros externos $X_\alpha$. Utilizando la expresión de la diferencial de una función de dos variables tenemos
+\begin{equation}
+	d\Gamma(E,X_\alpha) = \left( \pdv{\Gamma}{E} \right)_{X_\alpha} dE + \left( \pdv{\Gamma}{X_\alpha} \right)_{E} dX_\alpha
+\end{equation}
+
+La primera de las derivadas que aparecen en el segundo miembro ya la obtuvimos 
+\begin{equation}\label{eq:Gamma_E_t1}
+	\left( \pdv{\Gamma}{E} \right)_{X_\alpha} = \Omega(E,X_\alpha) 
+\end{equation}
+pero para la segunda necesitamos la expresión de la derivada de una integral, en la que los límites de integración y el integrado dependen de la variable respecto de la que se deriva
+\begin{equation}
+	\pdv{y} \int^{g(y)}_{f(y)} dx F(x,y) = \int^{g(y)}_{f(y)} \pdv{F}{y} + \left\lbrace \pdv{g}{y}F(g(y),y)- \pdv{f}{y}F(g(y),y) \right\rbrace
+\end{equation}
+
+Utilizando esta expresión y derivando respecto de $X_\alpha$ obtenemos
+
+\begin{align*}
+	\left( \pdv{\Gamma}{X_\alpha} \right)_{E} &= \pdv{X_\alpha} \int^E_{E_0} dE' \int dq dp \, \delta \left[ E' - H(q,p;X_\alpha) \right] \\
+	&=  \int^E_{E_0} dE' \int dq dp \, \pdv{X_\alpha} \delta \left[ E' - H(q,p;X_\alpha) \right]  - \pdv{E_0}{X_\alpha} \int dq dp \, \pdv{X_\alpha} \delta \left[ E' - H(q,p;X_\alpha) \right] \\
+	&=  - \int^E_{E_0} dE' \int dq dp \, \pdv{H}{X_\alpha} \pdv{E'} \delta \left[ E' - H(q,p;X_\alpha) \right] \\ 
+	& \quad - \pdv{E_0}{X_\alpha} \int dq dp \, \pdv{X_\alpha} \delta \left[ E' - H(q,p;X_\alpha) \right]
+\end{align*}
+
+Ahora, usando
+$$\int^E_{E_0} \dd{E'} \pdv{E'} \delta \left[ E' - H(q,p;X_\alpha) \right] = \delta \left[ E - H(q,p;X_\alpha) \right]  - \delta \left[ E_0 - H(q,p;X_\alpha) \right] $$
+y agrupando los términos resultantes de la integración acabamos con
+
+\begin{align} \label{eq:Gamma_X_a_t1}
+	\left( \pdv{\Gamma}{X_\alpha} \right)_{E} &= - \int^E_{E_0} dE' \int dq dp \pdv{H}{X_\alpha} \delta \left[ E' - H(q,p;X_\alpha) \right]  \nonumber \\ 
+	&\quad - \int^E_{E_0} dE' \int dq dp \left[ \pdv{E_0}{X_\alpha} - \pdv{H}{X_\alpha} \right] \delta \left[ E_0 - H(q,p;X_\alpha) \right] \\
+	&= -\Omega(E,N,V) \expval{\pdv{H}{X_\alpha}} \nonumber
+\end{align}
+
+Una vez tenemos ambos términos podemos evaluar finalmente el diferencial con el que comenzamos
+\begin{equation}
+	d\Gamma(E,X_\alpha) = \Omega(E,N,V)\left[dE - \expval{\pdv{H}{X_\alpha}} dX_\alpha \right]
+\end{equation}
+
+Identificado la variación de energía macroscópica dE con la variación media de la energía microscópica $dE$, y utilizando la identidad de $dE$ del inicio de la sección resulta que $$d\Gamma(E,X_\alpha) = 0$$ para los procesos que consisten en la variación cuasiestática de un parámetro externo en un sistema térmicamente aislado. Dicho de otra manera, $d\Gamma(E,X_\alpha)$ es un invariante para estos procesos.
+
+En Termodinamica la única magnitud que no varía, o sea, el único invariante que posee un sistema térmicamente aislado en un proceso cuasiestático, es la \emph{entropía}. Podemos entonces prever que una definición consistente de entropía en Mecánica Estadistica debe en principio estar relacionada con esta magnitud $\Gamma$.
+
+\section{Entropía y temperatura absoluta}
+
+Estudiemos ahora la dependencia del logaritmo neperiano del volumen fásico respecto de la energía y de los parámetros externos, Para ello consideremos la expresión
+\begin{equation}
+	d\Gamma(E,X_\alpha) = \frac{1}{\Gamma} \left[ \left( \pdv{\Gamma}{E} \right)_{X_\alpha} dE + \left( \pdv{\Gamma}{X_\alpha} \right)_{E} dX_\alpha\right]
+\end{equation}
+que podemos reescribir con \eqref{eq:Gamma_E_t1} y \eqref{eq:Gamma_X_a_t1} como
+\begin{equation}\label{eq:dgamma_t1}
+	d\Gamma(E,X_\alpha) = \frac{\Omega}{\Gamma} \left[ dE + \expval{Y_\alpha} dX_\alpha\right]
+\end{equation}
+
+Obsérvese que esta expresión entre paréntesis no es nula como sucedía en el apartado anterior, pues ahora dE proviene tanto de un intercambio de energía en forma de calor como en forma de trabajo.
+
+La expresión \eqref{eq:dgamma_t1} puede escribirse recordando la relación entre $\Gamma$ y $\Omega$ como
+\begin{equation}
+	d\Gamma(E,X_\alpha) = \left( \pdv{\ln \Gamma}{E} \right)_{X_\alpha} \left[ dE + \expval{Y_\alpha} dX_\alpha\right]
+\end{equation}
+de donde, con la primera ley de la termodinámica $dE \equiv dU = đQ - đW$ se obtiene
+\begin{equation}
+	d\Gamma(E,X_\alpha) = \left( \pdv{\ln \Gamma}{E} \right)_{X_\alpha} đQ
+\end{equation}
+
+Como el primer miembro de esta igualdad es una diferencial exacta, resulta que el segundo también lo será, es decir, que $đQ$ admite un factor integrante que es $$\left( \pdv{\ln \Gamma}{E} \right)_{X_\alpha}$$
+
+Ahora bien, en Termodinámica $đQ$ también posee un factor integrante, que es el inverso de la temperatura absoluta, y la magnitud cuya diferencial exacta se obtiene es la entropía $S$, que resulta ser de este modo una función de estado.
+Así, podemos identificar ambas magnitudes
+\begin{empheq}[box=\fbox]{align}
+	S &= k_B \ln \Gamma(E,X_\alpha) \\
+	T &= \left[ k_B \left( \pdv{\ln \Gamma}{E} \right)_{X_\alpha} \right]^{-1}
+\end{empheq}
+
+Se suele utilizar para una mayor sencillez en la escritura un parámetro $\beta$ definido como $$\beta = \frac{1}{k_B T}$$
+
+\emph{[Nota mental: revisar el final porque puede que quede algo por poner]}
+
+\section{Gas monoatómico ideal}
+
+Una vez efectuada la conexión entre las descripciones macroscópica y microscópica de un sistema, vamos aplicar los resultados obtenidos al cálculo de las magnitudes termodinámicas de un sistema concreto: el gas ideal monoatómico.
+
+Anteriormente obtuvimos la expresión del volumen fásico
+$$\Gamma(E,N,V) = V^N\frac{\pi^{\frac{3N}{2}}}{h^{3N}\Gamma(\frac{3N}{2}+1)}(2mE)^\frac{3N}{2}$$
+donde hemos añadido el factor $h^f = h^{3N}$. A partir de la expresión anterior, resulta para la temperatura
+$$\beta = \frac{1}{k_B T} = \left( \pdv{\ln \Gamma}{E} \right)_V = \frac{3N}{2E} \Rightarrow \frac{E}{N} = \frac{3}{2}k_B T$$
+
+Este resultado puede interpretarse diciendo que a cada partícula corresponde en valor medio una energía igual a $3k_BT /2$. De hecho puede establecerse un resultado análogo mucho más general que se conoce con el nombre de \textit{teorema de equipartición de la energía}, del que esta igualdad representa un caso concreto.
+
+La ecuación térmica de estado de un gas ideal podemos deducirla a partir de la expresión que nos da la presión
+$$\expval{Y_{\alpha}} \equiv \expval{p} = \frac{1}{\beta} \left( \pdv{\ln \Gamma(E, V)}{E} \right)_V = k_B T \left( \pdv{\ln \Gamma(E, V)}{E} \right)_V$$ donde, sustituyendo con la expresión del volumen fásico que recordamos al inicio de la sección obtenemos la ecuación de estado térmica de los gases ideales
+$$\expval{p} v = N k_B T = RT$$
+
+Calculemos ahora la expresión de la entropía, usando la \emph{fórmula de Stirling} (\hyperref[Anx2]{Anexo 2})
+\begin{align}
+	S(E,V) &= k_B \ln \Gamma(E, V)  \nonumber \\
+	&= k_B \left[ \frac{3N}{2}\ln\pi -\frac{3N}{2}\ln \frac{3N}{2} + \frac{3N}{2} - 3N\ln h + N\ln V + \frac{3N}{2}\ln(2mE) \right]  \nonumber \\
+	&\quad \boxed{\sigma \equiv \frac{3}{2} \ln \left( \frac{2mk_B}{h^2} \right) + \frac{3}{2}}  \nonumber \\
+	&= N k_B \left[ \frac{3}{2}\ln T +\ln V + \sigma \right]
+\end{align}
+
+Esta expresión de la entropía, totalmente análoga a la que se obtiene por razonamientos termodinámicos, no es satisfactoria, ya que conduce a la denominada \emph{paradoja de Gibbs}. 
+Dejando a un lado la exposición cualitativa de dicha paradoja y que puede verse en cualquier texto de Termodinámica, digamos que se presenta debido a que la expresión obtenida no es aditiva o extensiva.
+En efecto si, manteniendo la temperatura constante, aumentamos el volumen y el número de partículas del sistema en un factor a (es decir, unimos a sistemas idénticos) la nueva entropía sí viene relacionada con la del sistema original $S$ por
+$$S' = \alpha S + \alpha N k_B \ln \alpha$$
+en lugar de $S' = \alpha S$ que debería resultar si la entropía satisficiera el requirimiento de extensividad.
+
+¿Qué es lo que ha fallado en nuestro razonamiento? Es fácil ver que la introducción de un término adicional de la forma $-N k_B \ln N$ resuelve la dificultad pues obtendríamos
+\begin{equation}
+	S(E, V) =  N k_B \left[ \frac{3}{2}\ln T +\ln \frac{V}{N} + \sigma \right]
+\end{equation}
+expresión que es aditiva.
+
+La opinión generalmente aceptada por los distintos autores es que las dificultades provienen de un concepto demasiado \emph{fino} de microestado, Según esta idea no hay razón para considerar como distintos dos microestados que únicamente se diferencian en el intercambio de partículas iguales. 
+Es decir, que todas las situaciones que se obtienen permutando entre sí las $N$ partículas que componen el gas deben considerarse como un único microestado del sistema.
+
+Resulta entonces que al determinar $\Omega(E)$ por la condición de normalización habría que dividir por $N!$, número de permutaciones de $N$ partículas, pues de la función $\rho(q, p)$ definida en secciones anteriores hemos pasado a otra que está definida en un volumen del espacio fásico $N!$ veces menor. Lo mismo sucedería con el volumen fásico definido al inicio,
+\begin{equation}
+	\Gamma ' (E,V) = \frac{1}{h^{3f}N!} \int dqdp = \frac{1}{N!}\Gamma
+\end{equation}
+
+Con estas definiciones, que matemáticamente pueden entenderse como una métrica especial del espacio fásico, ninguno de los resultados generales obtenidos hasta ahora sufriría modificación, pues hasta este apartado solamente hemos considerado explícitamente la dependencia respecto de $N$ en el cálculo de $\Gamma$ para el caso de un gas ideal monoatómico.
+
+La entropía resultará ser
+\begin{equation}
+	S'(E, V) = N k_B \left[ \frac{3}{2}\ln T +\ln \frac{V}{N} + \sigma' \right] \quad | \quad \sigma' = \sigma + 1
+\end{equation}
+
+De este modo puede resolverse la paradoja de Gibbs. Parece, sin embargo, que la solución no es del todo satisfactoria, pues ha sido introducida un tanto forzadamente.
+Desde luego puede justificarse, y así se hace, diciendo que la Mecánica Clásica no es apropiada para describir los sistemas estadísticos constituidos por partículas iguales (lo que en el fondo equivale a decir que no es apropiada para describir ningún sistema estadístico).
+
+A pesar de todo ello se nos plantea la cuestión del origen de esta dificultad si nosotros hemos comprobado la aditividad de la definión de entropía dada. 
+Un análisis de los desarrollos efectuados proporciona la respuesta: hemos estudiado la aditividad de la entropía en subsistemas que podían intercambiar calor y trabajo, pero nunca cuando era posible el intercambio de partículas.
+Es decir hemos comprobado que nuestra definición de entropía presentaba una dependencia correcta respecto de la energía (temperatura) y respecto del volumen, pero no hemos estudiado si es correcta su dependencia respecto del número de partículas.
+
+\section{Interacción en general: equilibrio}
+
+Definida la entropía en apartados anteriores, vamos a tratar de establecer ahora si posee la propiedad de aditividad que goza en Termodinámica. Dicha propiedad afirma que si un sistema termodinámico se descompone en dos subsistemas cuyas entropías son $S_1$ y $S_2$ entonces la entropía del sistema total es $S_1 + S_2$ , lo cual equivale a decir que la entropía es una magnitud extensiva (Notemos que subsistema se utiliza aquí en un sentido macroscópico).
+
+Consideremos primero dos sistemas $A_1$ y $A_2$ puestos en contacto mediante una pared diaterma rígida, es decir una pared que permite/la interacción térmica entre ellos pero no la interacción mecánica. El sistema compuesto $A$ formado por ambos está aislado y por tanto corresponde a una energía constante $E$.
+
+El hamiltoniano general del sistema será
+$$H(q,Q,p,P) = H_1(p,q) + H_2 (Q,P) + H_{12}(q,Q,p,P)$$
+donde $H_{12}$ representa la energía de interacción entre $A_1$ y $A_2$. Nosotros vamos a admitir que esta energía es despreciable frente a la de cualquiera de los dos sistemas.
+
+Desde luego el hamiltoniano de interacción no puede ser estrictamente nulo, ya que entonces se negaría la posibilidad de un intercambio de energía entre $A_1$ y $A_2$.
+Puede verse fácilmente que si $H$ tuviese únicamente la suma de los dos subsistemas cada uno de los sistemas $A_1$ y $A_2$ evolucionaría separadamente, siendo cada uno de ellos conservativo.
+No obstante, es justificable despreciar la energía de interacción en sistemas macroscópicos si las fuerzas de interacción que se consideran poseen un alcance limitado. 
+En este caso $E_1$ y $E_2$ son proporcionales a los volúmenes de $A_1$ y $A_2$, mientras que la energía de interacción es proporcional a la superficie de separación.
+
+Al sistema total $A$ le es aplicable la distribución microcanónica de manera que le asignaremos una densidad de probabilidad en el espacio de las fases
+\begin{equation}
+	\rho(q,Q,p,P) = \frac{1}{h^f \Omega(E)} \delta \left[ E - H_1(q,p;X_\alpha) - H_2(Q,P;X_\alpha) \right]
+\end{equation}
+donde $f = f_1 + f_2$.
+
+De acuerdo con esta distribución resulta que son posibles en principio cualquier
+par de valores $E_1$ y $E_2$ con la única condición de que
+$$E = E_1+ E_2$$
+
+En este sentido es posible que toda la energía $E$ del sistema total se concentre a $A_1$, quedando $A_2$ con una energía nula. Parece entonces que la entropía de, por ejemplo, el sistema $A_1$ no está definida pues como sabemos el volumen fásico $\Gamma$ es una función de la energía.
+La situación sin embargo, no es ésta, pues no debemos olvidar el hecho fundamental de que la entropía es un concepto macroscópico, que no está ligado a ningún microestado en concreto sino al conjunto de todos los microestados del sistema.
+Vamos a ver que, si se tiene presente esta idea, las entropías de $A_1$ y $A_2$ están definidas de manera única como consecuencia de que también lo están las energías.
+Para ello vamos a plantearnos la cuestión de cuál es la probabilidad $\omega(E_1) dE_1$ de que el sistema total se encuentre en equilibrio en un estado tal que la energía del subsistema $A_1$ esté comprendida entre $E_1$ y $E_1 + dE_1$.
+
+La densidad de probabilidad $\rho(q, p)$ de que el sistema Al se encuentre en el microestado definido por $(q, p)$ independientemente de cuál sea el estado de $A_2$ se obtendrá integrando la distribución microcanónica para todos los valores de $Q$ y $P$
+\begin{align}
+	\rho(q,Q,p,P) &= \frac{1}{h^f \Omega(E)} \int dQ dP\delta \left[ E - H_1(q,p;X_\alpha) - H_2(Q,P;X_\alpha) \right]  \nonumber \\
+			      &= \frac{1}{h^f \Omega(E)} \Omega_2 \left[ E - H_1(q,p;X_\alpha) \right]
+\end{align}
+donde $\Omega_2 \left[ E - H_1(q,p;X_\alpha) \right]$ representa la derivada respecto de la energía del volumen encerrado en el espacio $Q - P$ por la hipersuperficie
+$$H_2 (P, Q) = E - H_1(q, p)$$
+
+Con este resultado es evidente
+\begin{align}
+	\omega(E_1) dE_1 &= \mkern-18mu \int\limits_{E_1 \le H_1(q, p) \le E_1+dE_1} \mkern-50mu dq dp \mkern10mu \rho(q, p)  \nonumber\\
+					 &= \frac{1}{h^{f_1} \Omega(E)} \Omega_2 \left[ E - E_1 \right] \mkern-28mu \int\limits_{E_1 \le H_1(q, p) \le E_1+dE_1} \mkern-40mu dq dp \\
+					 &= \frac{1}{\Omega(E)} \Omega_1(E) \Omega_2 \left[ E - E_1 \right] dE_1  \nonumber
+\end{align}
+
+%-------------------Gráfica---------------------------
+\pgfmathdeclarefunction{gauss}{2}{%
+	\pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+\begin{wrapfigure}{l}{0.25\textwidth}
+	\centering
+	\hspace{-2.5cm}
+	\begin{tikzpicture}
+		\begin{axis}[
+			scale = 0.65,
+			xmin = 0, xmax = 3,
+			every axis plot post/.append style={
+			mark=none,samples=80,smooth},
+			axis lines=left, % no box around the plot, only x and y axis
+			xlabel={$E_1$},
+			xlabel style={at=(current axis.right of origin), anchor=west},
+			xtick = {1.5},
+			xticklabel = {$\widetilde{E_1}$},
+			ytick=\empty,
+			ylabel={$\omega(E_1)$},
+			ylabel style={at=(current axis.above origin), anchor=south,rotate=-90},
+			enlargelimits=upper] % extend the axes a bit to the right and top
+			
+			\addplot[name path=f, NavyBlue, ultra thick] {gauss(1.5,0.25)};
+				
+			\addplot [fill=NavyBlue!20, draw=none, domain=0:3] {gauss(1.5,0.25)} \closedcycle;
+			
+		\end{axis}
+	\end{tikzpicture}
+	\vspace{-0.5cm}
+\end{wrapfigure}
+
+%----------------------------------------------------------
+
+
+Analicemos cualitativamente el resultado obtenido.
+Hemos visto en secciones anteriores que en el caso de sistemas macroscópicos $\Omega(E)$ es una función rápidamente creciente de la energía.
+Resulta entonces que si aumentamos $E_1$ manteniendo $E$ constante $\Omega(E_1)$ crecerá rápidamente, mientras que $\Omega(E_2)$ disminuirá también con gran rapidez.
+El resultado es que $\omega(E_1)$ presentará un máximo extremadamente agudo para un cierto valor $\widetilde{E_1}$ de la energía, es decir, un comportamiento del tipo representado en la figura adyacente.
+En esta distribución será
+$$\frac{\Delta^* E_1}{\widetilde{E_1}} \ll 1$$
+
+¿Qué consecuencias físicas podemos obtener de este resultado? En primer lugar que al pasar a una descripción macroscópica el sistema $A_1$ tendrá una energía $\widetilde{E_1}$ y el $A_2$ una energía $\widetilde{E_2} = E-\widetilde{E_1}$, y además estos valores presentan fluctuaciones despreciablemente pequeñas.
+
+Para comprobar la aditividad de la entropía partimos de la relación evidente ---basta por ejemplo exigir la normalización---
+\begin{equation}
+	\Omega(E) = \int dE_1 \Omega_1(E_1) \Omega_2(E - E_1)
+\end{equation}
+
+Recordando el concepto de desviación cuadrática media podemos escribir (ver Fig)
+$$\Omega(E) = \Omega_1(\widetilde{E_1}) \Omega_2(\widetilde{E_2})n\Delta^*E_1$$
+siendo $n$ del orden de unas pocas unidades.
+Tomando logaritmos se obtiene
+\begin{equation}
+	\ln \Omega(E) = \ln \Omega_1(\widetilde{E_1})  + \ln \Omega_2(\widetilde{E_2}) + \ln(n\Delta^*E_1)
+\end{equation}
+
+Ahora bien, sabemos que 
+$$\ln \Omega_1(\widetilde{E_1}) \sim f_1\ln \widetilde{E_1}$$
+y como por $\Delta^*E_1$ es despreciable frente a $E_1$ resulta que mucho más lo será $\ln (n\Delta^*E_1)$ frente a $f_1 \ln E_1$ (recuérdese que $n$ es del orden de unas pocas unidades mientras que $h$ es del orden de $10^{23}$ ).
+En consecuencia podemos escribir
+\begin{equation}
+	\ln \Omega(E) = \ln \Omega_1(\widetilde{E_1})  + \ln \Omega_2(\widetilde{E_2})
+\end{equation}
+con lo que se demuestra la propiedad de aditividad.
+
+Más aún, unan vez nos encontramos en el equilibrio podemos llegar a otra propiedad. En efecto, podemos
+determinar $\widetilde{E_1}$ para lo cual igualamos a cero la primera derivada de $\ln \omega(E_1)$ respecto
+a $E_1$ (manteniendo constantes los parámetros externos):
+$$0 = \left( \pdv{\ln \omega(E_1)}{E_1}\right)_{E_1 = \widetilde{E_1}}  = \left( \pdv{\Omega_1(E_1)}{E_1} \right)_{E_1 = \widetilde{E_1}} + \left( \pdv{\Omega_2(E_2)}{E_1} \right)_{E_2 = \widetilde{E_2}}$$
+y, como $\pdv{E_1}{E_2} = -1 $, resulta
+\begin{equation}
+	\left( \pdv{\Omega_1(E_1)}{E_1}\right)_{E_1 = \widetilde{E_1}} = \left(  \pdv{\Omega_2(E_2)}{E_1}\right)_{E_2 = \widetilde{E_2}}
+\end{equation}
+
+Con la definición de $\beta$ dada en secciones anteriores se obtiene
+\begin{equation}
+	\beta_1 = \beta_2 \Rightarrow \boxed{T_1 = T_2}
+\end{equation}
+y de manera análoga, con la diferenciación respecto de los movimientos generalizados tendremos la igualdad en las fuerzas generalizadas.
+
+Así, pues, hemos obtenido que, si dos sistemas en equilibrio están además en equilibrio térmico entre sí, la entropía del sistema total es igual a la suma de las entropía que cada uno de ellos tendría si estuviera aislado con un valor de la energía igual a su energía media.
+Hemos visto además que las temperaturas de los dos sistemas son iguales.
+
+En nuestros razonamientos ha jugado un importante papel el hecho de que el sistema total estaba en equilibrio; en particular solamente en ese caso hemos definido su entropía, y solamente en ese caso se le puede aplicar la distribución microcanónica.
+
+
+

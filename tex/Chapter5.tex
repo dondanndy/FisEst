@@ -1,0 +1,239 @@
+Hasta ahora hemos considerado únicamente sistemas ideales, despreciando todo tipo de interacción entre las partículas.
+En este capítulo trataremos de ir un poco más allá analizando el comportamiento estadístico de sistemas constituidos por partículas que interaccionan entre sí.
+Desde luego, el problema es de una gran complejidad matemática, siendo en general irresoluble, por lo que nos limitaremos a la consideración de un caso especialmente sencillo, aunque de un gran interés práctico: el modelo de gas real diluido.
+
+Es importante previamente entender bien el modo de proceder ante un problema en Mecánica Estadística y en general en toda la Física.
+A partir de un sistema real se construye un modelo teórico del mismo.
+Este modelo viene caracterizado por una cierta descripción matemática que, en nuestro caso, es la función de partición.
+Y sucede que, aunque formalmente esa descripción sea conocida, su evaluación explícita no suele ser matemáticamente posible, lo que lleva a introducir simplificaciones sobre el modelo.
+Este es el punto crucial en el desarrollo de la teoría, pues es importante saber delimitar si las simplificaciones son puramente matemáticas y no tienen ninguna incidencia sobre los resultados desde un punto de vista físico, o si por el contrario limitan el dominio de validez de los resultados al ser éstos aplicables únicamente a casos o conofrimientos particulares del sistema físico considerado.
+La teoría de los gases reales constituirá un claro ejemplo del modo de proceder que acabamos de indicar.
+
+Sin embargo, no siempre es posible prever a priori las limitaciones que una cierta hipótesis simplificadora impone sobre la validez de los resultados teniéndose que esperar a la comparación con los datos experimentales ---o un desarrollo más \emph{fino} de la teoría--- para comprobar su rango de validez.
+
+\newpage
+\section{Función de partición configuracional}
+
+Consideremos un modelo de gas monoatómico cuyas moléculas interaccionan entre sí.
+Si eliminamos de nuestras consideraciones gases polarizados o ionizados) parece lógico admitir que el potencial entre dos moléculas sea de tipo central, esto es, que dependa únicamente de la distancia que separa a las dos moléculas.
+Existen multitud de potenciales del tipo indicado que han sido propuestos para describir la interacción entre moléculas; algunos de ellos con un cierto fundamento teórico, pero todos esencialmente empíricos, de manera que su justificación se encuentra en la mayor o menor concordancia con los resultados experimentales de los resultados obtenidos a partir de ellos.
+Su forma cualitativa es la indicada en la figura adyacente: son fuertemente repulsivos a cortas distancias, como consecuencia del volumen finito de las moléculas, y presentan para distancias mayores una zona atractiva que tiende a cero al aumentar la separación entre las moléculas.
+
+\colorbox{red!60}{\textcolor{white}{\textit{[Esquemas, ya veré si los dejo aquí o más adelante]}}}
+
+El hamiltoniano de un sistema de $N$ partículas interaccionantes y sin estructura interna, si admitimos que la energía potencial total es la suma de las energías potenciales asociadas a todos los pares de moléculas,\footnote{Es conveniente detenerse a pensar en este punto para convencerse de que, efectivamente, se trata de una hipótesis. Cuando una partícula se coloca en las proximidades de otras dos que están interaccionando, no solo añadirá nuevos términos a la energía de interacción, sino que en general podrá perturbar el campo de fuerzas de las dos primeras partículas.} tendrá la forma
+\begin{equation}
+	H(q,p) = \sum_{i=1}^N \frac{p_i^2}{2m} + \sum_{1 \leq i < j}^{N} u(|\mathbf{r}_i - \mathbf{r}_j|)
+\end{equation}
+o, abreviadamente,
+\begin{equation}
+	H = K + U
+\end{equation}
+siendo $K$ la energía cinética (que depende solo de las cantidades de movimiento) y $U$ la energía potencial (que depende solo de las posiciones).
+
+De acuerdo con la teoría de la Mecánica Estadística que hemos venido desarrollando, y utilizando el colectivo canónico, sabemos que todas las propiedades termodinámicas del sistema se obtienen a partir de su función de partición
+\begin{align}\label{eq:Z_5}
+	Z &= \frac{1}{h^{3N} N!} \int dqdp \, \exp \left[ -\beta H(q,p) \right] \nonumber \\
+	  &= \frac{1}{h^{3N} N!} \int d^3\mathbf{r}_1 \cdots d^3\mathbf{r}_N d^3\mathbf{p}_1 \cdots d^3\mathbf{p}_N \, \exp \left[ -\beta H(q,p) \right] 
+\end{align}
+
+Dada la independencia de la energía potencial respecto de las cantidades de movimiento y de la energía cinética respecto de las posiciones, podemos descomponer \eqref{eq:Z_5} en la forma
+\begin{equation}\label{eq:Z_desc}
+	Z = Z_T Z_U
+\end{equation}
+siendo
+\begin{equation}
+	Z_T = \frac{1}{h^{3N} N!} \int d^3\mathbf{p}_1 \cdots d^3\mathbf{p}_N \, \exp \left[ -\beta K \right] 
+\end{equation}
+y
+\begin{equation}\label{eq:Z_u}
+	Z_U = \frac{1}{h^{3N} N!} \int d^3\mathbf{r}_1 \cdots d^3\mathbf{r}_N \, \exp \left[ -\beta U \right]
+\end{equation}
+
+El término $Z_T$, llamada función de partición traslacional, es fácil de integrar; de hecho coincide salvo un factor $V^N$ con la función de partición de un gas ideal monoatómico calculada previamente en la sección 2.4, y vale
+\begin{equation}\label{eq:Z_t}
+	Z_T = \frac{1}{h^{3N} N!} (2\pi m k_B T)^{3N/2}
+\end{equation}
+
+Resulta entonces que el cálculo de la función de partición queda reducido al cálculo de $Z_U$, que se suele denominar \emph{función de partición configuracional} por tratarse de una integral extendida al espacio de configuraciones. Es evidente que en el caso de un gas ideal $(U = 0)$ se obtiene $Z_U = V^N$.
+Sin embargo, en el caso general y para potenciales de interacción razonablemente reales ---en el sentido de estar acordes con la experiencia---, el cálculo de $Z_U$ es extremadamente complicado o imposible.
+Como consecuencia resulta necesaria la consideración de situaciones físicas concretas que permitan realizar aproximaciones, tal y como expusimos en la introducción de este capítulo.
+
+Existen desde luego numerosos procedimientos formales para el cálculo de \eqref{eq:Z_u} basados en métodos perturbativos, es decir, en desarrollos más o menos sistemáticos en potencias de un cierto parámetro que usualmente es la densidad o el potencial de interacción.
+No vamos a exponer aquí en detalle ninguno de estos procedimientos que por su complejidad matemática salen fuera de nuestros objetivos, pero analizaremos cuidadosamente el contenido físico de las aproximaciones que es necesario realizar a fin de obtener el valor de $Z_U$ que permita calcular los términos correspondientes a los órdenes más bajos en la densidad.
+Los resultados que obtengamos serán entonces aplicables a un gas \emph{suficientemente diluido}.
+El significado de esta expresión lo irán precisando los razonamientos y aproximaciones que realicemos.
+
+\section{Desarrollo en la densidad}
+
+Centremos nuestra atención en dos partículas dadas, que llamaremos $i$ y $j$, de nuestro sistema de $N$ partículas encerradas en un recipiente de volumen $V$.
+Nos preguntamos cuál será la probabilidad de que el sistema se encuentre en una configuración tal que estas dos partículas interaccionen entre sí. De las consideraciones del apartado anterior se deduce que esta probabilidad será igual a la probabilidad de que $j$ se encuentre a una distancia menor que $r_0$ de la partícula $i$, o dicho de otro modo, de que se encuentre dentro de la esfera del volumen $4\pi r_0^3/3$ y centro en la partícula $i$.
+Evidentemente la presencia de la partícula $i$ influirá sobre la probabilidad de presencia de $j$ y en particular una distancia menor que $\sigma$ le será prácticamente inaccesible.
+Podemos sin embargo realizar un interesante estudio cualitativo.
+
+Vamos a admitir, y esta es nuestra primera hipótesis, que la parte atractiva del potencia es muy débil comparada con la cinética media de todas las partículas, es decir, que $mv^2/2 \gg 1$. Es claro que por el teorema de equipartición esto equivalente	a admitir que la temperatura del sistema no es muy baja.
+Con esta hipótesis evitamos la posibilidad de que se formen agregados de partículas al ser atrapadas unas 	en el potencial de las otras, es decir, admitimos que las partículas siempre acaban separándose después de la interacción.
+
+Imaginemos ahora que mentalmente eliminamos del sistema la partícula $i$ y consideramos una esfera de radio $r_0$ alrededor de su posición. Este \emph{hueco} tenderá a ser ocupado por un cierto número de partículas, que podemos considerar que son las que colisionan con la partícula $i$ al tratar de ir a ocupar su esfera de influencia.
+
+Con estas consideraciones y dada la homogeneidad del sistema en el equilibrio podemos escribir que la probabilidad de que una partícula dada $j$ interaccione con la $i$ es del orden de
+\begin{equation}\label{eq:prob_ji}
+	\frac{r_0^3}{V}
+\end{equation}
+donde hemos prescindido de un factor numérico constante que no juega ningún papel en nuestras consideraciones.
+
+El número medio de colisiones binarias simultáneas en el sistema, o sea, el número medio de pares de partículas interaccionantes en los microestados, se obtendrá multiplicando \eqref{eq:prob_ji} por el número de posibles parejas $i$, $j$ que puedan formarse y que es $N ( N - 1)/2$, que puede aproximarse a $N^2 /2$, ya que $N \gg 1$.
+Resulta entonces que
+\begin{equation}\label{eq:n_2col}
+	\parbox{12em}{Número medio de colisiones\\binarias simultáneas} \sim \frac{N ( N - 1)}{2}\frac{r_0^3}{V} \simeq \frac{N}{2}nr_0^3
+\end{equation}
+donde hemos introducido la densidad numérica de partículas $n = N/V$. Obsérvese que \eqref{eq:n_2col} es una propiedad extensiva, es decir, proporcional a N, lo que refleja el hecho de que si duplicamos el sistema pasando de $N$ a $2N$ y de $V$ a $2V$ ---lo que mantiene $n$ constante--- el número medio de colisiones binarias simultáneas en el sistema se duplica.
+
+La generalización de los razonamientos a colisiones triples, cuádruples, etc. es evidente.
+Así, la probabilidad de que tres partículas dadas estén interaccionando
+entre sí será del orden de
+\begin{equation}
+	\left( \frac{r_0^3}{V}\right)^2
+\end{equation}
+y
+\begin{equation}\label{eq:n_3col}
+	\parbox{12em}{Número medio de colisiones\\triples simultáneas} \sim  \frac{N (N-1)(N-2)}{3!}\left( \frac{r_0^3}{V}\right)^2 \simeq \frac{N}{6}(nr_0^3)^2
+\end{equation}
+
+En general, para colisiones simultáneas de $p$ partículas obtendríamos\footnote{Alguien podrá observar que \eqref{eq:n_pcol} no es válida si $p$ no es mucho menor que $N$. El análisis detallado de este hecho exigiría una discusión más profunda de la que hemos realizado aquí de los fundamentos de la Mecánica Estadística y en particular del llamado \emph{límite termodinámico}. En todo caso, para nuestros actuales razonamientos, basta observar que la expresión «exacta», manteniendo $N(N - 1) ... (N - p + 1)$, sería menor que \eqref{eq:n_pcol}.}
+\begin{equation}\label{eq:n_pcol}
+	\parbox{12em}{Número medio de colisiones\\simultáneas de $p$ partículas} \sim  \frac{N}{p!}(nr_0^3)^{p-1}
+\end{equation}
+
+Vamos a considerar ahora un gas muy diluido en el que
+$$nr_0^3 \ll 1$$
+condición que se entiende más claramente si observamos que es equivalente a
+$$\frac{V}{N} \gg r_0^3$$
+o sea, que el volumen por molécula ha de ser mucho mayor que el volumen efectivo de interacción.
+Desde luego, ésta es una hipótesis sobre el modelo con claras implicaciones físicas, de manera que restringirá el rango de validez de nuestros resultados de acuerdo con la discusión que realizamos en el apartado anterior.
+
+Como consecuencia de la hipótesis que acabamos de efectuar resulta que \eqref{eq:n_3col} en particular y \eqref{eq:n_pcol} en general, con $p > 2$, serán despreciables frente a \eqref{eq:n_2col}, de manera que las configuraciones en donde se producen colisiones triples, cuádruples, etc. son altamente improbables frente a las que presentan únicamente colisiones binarias.
+
+Podemos simplificar aún más el problema matemático utilizando el carácter aditivo de \eqref{eq:n_2col} ya señalado.
+Vamos a considerar a efectos de cálculo un sistema en el que $\frac{N ( N - 1)}{2}\frac{r_0^3}{V}$ sea mucho menor que la unidad de manera que la probabilidad de que en el sistema se produzcan dos o más colisiones binarias simultáneas sea despreciable.
+Para ello tomaremos un valor de $N$ suficientemente pequeño, pero manteniendo $n$ constante.
+Como éste es el parámetro intensivo del sistema y no se ve afectado por la elección, parece claro que las propiedades termodinámicas intensivas no van a verse afectadas.
+De hecho, sabemos que, debido a la propiedad de aditividad, las fórmulas que se obtengan para un sistema de tipo serán automáticamente válidas para un sistema arbitrariamente grande.\footnote{Podemos precisar un poco más la idea. Desde ahora, y hasta que encontremos la expresión de una magnitud extensiva, olvidaremos que $N$ es grande y tomaremos $\frac{N ( N - 1)}{2}\frac{r_0^3}{V} \ll 1$. Cuando tengamos una magnitud extensiva, si ésta presenta una dependencia correcta respecto de $N$, es decir proporcional a ella, admitiremos que esa expresión es válida con independencia de su valor y más concretamente de que se cumpla o no la condición arriba señalada.}
+Es decir, que estamos en el caso de una simplificación matemática sin implicaciones físicas.
+
+Para trasladar todas estas ideas a un formalismo matemático es conveniente introducir una función $f(r)$ definida como
+\begin{eqnarray}\label{eq:Mayer}
+	f(r) = e^{-\beta u(r)} - 1
+\end{eqnarray}
+
+Esta función se denomina \emph{función de Mayer} y su comportamiento en el caso de un potencial como el de Lennard-Jones se ha representado en la Fig. 5.3. También hemos representado en la Fig. 5.4 la forma de $f(r)$ para el caso de un potencial como el de la Fig. 5.2. \colorbox{red!60}{\textcolor{white}{\textit{[Figuras a rellenar :D]}}}
+
+La característica importante de la función de Mayer es que ya no es finita para valores pequeños de $r$, como sucedía con el potencial, y, además $f(r) = 0$ cuando $u(r) = 0$, es decir, que $f(r) \simeq 0$ para $r > r_0$, donde $r_0$ es, como siempre, el parámetro que caracteriza el alcance del potencial.
+Con ayuda de la definición \eqref{eq:Mayer} podemos ahora escribir
+\begin{align}\label{eq:e_beta_u}
+	e^{-\beta u(r)} &= \exp \left[ -\beta \sum_{1 \leq i < j}^{N} u(|\mathbf{r}_i - \mathbf{r}_j|) \right] = \prod_{1 \leq i < j}^{N} e^{-\beta u(|\mathbf{r}_i - \mathbf{r}_j|)} \nonumber\\
+					&= \prod_{1 \leq i < j}^{N} (1+f_{ij})
+\end{align}
+donde
+\begin{eqnarray}
+	f_{ij} \equiv f(|\mathbf{r}_i - \mathbf{r}_j|) \equiv e^{-\beta u(|\mathbf{r}_i - \mathbf{r}_j|)} - 1 
+\end{eqnarray}
+
+El desarrollo de \eqref{eq:e_beta_u} tiene la forma
+\begin{align}\label{eq:des_e_beta_u}
+	&1 + \sum_{1 \leq i < j}^{N} f_{ij} + \sum_{1 \leq i < j}^{N} \, \sum_{1 \leq l < m}^{N} f_{ij} f_{lm} \nonumber \\
+	&+ \sum_{1 \leq i < j}^{N} \, \sum_{1 \leq l < m}^{N} \, \sum_{1 \leq p < q}^{N} f_{ij} f_{lm} f_{pq} + \cdots
+\end{align}
+que, introducido en la función de partición configuracional \eqref{eq:Z_u} da
+\begin{align}\label{eq:z_u_2}
+	Z_U &= \int d^3\mathbf{r}_1 \cdots d^3\mathbf{r}_N + \sum_{1 \leq i < j}^{N} \int d^3\mathbf{r}_1 \cdots d^3\mathbf{r}_N\, f_{ij} \nonumber \\
+		& \quad + \sum_{1 \leq i < j}^{N} \, \sum_{1 \leq l < m}^{N} \, \int d^3\mathbf{r}_1 \cdots d^3\mathbf{r}_Nf_{ij} f_{lm} + \cdots \nonumber \\
+		&= V^N + V^{N-2} \int d^3\mathbf{r}_i d^3\mathbf{r}_j f(|\mathbf{r}_i - \mathbf{r}_j|)  \nonumber \\
+		& \quad + V^{N-4} \sum_{1 \leq i < j}^{N} \,  \sum_{1 \leq l < m}^{N} \, \int d^3\mathbf{r}_i d^3\mathbf{r}_j d^3\mathbf{r}_l  d^3\mathbf{r}_m \, f(|\mathbf{r}_i - \mathbf{r}_j|) f(|\mathbf{r}_l - \mathbf{r}_m|) + \cdots
+\end{align}
+
+Vamos a analizar este desarrollo. Si tenemos en cuenta que $f(r) \neq 0$ equivale a $u(r) \neq 0$, podemos interpretar rápidamente los distintos términos del segundo miembro de \eqref{eq:z_u_2} del siguiente modo:
+\begin{enumerate}
+	\item El primero, $V^N$ representa la función de partición configuracional cuando se desprecian todas las interacciones entre las partículas. Formalmente, puede	obtenerse a partir de \eqref{eq:Z_u} haciendo $U = 0$, y desde luego coincide con el valor de $Z_U$ para un gas ideal.
+	
+	\item El segundo término representa una primera corrección en la que se consideran todas las aportaciones a $Z_U$ de aquellas configuraciones en las que colisionan dos partículas, pero solo dos partículas. Dicho de otro modo, de \emph{todas las configuraciones posibles} se consideran aquellas en las que dos partículas, y solo dos partículas, están situadas a una distancia menor que $r_0$. Según nuestras consideraciones anteriores, éstas son las aportaciones que queremos retener en el \emph{caso} de nuestro gas suficientemente diluido.
+	
+	\item El tercer término contiene dos tipos de correcciones según que consideremos los cuatro índices $i$, $j$, $l$, $m$, distintos, o que alguno de los dos primeros sea igual a alguno de los dos últimos.\footnote{Un momento de reflexión acerca de \eqref{eq:des_e_beta_u}, como desarrollo de \eqref{eq:e_beta_u}, es suficiente para convencerse de que tal posibilidad puede darse, pero que no es posible que los dos primeros índices $i$, $j$ sean iguales a los otros dos $l$, $m$.} La primera posibilidad corresponde a las configuraciones con dos interacciones binarias, mientras que la segunda representa un tipo de corrección debida a las colisiones triples.
+\end{enumerate}
+
+Análogamente se podrían ir interpretando todos los demás términos del desarrollo, que contendrán correcciones debidas a colisiones múltiples de más de dos partículas y a colisiones simultaneas.
+
+\section{Segundo coeficiente del virial}
+
+Con la hipótesis de gas suficientemente diluido efectuada en el apartado anterior y la consideración de colisiones binarias aisladas allí discutida, resulta que podemos considerar en el caso de nuestro sistema que
+\begin{equation}\label{eq:z_u_3}
+	Z_U = V^N + V^{N-2} \frac{N(N-1)}{2}\int d^3\mathbf{r}_1 d^3\mathbf{r}_2 \, f(|\mathbf{r}_1 - \mathbf{r}_2|)
+\end{equation}
+
+Vamos a efectuar un cambio de coordenadas en la integral, introduciendo coordenadas relativas y del centro de masas
+\begin{align}
+	\mathbf{r} &= \mathbf{r}_1 - \mathbf{r}_2 \nonumber \\
+	\mathbf{R} &= \frac{\mathbf{r}_1 + \mathbf{r}_2}{2}
+\end{align}
+con lo que se tiene, utilizando coordenadas esféricas,
+\begin{equation}\label{eq:int_zu}
+	\int d^3\mathbf{r}_1 d^3\mathbf{r}_2 \, f(|\mathbf{r}_1 - \mathbf{r}_2|) = \int d^3\mathbf{R} d^3\mathbf{r} \, f(r) = 4\pi V \int_0^{\infty} dr \, f(r) r^2
+\end{equation}
+
+En este punto hemos de hacer notar que hemos utilizado la invariancia traslacional del sistema al extender a todo el volumen las integrales respecto de \textbf{r} y \textbf{R}.
+La justificación está en que estamos interesados en las propiedades de volumen del sistema y no en los efectos de superficie, que de otro modo habrían de considerarse.
+Por otro lado, es evidente que podemos extender la integral respecto de $r$ hasta infinito en \eqref{eq:int_zu}, ya que $f (r)$ se anula para distancias grandes comparadas con $r_0$.
+
+Utilizando \eqref{eq:Z_desc}, \eqref{eq:Z_t}, \eqref{eq:z_u_3} y \eqref{eq:int_zu}, y en el caso de un gas no ideal, pero suficientemente diluido en el sentido que hemos precisado. tenemos que
+\begin{align}\label{eq:Z_virial}
+	Z &= \frac{1}{h^{3N} N!} (2\pi m k_B T)^{3N/2} \left[ 1 + \frac{N(N-1)}{2V} \int_0^{\infty} dr \, 4 \pi r^2 f(r) \right] \nonumber \\
+	  &= Z^\text{ideal} \left[ 1 + \frac{N(N-1)}{2V} \int_0^{\infty} dr \, 4 \pi r^2 f(r) \right]
+\end{align}
+donde hemos introducido la función de partición de un gas ideal
+\begin{equation}
+	Z^\text{ideal} = \frac{1}{h^{3N} N!} (2\pi m k_B T)^{3N/2}
+\end{equation}
+
+La forma cualitativa de la función $f(r)$ nos permite hacer una estimación del orden de magnitud del segundo sumando dentro del corchete de \eqref{eq:Z_virial}.
+En efecto, como hemos admitido que la parte atractiva del potencial es muy débil comparada con la energía cinética media de las moléculas, resulta que $f(r)$ es típicamente del orden de la unidad para valores de $r$ menores que $r_0$ y nula en otro caso y, por lo tanto,
+\begin{equation}
+	\frac{N(N-1)}{2V} \int_0^{\infty} dr \, 4 \pi r^2 f(r) \sim \frac{N(N-1)}{2V} r_0^3
+\end{equation}
+
+Pero este número es muy pequeño en nuestro modelo por la elección que hemos hecho de $N$ en el apartado anterior. Tomando entonces logaritmos en \eqref{eq:Z_virial} y teniendo en cuenta que $\ln(1 + x) \simeq x$, cuando $x \ll 1$, obtenemos
+\begin{align}
+	\ln Z &= \ln Z^\text{ideal} + \ln \left[ 1 + \frac{N(N-1)}{2V} \int_0^{\infty} dr \, 4 \pi r^2 f(r) \right] \nonumber \\
+		&\simeq \ln Z^\text{ideal} + \frac{N(N-1)}{2V} \int_0^{\infty} dr \, 4 \pi r^2 f(r) \\
+		&=  \ln Z^\text{ideal} + \frac{N^2}{2V} \int_0^{\infty} dr \, 4 \pi r^2 f(r) \nonumber
+\end{align}
+donde hemos despreciado, además, $N$ frente a $N^2$.
+Podemos ya calcular a partir de esta expresión la ecuación de estado utilizando la relación
+\begin{equation}
+	\left\langle p \right\rangle = \frac{1}{\beta} \left( \frac{\partial \ln Z}{\partial V}\right)_{\beta}
+\end{equation}
+que recordando que para un gas ideal es
+\begin{equation}
+	\left\langle p \right\rangle = \frac{N k_B T}{V}
+\end{equation}
+nos da
+\begin{equation}
+	\left\langle p \right\rangle = \frac{N k_B T}{V} - \frac{N^2 k_B T}{2V} \int_0^{\infty} dr \, 4 \pi r^2 f(r)
+\end{equation}
+que puede escribirse también como
+\begin{equation}\label{eq:gas_real}
+	\frac{\left\langle p \right\rangle V}{N k_B T} = 1 + \frac{N}{V} B_2(T)
+\end{equation}
+con
+\begin{equation}\label{eq:seg_coef}
+	B_2(T) = -2\pi \int_0^{\infty} dr \, r^2 f(r)
+\end{equation}
+
+Los dos términos del segundo miembro de \eqref{eq:gas_real} son los dos primeros términos del llamado \emph{desarrollo del virial}, es decir, de un desarrollo en potencias de la densidad
+\begin{equation}\label{eq:gas_real_des}
+	\frac{\left\langle p \right\rangle V}{N k_B T} = 1 + \frac{N}{V} B_2(T) + \left( \frac{N}{V} \right)^2 B_3(T) + \cdots
+\end{equation}
+
+Así, \eqref{eq:seg_coef} es la expresión del \emph{segundo coeficiente del virial} para gas clásico.
+Es importante hacer notar que nosotros hemos admitido implícitamente la existencia de este desarrollo en potencias de la densidad, o sea que el primer miembro de \eqref{eq:gas_real_des} es una función analítica de la densidad.
+Esto parece cierto para la clase de sistemas que estamos considerando, pero no es cierto si, por ejemplo, el potencial de interacción no disminuye de un modo suficientemente rápido con la distancia.
+

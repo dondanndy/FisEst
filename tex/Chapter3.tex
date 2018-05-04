@@ -1,0 +1,253 @@
+Al discutir la paradoja de Gibbs y la expresión correcta de la entropía en Mecánica Estadística clásica , pusimos de manifiesto que una descripción completa del equilibrio de un sistema exige considerar también la dependencia de las distintas magnitudes respecto del número de partículas que componen el sistema.
+Siguiendo en esa línea de razonamiento, vamos a generalizar la distribución canónica a fin de poder describir estadísticamente el equilibrio de sistemas abiertos o heterogéneos.
+
+\newpage
+\section{Colectividad canónica generalizada. La gran función de partición}
+
+Consideremos un sistema en contacto con un foco térmico en el sentido especificado en el capítulo anterior, pero ahora vamos a suponer además que el foco térmico actúa también como un \emph{foco de partículas} con el que el sistema puede intercambiar partículas.
+En seguida precisaremos el concepto de foco de partículas, que es totalmente análogo al de foco térmico. 
+Al sistema total  lo supondremos aislado y en equilibrio, de manera que le es aplicable la distribución microcanónica.
+Utilizaremos la misma notación que siempre, caracterizando con el subíndice 1 el sistema en consideración $A_1$,
+con el subíndice 2 el foco $A_2$ y dejando sin subíndices las magnitudes que se refieran al sistema total $A$.
+
+La densidad de probabilidad de encontrar al sistema $A_1$ en un microestado tal que contenga $N_1$ partículas dadas, con posiciones comprendidas en el intervalo $(q, q + dq)$ y cantidades de movimiento dentro del margen $(p, p+dp)$, viene dada por ---en las expresiones de $\rho$ fijamos primero el número de partículas y después las coordenadas y momentos generalizados, pues éste es el orden lógico; además, por sencillez, consideramos un único tipo de partículas---
+\begin{equation}
+	\rho^0(N_1,q,p) = \frac{1}{h^{f_1} \Omega(E)} \Omega_2 \left[ E - H_{N_1}(q,p;X_\alpha), N-N_1 \right]
+\end{equation}
+
+De acuerdo con lo que hemos visto en el Capítulo 1, el segundo miembro de esta igualdad no depende de cuáles sean las $N_1$ partículas seleccionadas, si admitimos que todas ellas son iguales.
+Consecuentemente pasamos a considerar, al igual que hicimos allí, la densidad de probabilidad de encontrar $N_1$ partículas cualesquiera, que evidentemente será
+\begin{align}
+	\rho(N_1,q,p) &= \frac{N!}{N_1!(N-N_1)!}\rho^0(N_1,q,p) \nonumber \\ 
+				  &= \frac{N!}{N_1!(N-N_1)!} \frac{\Omega_2 \left[ E - H_{N_1}(q,p;X_\alpha), N-N_1 \right]}{h^{f_1} \Omega(E)}
+\end{align}
+
+Esta expresión puede escribirse en la forma compacta
+\begin{equation}
+\rho(N_1,q,p) = B\frac{1}{h^{f_1} \Omega(E)} \frac{\Omega_2 \left[ E - H_{N_1}(q,p;X_\alpha), N-N_1 \right]}{(N-N_1)!}
+\end{equation}
+siendo $B$ independiente de $N_1$, $q$ y $p$.
+
+Ahora bien, hemos visto que esta densidad de probabilidad es prácticamente nula excepto cuando corresponda a valores muy próximos a $\widetilde{N_1}$ y $\widetilde{E_1}$ determinados por ---actuando de la misma manera que en la colectividad canónica---.
+
+Además, dado el carácter de foco del sistema $A_2$ es decir, dado que se trata de un sistema con muchos más grados de libertad que $A_1$, los razonamientos sobre órdenes de magnitud efectuados reiteradamente nos muestran que en la región en que $\rho$ es distinta de cero se tiene
+$$E_1 \ll E \quad | \quad N_1 \ll N$$
+
+Podemos entonces desarrollar el último factor del segundo miembro de $\rho$ reteniendo únicamente el primer orden ---recordar que $N_2 = N - N_1$---
+$$\ln \frac{\Omega_2 \left[ E - H_{N_1}(q,p;X_\alpha), N-N_1 \right]}{h^{f_1} \Omega(E)} = \ln \frac{\Omega_2 \left[ E \right] }{N!} - \left( \pdv{E_2} \ln\frac{\Omega_2}{N_2!}\right)_{\substack{E_2 = E \\ N_2 = N}} \mkern-8mu H_{N_1} + \left( \pdv{N_2} \ln\frac{\Omega_2}{N_2!}\right)_{\substack{E_2 = E \\ N_2 = N}} \mkern-8mu N_1$$
+
+La derivada
+\begin{equation}
+	\beta = \left( \pdv{E_2} \ln\frac{\Omega_2}{N_2!}\right)_{\substack{E_2 = E \\ N_2 = N}}
+\end{equation}
+define la temperatura del foco como ya discutimos, mientras que
+\begin{equation}
+-\beta \mu = \left( \pdv{N_2} \ln\frac{\Omega_2}{N_2!}\right)_{\substack{E_2 = E \\ N_2 = N}}
+\end{equation}
+define su potencial químico $\mu$.
+
+Obsérvese que la derivada está calculada en $E$ y $N$ no en $\widetilde{E}$ y $\widetilde{N}$. Este hecho es el que nos va a permitir precisar más el concepto de foco de partículas.
+Cuando al poner en contacto dos sistemas, el potencial químico de uno de ellos permanezca esencialmente invariable cualquiera que sean los intercambios de energía y partículas entre ellos, se dice que este sistema actúa como \emph{foco de partículas} respecto del otro.
+
+Con estas identidades resulta
+\begin{equation}
+	\ln \frac{\Omega_2 \left[ E - H_{N_1}(q,p;X_\alpha), N-N_1 \right]}{h^{f_1} \Omega(E)} = \frac{\Omega_2(E,N)}{N!} \exp\left[ \beta H_{N_1}(q,p) + \beta\mu N_1 \right]
+\end{equation}
+con lo que obtenemos
+\begin{equation}
+	\rho(N_1,q,p) = C\frac{1}{h^{f_1}N_1!}\exp\left[ \beta \left( H_{N_1}(q,p) - \mu N_1\right)  \right]
+\end{equation}
+donde
+$$C = B\frac{\Omega_2(E,N)}{N!}$$
+y es independiente de $N_1$, $q$ y $p$. A veces esta expresión se escribe de la forma
+\begin{equation}
+	\rho(N_1,q,p) = C\frac{1}{h^{f_1}N_1!}\exp\left[ \beta H_{N_1}(q,p) - \alpha N_1  \right]
+\end{equation}
+donde hemos introducido
+\begin{equation}
+	\alpha = \beta\mu = \left( \pdv{N} \ln\frac{\Omega}{N!}\right)_{\substack{E = \widetilde{E} \\ N = \widetilde{N}}}
+\end{equation}
+
+La magnitud $z \equiv e^{-\alpha}$ recibe el nombre de \emph{fugacidad}.
+
+La constante $C$ puede determinarse por la condición de normalización sumando para todos los posibles números de partículas y todas las posibles configuraciones
+$$C^{-1} = \sum_{N_1 = 0}^{\infty} \frac{e^{\mu\beta N_1}}{h^{f_1} N_1!} \int dqdp \, \exp\left[ -\beta H_{N_1}(q,p) \right]$$
+y por extensión de la función de partición, introducimos la \emph{función de partición generalizada} o \textbf{\emph{gran función de partición}} definida como
+\begin{equation}
+	C^{-1} \equiv  \boxed{Q = \sum_{N = 0}^{\infty} \frac{e^{-\alpha N}}{h^{f} N!} \int dqdp \, \exp\left[ -\beta H_{N}(q,p) \right]}
+\end{equation}
+habiendo prescindido del subíndice 1. Esta distribución de probabilidades se denomina \textit{distribución macrocanónica}, \textit{gran canónica} o \textit{canónica generalizada} y está normalizada de forma que
+$$\sum_{N = 0}^\infty \int dqdp \, \rho(N; q,p) = 1$$
+
+Podemos también escribir la distribución de probabilidades para la energía en este caso de una colectividad canónica generalizada, para lo cual no habrá más que integrar $\rho$ para todos los valores de $q$ y $p$ que hacen $H_N(q, p) = E$.
+El resultado es
+\begin{equation}
+	\omega(N; E) = \Omega(N; E) \frac{1}{N!}\frac{1}{Q} \exp\left[ -\beta H_{N_1}(q,p) \right]
+\end{equation}
+
+La generalización al caso de varios tipos de partículas es trivial.
+Las expresiones en este caso general toman la forma
+\begin{equation}
+	Q = \sum_{N_1 = 0}^\infty \cdots \sum_{N_s = 0}^\infty \frac{e^{-\sum_{i=1}^s \alpha_i N_i}}{h^{f_1 + \cdots + f_s} N_1!\cdots N_s!} \int dqdp \, \exp\left[ -\beta\left(  H_{N_1}(q,p) + \cdots + H_{N_s} \right) \right]
+\end{equation}
+siendo
+$$\alpha_i = \left( \pdv{N_i} \ln \frac{\Omega}{N_i!} \right)_{\substack{E = \widetilde{E} \\ N_j = \widetilde{N_j}}} $$
+y $s$ el número de clases de partículas distintas que existen en el sistema.
+
+Para no complicar la notación no hemos desdoblado explícitamente el conjunto de variables $(q, p)$, pero desde luego tendrá la forma
+\begin{align}
+	(q, p) = (&q_1, \ldots ,q_{N_1},q_{N_1 + 1}, \ldots,q_{N_1 + N_2} ,q_{N_1 + N_2 +1},\ldots; \nonumber\\
+	&p_1, \ldots, p_{N_1},p_{N_1 + 1}, \ldots,p_{N_1 + N_2} ,p_{N_1 + N_2 +1},\ldots)
+\end{align}
+
+En los razonamientos que siguen utilizaremos indistintamente la distribución correspondiente a un solo tipo de partículas y la general, pues todos los resultados obtenidos mediante la primera se generalizan sin dificultad a sistemas multicomponentes.
+
+\section{Cálculo de valores medios y fluctuaciones}
+
+Las expresiones de los valores en el conjunto canónico generalizado son completamente análogas a las obtenidas para la distribución canónica. Comenzamos por la energía media
+\begin{align}
+	\expval{E} &= \sum_{N = 0}^\infty \int dqdp \, H_N(q,p) \rho(N; q,p) \nonumber\\
+							     &= \frac{1}{Q} \sum_{N = 0}^\infty \frac{e^{-\alpha N}}{h^f N!}\int dqdp \, H_N(q,p) e^{-\beta H_N(q,p)} \\
+							     &= - \frac{1}{Q} \left( \pdv{Q}{\beta} \right)_{\alpha, X} = \left( \pdv{\ln Q}{\beta} \right)_{\alpha, X} \nonumber
+\end{align}
+Debe observarse, para evitar posibles confusiones, que esta derivada parcial \textbf{debe calcularse a $\bm{\alpha}$ constante, y no a potencial químico constante}; si la derivada fuese a $\mu$ constante la expresión sería
+\begin{equation}
+	\expval{E} = \left( \pdv{\ln Q}{\beta} \right)_{\mu, X} - \mu \expval{N}
+\end{equation}
+donde $\expval{N}$ es el número medio de partículas que calcularemos un poco más adelante.
+
+Siguiendo la misma línea de razonamientos se demuestra que
+$$\expval{E^2} = \frac{1}{Q} \left( \pdv[2]{Q}{\beta} \right)_{\alpha, X}$$
+de forma análoga al resultado de la colectividad canónica.
+
+Así, la dispersión de la energía será\footnote{Obsérvese que la expresión para la dispersión de la energía es similar a la que se obtuvo en el colectivo canónico, pero hay una diferencia fundamental.
+Anteriormente la derivada se tomaba, aparte de a parámetros externos constantes, a $N$ constante ---en el colectivo canónico $N$ es un parámetro fijo---, mientras que en ahora la derivada se toma a $\alpha$ constante.}
+\begin{align}
+	(\Delta E)^2 = \expval{E^2} - \expval{E}^2 &= \sum_{N = 0}^\infty \int dqdp \, H_N(q,p) \rho(N; q,p) \nonumber\\
+		&= \frac{1}{Q} \left( \pdv[2]{Q}{\beta} \right)_{\alpha, X} -  \left( \pdv{\ln Q}{\beta} \right)_{\alpha, X}^2 \\
+		&= \left( \pdv[2]{\ln Q}{\beta} \right)_{\alpha, X} = - \left( \pdv{\expval{E}}{\beta} \right)_{\alpha, X} \nonumber
+\end{align}
+
+Ahora podemos calcular el valor medio del número de partículas. Viene dado por
+\begin{align}
+	\expval{N} &= \sum_{N = 0}^\infty \int dqdp \, N \rho(N; q,p) \nonumber \\
+								&= \frac{1}{Q} \sum_{N = 0}^\infty \frac{e^{-\alpha N}}{h^f N!}\int dqdp \, e^{-\beta H_N(q,p)} \\
+								&= - \frac{1}{Q} \left( \pdv{Q}{\alpha} \right)_{\beta, X} = \left( \pdv{\ln Q}{\alpha} \right)_{\beta, X} \nonumber
+\end{align}
+y de la misma manera que con la energía el segundo orden se obtiene fácilmente
+\begin{equation}
+	\expval{N^2} = \frac{1}{Q} \left( \pdv[2]{Q}{\alpha} \right)_{\beta, X}
+\end{equation}
+y la dispersión será
+\begin{align}
+(\Delta N)^2 &= \expval{N^2} - \expval{N}^2 =  \left( \pdv[2]{\ln Q}{\alpha} \right)_{\beta, X} \nonumber\\ 
+			&= \left( \pdv{\expval{N}}{\beta} \right)_{\beta, X} = k_B T \left( \pdv{\expval{N}}{\mu} \right)_{\beta, X}
+\end{align}
+
+Por último, podemos calcular los momentos generalizados
+\begin{align}
+\expval{Y_\alpha} &= - \sum_{N = 0}^\infty \int dqdp \, \pdv{H}{X_k} \rho(N; q,p) \nonumber \\
+					&= - \frac{1}{Q} \sum_{N = 0}^\infty \frac{e^{-\alpha N}}{h^f N!}\int dqdp \, \pdv{H}{X_k} e^{-\beta H_N(q,p)} \\
+					&= - \frac{1}{Q} \frac{1}{\beta} \left( \pdv{Q}{X_k} \right)_{\alpha, \beta, X_{i \neq k}} = \frac{1}{\beta} \left( \pdv{\ln Q}{X_k} \right)_{\alpha, \beta, X_{i \neq k}} \nonumber
+\end{align}
+
+\section{Relación con la termodinámica}
+
+La gran función de partición será función en general de los parámetros externos, de las $\alpha_i$ y de la temperatura.
+Por lo tanto
+$$d\ln Q = \left( \pdv{Q}{\beta} \right)_{\alpha_i, X_k} d\beta + \sum_i \left( \pdv{Q}{\alpha_i} \right)_{\alpha_{j\neq i}, X_k, \beta} d\alpha_i + \sum_k \left(  \pdv{Q}{X_k} \right)_{\alpha_i, X_{i \neq k}, \beta} dX_k$$
+y aprovechando los resultados anteriores
+\begin{equation}
+	d\ln Q = -\expval{E} d\beta + \sum_i \expval{N_i} d\alpha_i + \sum_k \expval{Y_k} dX_k
+\end{equation}
+
+Si queremos hallar una expresión para la entropía hemos de buscar, igual que hicimos en el capítulo anterior, una diferencial exacta que provenga de $đQ$\footnote{Por el contexto se deduce cuándo $Q$ se refiere al calor o a la gran función de partición.} mediante el inverso de la temperatura como factor integrante.
+Es fácil obtener que
+\begin{equation}
+	d\left( \ln Q  + \beta \expval{E} -\sum_i \alpha_i \expval{N_i} \right) = \beta \left( d\expval{E} - \sum_i \alpha_i  d\expval{N_i} + đW \right)
+\end{equation}
+donde hemos introducido
+$$đW = \sum_k \expval{Y_k} dX_k$$
+
+Considerando que la variación de la energía de un sistema puede provenir de la realización de un trabajo, de un intercambio de partículas, o de una transferencia de calor, parece lógico identificar
+$$đQ = d\expval{E} - \sum_i \alpha_i  d\expval{N_i} + đW$$
+y, consecuentemente, identificamos
+\begin{equation}\label{eq:S_T3}
+	S = k_B \left( \ln Q  + \beta \expval{E} -\beta \sum_i \mu_i \expval{N_i} \right)
+\end{equation}
+
+\begin{center}
+	\rule[0.5ex]{5em}{0.55pt}
+\end{center}
+
+Definamos ahora la función de Gibbs
+\begin{equation}
+	G = \expval{E} - TS + \sum_k \expval{Y_k} dX_k \label{eq:Gibb}
+\end{equation}
+cuya diferencial es
+\begin{equation}
+	dG = -SdT + \sum_k X_k d\expval{Y_k} + \sum_i \mu_i d\expval{N_i}
+\end{equation}
+
+Si comparamos esta expresión con la expresión formal de la diferencial de $G$ considerada como función de $T$, $\expval{Y_k}$ y $\expval{N_i}$
+$$dG = \left( \pdv{G}{T} \right)_{\expval{Y_k}, N_i} dT + 
+	\sum_k \left( \pdv{G}{Y_k} \right)_{T, \expval{Y_{i\neq k}}, \expval{N_i}} d\expval{Y_k} + 
+	\sum_i \left( \pdv{G}{N_i} \right)_{T,\expval{Y_k}, \expval{N_{j\neq i}}} d\expval{N_i}$$
+obtenemos
+\begin{equation}
+	\mu_i = \left( \pdv{G}{N_i} \right)_{T,\expval{Y_k}, \expval{N_{j\neq i}}}
+\end{equation}
+
+Como $G$ por definición es una magnitud extensiva, ha de ser una función homogénea de primer grado en las variables extensivas independientes de que dependa.
+Ahora bien, en el conjunto de variables $T$, $\expval{Y_k}$ y $\expval{N_i}$ las únicas variables extensivas son las $\expval{N_i}$, por lo que, aplicando el teorema de Euler de las funciones homogéneas, ha de ser
+\begin{equation}
+	G = \sum_i \left( \pdv{G}{N_i}  \right)_{T,\expval{Y_k}, \expval{N_{j\neq i}}} d\expval{N_i} = \sum_i \mu_i d\expval{N_i}
+\end{equation}
+y con la definición del potencial de Gibbs
+\begin{equation}
+	\expval{E} - TS + \sum_k \expval{Y_k} dX_k = \sum_i \mu_i d\expval{N_i}
+\end{equation}
+y la relación con la entropía que obtuvimos antes
+\begin{equation}
+	\sum_k \expval{Y_k} dX_k = k_B T \ln Q
+\end{equation}
+
+Esta ecuación es muy utilizada en la práctica, pues proporciona de un modo directo la ecuación de estado. En el caso de un sistema hidroestático simple, en el que el único parámetro externo es el volumen, se convierte en
+\begin{equation}
+	\expval{p} V = k_B T \ln Q \label{eq:pvGb}
+\end{equation}
+
+Para un gas ideal monoatómico, se obtiene que $\ln Q = \expval{N}$, como debía ser a fin de que se convierta en la ecuación de Clapeyron.
+
+\begin{center}
+	\rule[0.5ex]{5em}{0.55pt}
+\end{center}
+
+Vamos a introducir ahora una magnitud termodinámica que está directamente relacionada con el logaritmo de la gran función de partición, en lugar de con sus derivadas como sucede con la energía interna o la entropía.
+Definimos el llamado \emph{gran potencial} como ($F$ es la energía libre de Helmholtz)
+\begin{equation}
+	\Phi = \expval{E} - TS - \sum_i \mu_i \expval{N_i} = F - \sum_i \mu_i \expval{N_i} \label{eq:Phi}
+\end{equation}
+cuya diferencial es ---obsérvese que las variables independientes del gran potencial son la temperatura, los parámetros externos y los potenciales químicos---
+\begin{align}
+	d\Phi &= d\expval{E} - TdS - SdT - \sum_i \mu_i d\expval{N_i} - \sum_i  \expval{N_i} d\mu_i \nonumber \\
+	      &= -SdT - \sum_k \expval{Y_k} dX_k - \sum_i  \expval{N_i} d\mu_i
+\end{align}
+
+Comparando esta expresión con la expresión formal de la diferencial de $\Phi$ considerada como función de $T$, $X_k$ y $\mu_i$
+$$d\Phi = \left( \pdv{\Phi}{T} \right)_{\expval{Y_k}, \mu_i}dT - 
+	\sum_k \left( \pdv{\Phi}{X_k} \right)_{T,\expval{X_{i\neq k}}, \expval{\mu_i}} dX_k -
+	\sum_i  \left( \pdv{\Phi}{\mu_i} \right)_{T,\expval{Y_k}, \expval{\mu_{j\neq i}}} d\mu_i$$
+obtenemos
+$$S = - \left( \pdv{\Phi}{T} \right)_{\expval{Y_k}, \mu_i} | \quad
+	\expval{Y_k} = \left( \pdv{\Phi}{X_k} \right)_{T,\expval{X_{i\neq k}}, \expval{\mu_i}} | \quad
+	\expval{N_i} = \left( \pdv{\Phi}{\mu_i} \right)_{T,\expval{Y_k}, \expval{\mu_{j\neq i}}} $$
+	
+Por otro lado, de la comparación entre \eqref{eq:S_T3} y \eqref{eq:Phi} deducimos
+\begin{equation}
+	\Phi = -k_B T \ln Q
+\end{equation}
+que, con \eqref{eq:pvGb} pasa a ser
+\begin{equation}
+	\Phi = -\expval{p} V
+\end{equation}

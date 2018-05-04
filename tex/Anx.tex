@@ -1,0 +1,269 @@
+\newpage
+\section*{Anexo 1}\label{Anx1}
+\renewcommand{\theequation}{A\textsubscript{1}.\arabic{equation}}
+
+En este primer anexo vamos a deducir el volumen de una hiperesfera de radio $R$ de dimensión $n$, de ecuación
+\begin{equation}
+	x_1^2+x_2^2 + \cdots + x_n^2 = R^n
+\end{equation}
+En general, sabemos que será proporcional a su radio de la forma
+\begin{equation}
+	V_n = C_nR^n
+\end{equation}
+donde $C_n$ es una constante que debemos determinar.
+Para ello comenzamos con la definición de la superficie, que no será más que la derivada del volumen
+\begin{equation}
+	dS_n(R) = C_n n R^{n-1} dR
+\end{equation}
+
+\begin{align}
+	\int_{-\infty}^{\infty} \dd{x_1} \int_{-\infty}^{\infty} \dd{x_2} \cdots \int_{-\infty}^{\infty} \dd{x_n}e^{-(x_1^2+x_2^2 + \cdots + x_n^2)} &= \int_{0}^{\infty} \dd{S_n} e^{-R^2} \nonumber \\
+	\int_{-\infty}^{\infty} \dd{x_1} e^{-x_1^2} \int_{-\infty}^{\infty} \dd{x_2} e^{-x_2^2} \cdots \int_{-\infty}^{\infty} \dd{x_n} e^{-x_n^2} &= \int_{0}^{\infty} \dd{R} C_n n R^{n-1} e^{-R^2} \\
+	\left[ 2 \int_{0}^{\infty} \dd{x_1} e^{-x_1^2} \right]^N &=  C_n n \int_{0}^{\infty} \dd{R} R^{n-1} e^{-R^2}\nonumber
+\end{align}
+
+Evaluemos ambos miembros por separado.
+Para la integral del lado izquierdo realizamos el cambio de variable $x^2=t$
+\begin{equation}
+	2 \int_{0}^{\infty} \dd{x} e^{-x^2} = 2\frac{1}{2} \int_{0}^{\infty} \dd{t} t^{1/2} e^{-t} = \Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}
+\end{equation}
+y para la del derecho, $R^2 = t$
+\begin{equation}
+	C_n n \int_{0}^{\infty} \dd{R} R^{n-1} e^{-R^2} = C_n n \frac{1}{2} \int_{0}^{\infty} \dd{t} t^{n - 1/2} e^{-t} = C_n \frac{n}{2} \Gamma\left(\frac{n}{2}\right)
+\end{equation}
+y recomponiendo
+\begin{equation}
+	\pi^{n/2} = C_n \frac{n}{2} \Gamma\left(\frac{n}{2}\right) \Rightarrow C_n = \pi^{n/2}\frac{2}{n}\frac{1}{\Gamma\left(\frac{n}{2}\right)} = \frac{\pi^{n/2}}{\Gamma\left(\frac{n}{2} + 1 \right)}
+\end{equation}
+
+Con lo que finalizamos con
+\begin{equation}
+	V_n = \frac{\pi^{n/2}}{\Gamma\left(\frac{n}{2} + 1 \right)}R^n
+\end{equation}
+
+\newpage
+\section*{Anexo 2}\label{Anx2}
+\renewcommand{\theequation}{A\textsubscript{2}.\arabic{equation}}
+\setcounter{equation}{0}
+
+En el anexo 2 vamos a desarrollar la \emph{fórmula de Stirling}, una aproximación válida para números muy grandes que es usada en varias ocasiones en el desarrollo de este documento.
+
+La fórmula de Stirling comienza su desarrollo en la definición del factorial
+\begin{equation}
+	N! = N\cdot (N-1) \cdots 2 \cdot 1
+\end{equation}
+y, por tanto,
+\begin{equation}
+	\ln N! = \ln N + \cdots + \ln 1 = \sum_{n=1}^{N} \ln n
+\end{equation}
+
+\begin{wrapfigure}{r}{0.25\textwidth}
+	\centering
+	\hspace{2.5cm}
+	\begin{tikzpicture}
+	\begin{axis}[
+	scale = 0.65,
+	samples=300,
+	xmin = 1, xmax = 10,
+	ymin = 0,
+	axis lines=left,
+	xlabel={$n$},
+	ylabel={$\ln n$},
+	xmajorgrids,
+	x grid style={white!70!black},
+	ymajorgrids,
+	y grid style={white!70!black}]
+	
+	\addplot[purple, ultra thick, domain=0:10] {ln(x)};
+	\addplot[NavyBlue, ultra thick, domain=0:10] {ln(floor(x))};
+	
+	\addplot [fill=NavyBlue, opacity=0.3, draw=none,domain=0:10] {ln(floor(x))} \closedcycle;
+	
+	\end{axis}
+	\end{tikzpicture}
+	\vspace{-0.5cm}
+\end{wrapfigure}
+
+Esta suma es igual al área encerrada por la línea poligonal de la figura entre $n = 1$ y $n = N$ (área sombreada).
+Consideremos ahora el área encerrada entre los mismos valores de $n$ por la curva $y = \ln n$, también representada en la figura (línea sólida).
+Para valores pequeños de $N$ ambas áreas difieren apreciablemente, pero al ir creciendo $N$ las dos curvas tienden a superponerse y las áreas encerradas por cada una de ellas se aproximan entre sí cada vez más.
+No olvidemos que deseamos que sea pequeño el error relativo cometido al sustituir un área por otra y no su diferencia absoluta.
+Recordando que el área encerrada entre una curva y el eje de abscisas viene dada por la integral definida, podemos escribir para valores grandes de $N$
+\begin{equation}
+	\ln N! \approx \int_{1}^{N} dn\ln n = \left[ n\ln n - n \right]_1^N
+\end{equation}
+o, despreciando la unidad frente a N,
+\begin{equation}\label{eq:Stirl}
+	\boxed{\ln N! \approx N\ln N - N}
+\end{equation}
+que es la fórmula de Stirling.
+
+Desde luego existen expresiones más exactas, como la que podemos obtener a partir de la función $\Gamma$. Por definición
+\begin{equation}
+	n! = \int_0^\infty x^n e^{-x}\, dx
+\end{equation}
+que con el cambio de variable $x = ny$ y agrupando obtenemos
+\begin{equation}
+	n! = \int_0^\infty e^{n\ln x-x}\, dx = e^{n \ln n} n \int_0^\infty e^{n(\ln y -y)}\, dy
+\end{equation}
+y aplicando el método de Laplace obtenemos
+\begin{equation}
+	\int_0^\infty e^{n(\ln y -y)}\, dy \sim  \sqrt{\frac{2\pi}{n}} e^{-n}
+\end{equation}
+con lo que se obtiene la fórmula de Stirling
+$$n! \approx \sqrt{2 \pi n} \; \left(\frac{n}{e}\right)^{n}$$
+
+La expresión obtenida es una mera aproximación usando un orden bajo del método.
+La expresión completa recibe el nombre de \emph{serie de Stirling}
+\begin{equation}
+	n! = \sqrt{2 \pi n} \; \left(\frac{n}{e}\right)^{n} \exp\left[ 
+		{\frac{1}{12n}}
+		-{\frac{1}{360n^3}}
+		+{\frac{1}{1260n^5}}
+		-{\frac{1}{1680n^7}}
+		+\cdots \right] 
+\end{equation}
+
+Desarrollando dicha exponencial también se puede reescribir la fórmula como
+\begin{equation}
+	n! = \sqrt{2 \pi n} \; \left(\frac{n}{e}\right)^{n}
+		\left(
+			1
+			+{\frac{1}{12n}}
+			+{\frac{1}{288n^2}}
+			-{\frac{139}{51840n^3n}}
+			-{\frac{571}{2488320n^4}}
+			+ \cdots
+		\right)
+\end{equation}
+\begin{wrapfigure}{l}{0.4\textwidth}
+	\centering
+	\hspace{-1.5cm}
+	\input{./graph/Stirling.tex}
+	\vspace{-1cm}
+\end{wrapfigure}
+
+Pero para valores de $n$ muy grandes podemos despreciar los valores del desarrollo y quedarnos con la expresión aproximada.
+Tomando logaritmos y de nuevo aproximando llegamos a \eqref{eq:Stirl}
+\begin{equation}
+	\ln n! \approx n\ln n - n
+\end{equation}
+
+La diferencia entre la aproximación y el valor real disminuye cuando $n$ toma valores grandes, como se puede apreciar en la figura que se adjunta.
+En los sistemas en los que vamos a estudiar, que tendrán moléculas en el orden del mol ($10^{23}$), resultará muy útil.
+
+\newpage
+\section*{Anexo 3}\label{Anx3}
+\renewcommand{\theequation}{A\textsubscript{3}.\arabic{equation}}
+\setcounter{equation}{0}
+
+
+\newpage
+\section*{Anexo 4}\label{Anx4}
+\renewcommand{\theequation}{A\textsubscript{4}.\arabic{equation}}
+\setcounter{equation}{0}
+
+En este cuarto anexo vamos a calcular la integral
+\begin{equation}
+	\int_{0}^{\infty} \dd{\varepsilon} \frac{f(\varepsilon)}{e^{\beta(\varepsilon_r - \mu)} + 1}
+\end{equation}
+
+Comenzamos con el cambio de variable $z = \beta(\varepsilon_r - \mu)$, con lo que obtenemos
+\begin{align}\label{eq:des1}
+	\int_{0}^{\infty} \dd{\varepsilon} \frac{f(\varepsilon)}{e^{\beta(\varepsilon_r - \mu)} + 1} &= \int_{-\beta\mu}^{\infty} \frac{dz}{\beta} \frac{f(\mu + \frac{z}{\beta})}{e^z + 1} = \frac{1}{\beta} \int_{-\beta\mu}^{0} \dd{z} \frac{f(\mu + \frac{z}{\beta})}{e^z + 1} + \frac{1}{\beta} \int_{0}^{\infty} \dd{\beta} \frac{f(\mu + \frac{z}{\beta})}{e^z + 1} \nonumber\\
+	&= \frac{1}{\beta} \int_{0}^{\beta\mu} \dd{\beta} \frac{f(\mu - \frac{z}{\beta})}{e^{-z} + 1} + \frac{1}{\beta} \int_{0}^{\infty} \dd{\beta} \frac{f(\mu + \frac{z}{\beta})}{e^z + 1}
+\end{align}
+
+A continuación evaluamos la fracción que se encuentra en la primera integral resultante
+\begin{equation}
+	\frac{1}{e^{-z} + 1} = \frac{e^{-z} + 1 - e^{-z}}{e^{-z} + 1} = 1 - \frac{-e^{-z}}{e^{-z} + 1} = 1 - \frac{1}{e^{z} + 1}
+\end{equation}
+y retomamos con esta relación el desarrollo
+\begin{align}\label{eq:des2}
+	&\rightsquigarrow \frac{1}{\beta} \left[  \int_{0}^{\beta\mu} \dd{z} f\left( \mu - \frac{z}{\beta}\right) \left( 1 - \frac{1}{e^{z} + 1} \right) + \int_{0}^{\infty} \dd{z} \frac{f(\mu + \frac{z}{\beta})}{e^z + 1}\right] \nonumber \\
+	&= \frac{1}{\beta} \left[ - \int_{\mu}^{0} \beta \dd{\varepsilon} f(\varepsilon) +  \int_{0}^{\beta\mu} \dd{z} \frac{f\left( \mu - \frac{z}{\beta}\right)}{e^{z} + 1} + \int_{0}^{\infty} \dd{z} \frac{f(\mu + \frac{z}{\beta})}{e^z + 1}\right]\\
+	&= \int_{0}^{\mu} \dd{\varepsilon} f(\varepsilon) + \frac{1}{\beta} \left[ -\int_{0}^{\infty} \dd{z} \frac{f\left( \mu - \frac{z}{\beta}\right)}{e^z + 1} + \int_{0}^{\infty} \dd{z} \frac{f\left( \mu + \frac{z}{\beta}\right)}{e^z + 1} \right] \nonumber
+\end{align}
+donde, en el último paso, hemos aproximado en los límites de las integrales como $1 \ll \beta\mu \approx \infty$.
+
+Ahora desarrollamos las funciones $f\left( \mu - \frac{z}{\beta}\right)$ y $f\left( \mu + \frac{z}{\beta}\right)$ en $z=0$
+\begin{align}
+	f\left( \mu - \frac{z}{\beta}\right) &= f(\mu) + f'\left( \mu - \frac{z}{\beta}\right)_{z=0}\frac{z}{\beta} + \frac{1}{2!}f''\left( \mu - \frac{z}{\beta}\right)_{z=0}\frac{z^2}{\beta^2} + \cdots \nonumber \\
+	&= f(\mu) + f'(\mu)\frac{z}{\beta} + \frac{1}{2!}f''(\mu)\frac{z^2}{\beta^2} + \cdots\\
+	f\left( \mu + \frac{z}{\beta}\right) &= f(\mu) - f'(\mu)\frac{z}{\beta} + \frac{1}{2!}f''(\mu)\frac{z^2}{\beta^2} - \cdots
+\end{align}
+y restando ambas
+\begin{equation}
+	 f\left( \mu + \frac{z}{\beta}\right) - f\left( \mu - \frac{z}{\beta}\right) = 2f'(\mu)\frac{z}{\beta} + \frac{2}{3!}f'''(\mu)\frac{z^3}{\beta^3} + \cdots
+\end{equation}
+
+Así, podemos introducirla en el desarrollo en \eqref{eq:des2}, obteniendo
+\begin{equation}\label{eq:des3}
+	\rightsquigarrow \int_{0}^{\mu} \dd{\varepsilon} f(\varepsilon) + 2\frac{1}{\beta}f'(\mu) \int_{0}^{\infty} dz \frac{z}{e^z + 1} + \frac{2}{3!}\frac{1}{\beta^3}f'''(\mu) \int_{0}^{\infty} dz \frac{z^3}{e^z + 1} + \cdots
+\end{equation}
+
+Solo nos queda evaluar cada una de las integrales de la serie restante.
+Podemos observar que la única diferencia entre ellas será la potencia del denominador, así que calcularemos un equivalente genérico
+\begin{align}\label{eq:des_sub_1}
+	I_k &= \int_{0}^{\infty} \dd{z} \frac{z^{2k+1}}{e^z + 1} = \int_{0}^{\infty} \dd{z} z^{2k+1} e^{-z} \frac{e^z}{e^z + 1} = \int_{0}^{\infty} \dd{z} z^{2k+1} e^{-z} \frac{1}{1 + e^{-z}} \nonumber \\
+		&= \int_{0}^{\infty} \dd{z} z^{2k+1} e^{-z} \left[1 - e^{-z} + e^{z} - \cdots \right] = \int_{0}^{\infty} \dd{z} z^{2k+1} \left[ e^{-z} - e^{-2z} + e^{3z} - \cdots \right] \nonumber\\
+		&= \int_{0}^{\infty} \dd{z} z^{2k+1} \sum_{n=1}^{\infty} (-1)^{n+1}e^{-nz} = \sum_{n=1}^{\infty} (-1)^{n+1}  \int_{0}^{\infty} \dd{z} z^{2k+1} e^{-nz} \\
+		\textcolor{NavyBlue}{[t = nz]} &= \sum_{n=1}^{\infty} (-1)^{n+1} \frac{1}{n^{2k}} \int_{0}^{\infty} \dd{t} t^{2k+1} e^{-t} = \Gamma(2k) \sum_{n=1}^{\infty} (-1)^{n+1} \frac{1}{n^{2k}} \nonumber
+\end{align}
+
+Una vez aquí debemos introducir la función $\zeta$ de Riemann, definida como
+\begin{equation}\label{eq:zeta}
+	\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^{s}}
+\end{equation}
+y que podemos manipular de la siguiente forma
+\begin{align}
+	\zeta(2k) &= \sum_{n=1}^{\infty} \frac{1}{n^{2k}} = \frac{1}{1^{2k}} + \frac{1}{2^{2k}} + \frac{1}{3^{2k}} + \cdots = \frac{1}{1^{2k}} + \frac{1}{3^{2k}} + \cdots + \frac{1}{2^{2k}} + \frac{1}{4^{2k}} + \cdots \nonumber \\
+		&= \frac{1}{1^{2k}} + \frac{1}{3^{2k}} + \cdots + \frac{1}{2^{2k}}\left[\frac{1}{1^{2k}}  + \frac{1}{2^{2k}} + \cdots \right] =  \frac{1}{1^{2k}} + \frac{1}{3^{2k}} + \cdots + \frac{1}{2^{2k}}\zeta(2k)
+\end{align}
+y así
+\begin{equation}
+	\frac{1}{1^{2k}} + \frac{1}{3^{2k}} + \cdots = \left[1 - \frac{1}{2^{2k}} \right] \zeta(2k)
+\end{equation}
+que podemos introducir en \eqref{eq:des_sub_1} si desarrollamos la serie y reordenamos de tal forma que
+\begin{align}\label{eq:des_sub_2}
+	I_k &= \Gamma(2k) \sum_{n=1}^{\infty} (-1)^{n+1} \frac{1}{n^{2k}} = \Gamma(2k) \left[ \frac{1}{1^{2k}} + \frac{1}{3^{2k}} + \cdots - \frac{1}{2^{2k}} - \frac{1}{4^{2k}} - \cdots \right]  \nonumber \\
+		&= \Gamma(2k) \left[ \left(1 - \frac{1}{2^{2k}} \right) \zeta(2k) - \frac{1}{2^{2k}}\left(\frac{1}{1^{2k}}  + \frac{1}{2^{2k}} + \cdots \right) \right] \\
+		&= \Gamma(2k) \left[ \left(1 - \frac{1}{2^{2k}} \right) \zeta(2k) - \frac{1}{2^{2k}}\zeta(2k) \right] = \Gamma(2k)\left[ 1-2^{1-2k} \right] \zeta(2k)\nonumber
+\end{align}
+
+Ahora que tenemos el valor de cada una de estas \emph{pequeñas} integrales podemos, finalmente, recuperar el desarrollo de \eqref{eq:des3}
+\begin{align}\label{eq:des4}
+	I &= \int_{0}^{\mu} \dd{\varepsilon} f(\varepsilon) + \frac{2}{\beta^2}f'(\mu) \Gamma(2)(1-2^{-1})\zeta(2) + \frac{1}{3\beta^4}f'''(\mu) \Gamma(4)(1-2^{-3})\zeta(4) + \cdots  \nonumber \\
+		&= \int_{0}^{\mu} \dd{\varepsilon} f(\varepsilon) + \frac{1}{\beta^2}f'(\mu) \frac{\pi^2}{6} + \frac{1}{3\beta^4}f'''(\mu) \cdot 6 \frac{7}{8}\frac{\pi^4}{90} + \cdots
+\end{align}
+que es el resultado que buscábamos.
+
+\newpage
+\section*{Anexo 5}\label{Anx5}
+\renewcommand{\theequation}{A\textsubscript{5}.\arabic{equation}}
+\setcounter{equation}{0}
+
+Al igual que en el Anexo anterior, vamos a resolver un tipo de integral. En este caso será del tipo
+\begin{equation}
+	I(2k) = \int_{0}^{\infty} \dd{z} \frac{z^{2k-1}}{e^z-1}
+\end{equation}
+
+Así:
+\begin{align}
+	I(2k) &= \int_{0}^{\infty} \dd{z} \frac{z^{2k-1}}{e^z-1} = \int_{0}^{\infty} \dd{z} z^{2k-1} e^{-z}\frac{e^z}{e^z-1} \nonumber \\
+		&= \int_{0}^{\infty} \dd{z} z^{2k-1} e^{-z}\frac{1}{1 - e^{-z}} = \int_{0}^{\infty} \dd{z} z^{2k-1} e^{-z} \left[1 + e^{-z} + e^{-2z} + \cdots \right] \\
+		&= \int_{0}^{\infty} \dd{z} z^{2k-1} \sum_{n=1}^{\infty} e^{-nz} = \sum_{n=1}^{\infty}  \int_{0}^{\infty} \dd{z} z^{2k-1} e^{-nz}  \nonumber
+\end{align}
+donde hemos usado las mismas propiedades que en \eqref{eq:des_sub_1}
+
+Una vez aquí realizamos el cambio de variable $t=nz$
+\begin{equation}
+	I(2k) = \sum_{n=1}^{\infty} \frac{1}{n^{2k}} \int_{0}^{\infty} \dd{t} t^{2k-1} e^{-t} = \sum_{n=1}^{\infty} \frac{\Gamma(2k)}{n^{2k}}
+\end{equation}
+y finalizamos con la ecuación $\zeta$ de Riemann \eqref{eq:zeta}
+\begin{equation}
+	\int_{0}^{\infty} \dd{z} \frac{z^{2k-1}}{e^z-1} = \Gamma(2k)\zeta(2k)
+\end{equation}
+
+
+

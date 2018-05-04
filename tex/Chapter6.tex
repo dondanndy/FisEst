@@ -1,0 +1,392 @@
+Es bien sabido que, en principio, una descripción correcta de los sistemas físicos requiere el uso de la Mecánica Cuántica, por lo que una formulación correcta de la Mecánica Estadística solo puede hacerse dentro del marco de las ideas mecánico-cuánticas, a pesar de que, en muchos casos, la Mecánica Clásica proporciona una excelente aproximación al problema, como hemos visto hasta ahora.
+
+Así, aunque el esquema general de la Mecánica Estadística desarrollado en los capítulos anteriores sigue siendo válido cuando la descripción mecánica de las partículas que componen el modelo microscópico se realiza mediante la Mecánica Cuántica, la aplicación de los postulados y las leyes cuánticas tiene importantes implicaciones en las propiedades finales de los sistemas. Además: corno analizaremos seguidamente, la Mecánica Estadística Cuántica no solo recupera los resultados obtenidos con la Clásica, sino que también soluciona las dificultades conceptuales anteriormente encontradas.
+
+De entre los resultados que se derivan de tina descripción cuántica de los sistemas físicos, los que se deducen de la indistinguibilidad de las partículas y las propiedades de simetría de las funciones de onda jugarán un papel esencial en lo que sigue, por lo que comenzaremos este capítulo con una breve recopilación de los mismos.
+
+\newpage
+\section{Función de particion de un gas cuántico ideal}
+
+En este apartado y los siguientes vamos a considerar el modelo microscópico de un gas ideal cuando la descripción del mismo se realiza mediante la Mecánica Cuántica.
+Como veremos, aparecen hechos peculiares que son consecuencia de la indistinguibilidad cuántica de las partículas.
+
+Así, pues, consideremos un sistema de $N$ partículas idénticas cuyas fuerzas de interacción pueden despreciarse. Vamos a utilizar la siguiente nomenclatura:
+
+\begin{itemize}
+	\item Las propiedades que se refieran a una partícula las representaremos mediante letras minúsculas, de forma que escribiremos $r$ para el estado cuántico de una partícula, $\varepsilon_r$ para la energía de ese estado y $n_r$ para el número de partículas que se encuentran en el mismo estado $r$.
+	
+	\item Utilizaremos letras mayúsculas para las propiedades del sistema total.
+	Así por ejemplo $E_R$ representa la energía del sistema total cuando se encuentra en el estado cuántico $R$.
+\end{itemize}
+
+Con esta notación son evidentes las relaciones
+\begin{equation} \label{eq:E_R}
+	E_R = \sum_r n_{r,R} \varepsilon_r
+\end{equation}
+y
+\begin{equation}\label{eq:N_R}
+	N_R = \sum_r n_{r,R}
+\end{equation}
+donde $n_{r,R}$ representa el número de partículas en el estado $r$, cuando el sistema se encuentra en el estado $R$.
+
+Un estado cuántico $R$ de un sistema de partículas idénticas queda totalmente determinado si se conoce el número de partículas que se encuentran en cada estado $r$, no siendo posible especificar cuáles son las partículas que se encuentran concretamente en cada estado.
+En consecuencia, un estado $R$ se puede especificar mediante el conjunto de números $\{n_r,R\}$ que se denominan \emph{números de ocupación}.
+
+Como sabemos, las propiedades termodinámicas de cualquier sistema pueden determinarse evaluando su función de partición $Z$, definida como
+\begin{equation}
+	Z = \sum_R e^{-\beta E_R}
+\end{equation}
+que, utilizando \eqref{eq:E_R}, y teniendo en cuenta lo que acabamos de decir sobre la especificación de los estados, podrá escribirse
+\begin{equation}\label{eq:Z_cuant}
+	Z = \sum_{\substack{n_1, n_2, \ldots\\(\sum n_r =N)}} e^{-\beta (n_1 \varepsilon_1 + n_2 \varepsilon_2 + \cdots)} = \sum_{\substack{n_1, n_2, \ldots\\(\sum n_r =N)}} \exp \left[ -\beta \sum_r n_{r,R} \varepsilon_r \right] 
+\end{equation}
+ya que la suma sobre todos los estados $R$ se transformará en una suma extendida a todos los valores posibles de los números de ocupación, con la restricción de que su suma sea $N$ |número de partículas del sistema|, puesto que en la función de partición la suma se extiende sobre todos los estados accesibles a un sistema cerrado, esto es, con un número constante de partículas.
+
+Sin embargo, el cálculo de la función de partición es bastante complicado, debido precisamente a la presencia de la condición restrictiva $\sum n_r =N$ Y resulta mucho más cómoda la utilización del \emph{conjunto canónico generalizado}, donde no existe dicha restricción.
+Recordemos que las distintas colectividades son equivalentes en lo que se refiere a valores medios y propiedades termodinámicas, y que las diferencias aparecen en el problema específico de las fluctuaciones.
+
+Así, pues, pasamos a considerar la gran función de partición que viene dada por
+\begin{equation}
+	Q = \sum_{N=0}^\infty e^{-\alpha N} \sum_{R}^{} {}^{(N)} e^{-\beta E_R} = \sum_{N=0}^\infty e^{-\alpha N_R -\beta E_R}
+\end{equation}
+donde, en la última expresión, el sumatorio respecto de $R$ se extiende sobre todos los estados posibles con cualquier número de partículas.
+Utilizando \eqref{eq:E_R} y  \eqref{eq:N_R} podemos escribir
+\begin{equation}
+	Q = \sum_{N=0}^\infty \exp \left[ -\alpha \sum_r n_{r,R} -\beta \sum_r n_{r,R} \varepsilon_r \right] 
+\end{equation}
+o
+\begin{equation}\label{eq:Q_cuant}
+	Q = \sum_R \prod_r \exp \left[ -\alpha n_{r,R} -\beta n_{r,R} \varepsilon_r \right]  = \sum_R \prod_r \exp \left[  -(\alpha  + \beta \varepsilon_r) n_{r,R}\right]
+\end{equation}
+
+En esta expresión la suma para todos los estados $R$ equivale a sumar para todos los valores posibles del conjunto de números $\{n_r,R\}$ como en \eqref{eq:Z_cuant}, pero ahora sin restricción para la suma.
+Dicho de otro modo, cada $n_r$ toma valores en \eqref{eq:Q_cuant} con independencia de cuáles sean los valores de los restantes números de ocupación, de manera que tenemos
+\begin{equation}
+	Q = \sum_{n_1, n_2, \ldots} \prod_r \exp \left[  -(\alpha  + \beta \varepsilon_r) n_r\right] = \sum_{n_1} \sum_{n_2} \cdots \prod_r \exp \left[  -(\alpha  + \beta \varepsilon_r) n_{r}\right]
+\end{equation}
+
+Es fácil ver ahora que esta expresión puede escribirse también en la forma
+\begin{equation}\label{eq:Q_cuant2}
+	Q = \prod_r \sum_{n=0}^{n_{max}} \exp \left[  -(\alpha  + \beta \varepsilon_r) n \right]
+\end{equation}
+donde $n_{max}$ representa el valor máximo que pueden tomar los números de ocupación.
+
+\colorbox{red!60}{\textcolor{white}{\textit{[Aquí falta alguna cosilla, a saber si la hago]}}}
+
+Ahora vamos a estudiar algunas propiedades formales de la gran función de partición en Mecánica Cuántica.
+
+\subsection*{Número medio de partículas en un estado de partícula $\bm{r}$}
+A partir de la definición general de valor medio tenemos
+$$\expval{n_r} = \frac{\sum_R e^{-\alpha N_R -\beta E_R}}{Q} = \frac{1}{Q} \sum_R e^{-\alpha \sum_r n_{r,R} -\beta \sum_r n_{r,R} \varepsilon_r} = - \frac{1}{\beta} \frac{1}{q} \frac{\partial Q}{\partial \varepsilon_r}$$
+o sea
+\begin{equation}
+	\expval{n_r} = - \frac{1}{\beta} \frac{\partial \ln Q}{\partial \varepsilon_r}
+\end{equation}
+
+\subsection*{Cálculo de la presión}
+
+La expresión puede deducirse ---a gusto del lector ;)---, obteniéndose
+\begin{equation}
+	\left\langle p \right\rangle = \frac{1}{\beta} \left( \frac{\partial \ln Q}{\partial V} \right)_{\alpha, \beta}
+\end{equation}
+
+Si ahora utilizamos la expresión de $Q$, \eqref{eq:Q_cuant}, resulta
+\begin{align*}
+	\left\langle p \right\rangle &= \frac{1}{\beta Q} \sum_R \left\lbrace \left[ -\beta \sum_r n_{r,R} \left( \frac{\partial \varepsilon_r}{\partial V} \right) \right] \exp \left( -\alpha \sum_r n_{r,R} -\beta \sum_r n_{r,R} \varepsilon_r \right)  \right\rbrace \\
+	&= \frac{1}{Q} \sum_R  \sum_r \left( \frac{\partial \varepsilon_r}{\partial V} \right) \sum_R n_{r,R} \exp \left( -\alpha \sum_r n_{r,R} -\beta \sum_r n_{r,R} \varepsilon_r \right)
+\end{align*}
+que, teniendo en cuenta la expresión de $n_r$, puede escribirse
+\begin{equation}\label{eq:p_cuant}
+	\left\langle p \right\rangle = \sum_r \left( \frac{\partial \varepsilon_r}{\partial V} \right) \expval{n_r} 
+\end{equation}
+
+Esta relación toma una forma especialmente útil en el caso particular de un sistema de partículas ideales encerradas en un volumen $V = L_xL_yL_z$, de forma que la energía de las partículas sea únicamente de traslación, y cuyos niveles energéticos vienen dados por
+\begin{equation}\label{eq:e_r_gen}
+	\varepsilon_r \equiv \frac{\hbar^2 \pi^2}{2m} \left[\left( \frac{n_x}{L_x} \right)^2 + \left( \frac{n_y}{L_y} \right)^2 + \left( \frac{n_z}{L_z} \right)^2 \right] 
+\end{equation}
+donde $n_x$, $n_y$ y $n_z$ son números cuánticos que pueden tomar valores enteros positivos |y que evidentemente no tienen nada que ver con los números de ocupación|.
+Como las propiedades termodinámicas de un sistema deben ser independientes de la forma de éste) vamos a particularizar \eqref{eq:e_r_gen} al caso concreto de un cubo $(L_x = L_y = L_z = L)$ que es la forma más sencilla, obteniendo,
+\begin{equation}
+\varepsilon_r \equiv \frac{\hbar^2 \pi^2}{2mV^{2/3}} \left[ n_x^2 + n_y^2 + n_z^2 \right] 
+\end{equation}
+donde $V = L^3$.
+En esta expresión aparece explícita toda la dependencia respecto del volumen, por lo que podemos calcular
+$$\frac{\partial \varepsilon_r}{\partial V} = - \frac{2}{3 V} \varepsilon_r$$
+que sustituida en \eqref{eq:p_cuant} da
+$$\left\langle p \right\rangle = \sum_r \frac{2}{3 V} \varepsilon_r \expval{n_r} \frac{2}{3} \frac{\left\langle E \right\rangle}{V}$$
+
+Esta relación es válida independientemente de que las partículas que se consideren sean fermiones o bosones, con la condición de que los niveles energéticos de una partícula vengan dados por una expresión del tipo \eqref{eq:e_r_gen}.
+En este sentido no será aplicable a gases poliatómicos ni a los fotones y fonones.
+ 
+\section{Estadísticas de Fermi-Dirac y Bose-Einstein}
+\subsection*{Estadística de Fermi-Dirac}
+
+Vamos ahora a particularizar los resultados obtenidos en el apartado anterior para el caso de que las partículas que componen el sistema sean fermiones.
+Sabemos que $n_r$ solo puede tomar entonces los valores 0 ó 1, de modo que $n_{max} = 1$ y \eqref{eq:Q_cuant2} toma la forma
+\begin{equation}
+	Q_{FD} = \prod_r \sum_{n=0}^{n=1} e^{-(\beta\varepsilon_r + \alpha) n} = \prod_r \left[ 1 + e^{ -( \beta\varepsilon_r + \alpha)} \right]
+\end{equation}
+de donde
+\begin{equation}
+	\ln Q_{FD} = \sum_r \ln \left[ 1 + e^{ -( \beta\varepsilon_r + \alpha)} \right]
+\end{equation}
+
+A partir de esta expresión obtenemos para el número medio de partículas en el sistema
+\begin{equation}
+	\expval{N} = - \frac{\partial \ln Q_{FD}}{\partial \alpha} = - \sum_r \frac{-e^{-\beta\varepsilon_r - \alpha}}{1 + e^{-\beta\varepsilon_r - \alpha}} = - \sum_r \frac{1}{1 + e^{\beta\varepsilon_r + \alpha}}
+\end{equation}
+y para el número medio de partículas en el estado r
+\begin{equation}\label{eq:n_r_1}
+	\expval{n_r} = - \frac{1}{\beta} \frac{\partial \ln Q_{FD}}{\partial \varepsilon_r} = \frac{1}{e^{\beta\varepsilon_r + \alpha} + 1}
+\end{equation}
+cumpliéndose, como es lógico, que $\expval{N} = \sum n_r$.
+Además, como evidentemente se tiene
+$$0 \leq e^{\beta\varepsilon_r + \alpha} \leq \infty$$
+resulta que
+$$0 \leq \expval{n_r} \leq 1$$
+de acuerdo con el principio de exclusión de Pauli.
+
+Esta expresión puede escribirse equivalentemente en función del potencial químico $\mu (T)$ ---que sabemos que está relacionado con $\alpha$ por $\alpha = -\beta\mu$--- en la forma
+\begin{equation}\label{eq:n_r_2}
+	\expval{n_r} = \sum_r \frac{1}{e^{\beta(\varepsilon_r - \mu)} + 1}
+\end{equation}
+
+Es usual en la bibliografía referirse a \eqref{eq:n_r_1} y \eqref{eq:n_r_2} como la \emph{distribución de Fermi}, reflejando el hecho de que indica el modo de distribuirse en valor medio las partículas entre los distintos estados.
+Además, $\mu (T)$ recibe el nombre de \emph{nivel de Fermi} y su valor para $T = 0$, que representaremos por $\mu_0$, el de \emph{energía de Fermi} ---recordemos que el potencial químico tiene dimensiones de energía, como es fácil de comprobar---.
+Así pues, escribiremos a partir de ahora
+$$\mu_0 \equiv \mu(T=0)$$
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+	\centering
+	\hspace{3.5cm}
+	\input{./graph/FD.tex}
+	\vspace{-0.5cm}
+\end{wrapfigure}
+En la figura adyacente se representa la forma de $\expval{n_r}$ para distintos valores de la temperatura.
+En el cero absoluto $(T = 0K)$, $\expval{n_r}$ es una función escalón y vale 1 para $\varepsilon_r \leq \mu_0$ y 0 para $\varepsilon_r > \mu_0$ de forma que todos los estados que correspondan a una energía menor o igual que la energía de Fermi están ocupados, mientras que los estados de energía superior están vacíos.
+A temperaturas superiores, los niveles con energía inferior a $\mu$, pero próxima a él, comienzan a despoblarse en beneficio de los que poseen una energía superior.
+Desde luego, en rigor, las curvas de la figura solo poseen significado para ciertos valores de $\varepsilon_r$ pues, como sabemos, los posibles valores de la energía de una partícula localizada en una cierta región del espacio tienen espectro discreto.
+
+Obsérvese que para cualquier temperatura $T > 0 K$,
+\begin{equation}
+	\expval{n_r} (\varepsilon_r = \mu )= \frac{1}{2}
+\end{equation}
+y, por lo tanto, los estados con energía menor que la del nivel de Fermi, siempre tienen $\expval{n_r} > \sfrac{1}{2}$ y los que poseen una energía superior, $\expval{n_r} < \sfrac{1}{2}$.
+
+\subsection*{Estadística de Bose-Einstein}
+
+En el caso de bosones no existe limite para el número de partículas idénticas que pueden encontrarse en un mismo estado, de manera que $n_{max} = \infty$ y
+\begin{equation}
+	Q_{BE} = \prod_r \sum_{n=0}^{\infty} e^{-(\beta\varepsilon_r + \alpha) n}
+\end{equation}
+
+En esta expresión se observa que la suma se extiende ---para un $\varepsilon_r$ dado--- a los términos de una progresión geométrica indefinida de razón
+$$e^{-(\beta\varepsilon_r + \alpha)} = e^{-\beta(\varepsilon_r - \mu)}$$
+	
+Esta serie es decreciente y, por lo tanto, su suma converge si la tazón es menor que la unidad o sea si
+$$e^{-\beta(\varepsilon_r - \mu)} < 1$$
+lo que equivale a
+\begin{equation}\label{eq:cond_FD}
+	\varepsilon_r - \mu > 0
+\end{equation}
+
+Esta condición se satisface siempre en las aplicaciones prácticas, para todos los estados $r$, ya que en otro caso el número de bosones en el sistema no estaría acotado.
+
+Sumando la serie,\footnote{Recordemos que si $r < 1$ se tiene $\sum_{n=0}^{\infty} ar^n = \frac{a}{1-r}$} obtenemos
+\begin{equation}
+	Q_{BE} = \prod_r \frac{1}{1 - e^{-\beta\varepsilon_r + \alpha}}
+\end{equation}
+y, por lo tanto,
+\begin{equation}
+	\ln Q_{BE} = - \sum_r \ln (1 - e^{-\beta\varepsilon_r + \alpha})
+\end{equation}
+
+A partir de esta expresión deducimos
+\begin{equation}
+	\expval{N} = - \frac{\partial \ln Q_{BE}}{\partial \alpha} = \sum_r \frac{1}{e^{-\beta\varepsilon_r + \alpha} - 1}
+\end{equation}
+\begin{equation}
+	\expval{n_r} = \frac{1}{e^{-\beta\varepsilon_r + \alpha} - 1} = \frac{1}{e^{-\beta(\varepsilon_r - \mu)} - 1}
+\end{equation}
+
+Como es lógico, $\expval{n_r}$ puede ahora ser mayor que 1, y en particular tiende a infinito cuando $\varepsilon_r \rightarrow \mu$.
+En la figura se representa el comportamiento de la función de distribución de Bose para distintos valores de la temperatura.
+En el cero absoluto todos los bosones se agrupan en el estado de mínima energía, tendiendo a pasar a ocupar estados de mayor energía cuando se aumenta la temperatura.
+
+Las expresiones correspondientes a ambas estadísticas pueden agruparse escribiendo
+\begin{equation}
+	\ln Q = \pm \sum_r 	\ln (1 \pm e^{-\beta\varepsilon_r + \alpha})
+\end{equation}
+\begin{equation}\label{eq:n_e_BE}
+	\expval{n_r} = \frac{1}{e^{-\beta\varepsilon_r + \alpha} \pm 1}
+\end{equation}
+siendo válidos los signos superiores (+) en el caso de la estadística de Fermi-Dirac y
+los signos inferiores (-) en el caso de la de Bose-Einstein.
+Con este mismo convenio podemos escribir la ecuación de estado como
+\begin{equation}
+	\left\langle p \right\rangle V = \pm k_B T \sum_r \ln (1 \pm e^{-\beta\varepsilon_r + \alpha})
+\end{equation}
+
+Con vistas a la utilización práctica de todas estas expresiones es importante recordar que si se aplican a un sistema abierto, el potencial químico viene dado por el del foco con el que esté en contacto.
+Pero como ya hemos dicho reiteradamente, estas expresiones son también aplicables a un sistema cerrado ($N$ constante), en cuyo caso el potencial químico $\mu$, se determinará por la condición
+\begin{equation}
+	N = \sum_r \expval{n_r} = \sum_r \frac{1}{e^{-\beta(\varepsilon_r - \mu)} \pm 1}
+\end{equation}
+
+\section{El límite clásico: la estadística de Maxwell-Boltzmann}
+
+El número de estados cuánticos $r$ de una partícula depende del volumen del sistema.
+Más concretamente, se demuestra que el número de estados de traslación es proporcional al mismo.
+Utilizando este hecho vamos a analizar el comportamiento de las funciones de distribución \eqref{eq:n_e_BE} en dos casos límites:
+
+\textbf{1)} Imaginemos que, manteniendo la temperatura del gas constante, tomamos el límite de bajas densidades, esto es, hacemos suficientemente pequeño el número de partículas por unidad de volumen,\footnote{Desde luego en un sistema abierto nos referimos a $\sfrac{\expval{N}}{V}$ y en uno cerrado a $\sfrac{N}{V}$.} como para que el número de estados de partícula por unidad de volumen sea mucho mayor que él. Consideremos la expresión
+\begin{equation}\label{eq:sum_r_cas1}
+	\sum_r \expval{n_r} = \sum_r \frac{1}{e^{\beta\varepsilon_r + \alpha} \pm 1} = \expval{N}
+\end{equation}
+
+De acuerdo con lo que acabamos de admitir, resulta que el número de sumandos que contienen los sumatorios es mucho mayor que $\expval{N}$. La consecuencia es que cada uno de ellos ha de ser mucho menor que la unidad, o sea
+\begin{equation}\label{eq:sum_r_cas1_2}
+	\expval{n_r} = \frac{1}{e^{\beta\varepsilon_r + \alpha} \pm 1} \ll 1
+\end{equation}
+y, por lo tanto,
+\begin{equation}\label{eq:lim_exp}
+	\beta\varepsilon_r + \alpha \gg 1
+\end{equation}
+para todos los estados de partícula $r$.
+En efecto, si recordamos que los niveles energéticos de traslación para un sistema macroscópico son muy degenerados o sea que a un valor de la energía $\varepsilon_r$ corresponde un gran número de estados $r$, y que además los niveles están muy próximos, resulta que si en \eqref{eq:sum_r_cas1} hubiese un sumando del orden de la unidad, automáticamente habría un número prácticamente infinito de ellos que serían de ese mismo orden.
+
+\vspace{0.2cm}
+\textbf{2)} Supongamos ahora que mantenemos fija la densidad del gas y aumentamos su temperatura, o sea disminuimos $\beta$.
+Es evidente que el número de sumandos que constituyen efectivamente a \eqref{eq:sum_r_cas1} aumenta, pues cuanto menor sea $\beta$ mayor puede ser $\varepsilon_r$ sin que sea $\beta\varepsilon_r \gg 1$.
+Aplicando el mismo razonamiento que en el caso anterior, llegamos a la conclusión de que para temperaturas suficientemente altas también debe cumplirse \eqref{eq:lim_exp}.
+
+\begin{wrapfigure}{l}{0.35\textwidth}
+	\centering
+	\hspace{-1.8cm}
+	\input{./graph/MB.tex}
+	\vspace{0.5cm}
+\end{wrapfigure}
+Resulta entonces que, en el límite de densidades bajas o temperaturas altas, debe cumplirse \eqref{eq:lim_exp}, cuya forma es independiente de la estadística de que se trate bien sea la de Fermi-Dirac o la de Bose-Einstein.
+Despreciando la unidad frente a $e^{\beta\varepsilon_r + \alpha}$ en \eqref{eq:sum_r_cas1_2}, en el límite señalado obtenemos para ambas estadísticas (figura adyacente).
+\begin{equation}\label{eq:n_r_MB}
+	\expval{n_r} = \exp[-\beta\varepsilon_r - \alpha]
+\end{equation}
+
+El parámetro $\alpha$ puede determinarse por la condición
+\begin{equation}
+	\expval{N} = \sum_r \expval{n_r} = \sum_r \exp[-\beta\varepsilon_r - \alpha] = e^{-\alpha} \sum_r e^{-\beta\varepsilon_r}
+\end{equation}
+de donde se puede despejar $e^{\alpha}$ e introducirse en \eqref{eq:n_r_MB}, resultando
+\begin{equation}
+	\expval{n_r} = \expval{N} \frac{e^{-\beta\varepsilon_r}}{\sum_r e^{-\beta\varepsilon_r}}
+\end{equation}
+siendo $\expval{N} = N$ en el caso de un sistema cerrado.
+
+En el mismo límite y utilizando la aproximación
+$$\ln(1+x) \approx x \qquad x \ll 1$$
+obtenemos para la función de partición generalizada
+\begin{equation}
+	\ln Q = \pm \sum_r \ln(1 \pm e^{-\beta\varepsilon_r}) = \sum_r e^{\beta\varepsilon_r}
+\end{equation}
+
+Sustituyendo en esta expresión el valor de $e^{-\alpha}$ que obtuvimos antes resulta
+\begin{equation}
+	\ln Q = \expval{N}
+\end{equation}
+que es el mismo resultado que se obtiene mediante la Mecánica Estadística Clásica.
+
+\section{Gas ideal monoatómico}
+En general, definimos la función de partición por partículas de un gas ideal en el límite clásico como
+\begin{equation}\label{eq:zeta_lim}
+	\zeta = e^{-\beta\varepsilon_r}
+\end{equation}
+
+En el caso de un gas ideal monoatómico (sin grados internos de libertad) el estudio de los estados cuánticos accesibles a un átomo es equivalente al estudio de los estados estacionarios de una partícula puntual encerrada en un volumen $V$ y que, como ya sabemos, vienen caracterizados por tres números cuánticos $n_x$, $n_y$ y $n_z$ y cuya energía asociada a un estado es
+\begin{equation}
+\varepsilon_r \equiv \frac{\hbar^2 \pi^2}{2m} \left[\left( \frac{n_x}{L_x} \right)^2 + \left( \frac{n_y}{L_y} \right)^2 + \left( \frac{n_z}{L_z} \right)^2 \right] 
+\end{equation}
+
+Teniendo en cuenta que sumar para todos los estados de una partícula es equivalente a sumar sobre todos los valores posibles de $n_x$, $n_y$ y $n_z$ que son enteros positivos, resulta
+\begin{align}\label{eq:z_gen}
+	\zeta &= \sum_{n_x=1}^{\infty} \sum_{n_y=1}^{\infty} \sum_{n_z=1}^{\infty} \exp \left\lbrace - \beta \frac{\hbar^2 \pi^2}{2m} \left[\left( \frac{n_x}{L_x} \right)^2 + \left( \frac{n_y}{L_y} \right)^2 + \left( \frac{n_z}{L_z} \right)^2 \right]  \right\rbrace \nonumber \\
+		&= \left\lbrace \sum_{n_x=1}^{\infty} \exp \left[ -\beta \frac{\hbar^2 \pi^2}{2m} \left( \frac{n_x}{L_x} \right)^2 \right] \right\rbrace \left\lbrace \sum_{n_y=1}^{\infty} \exp \left[ -\beta \frac{\hbar^2 \pi^2}{2m} \left( \frac{n_y}{L_y} \right)^2 \right] \right\rbrace \times \\
+		&\times \left\lbrace \sum_{n_z=1}^{\infty} \exp \left[ -\beta \frac{\hbar^2 \pi^2}{2m} \left( \frac{n_z}{L_z} \right)^2 \right] \right\rbrace \nonumber
+\end{align}
+y vamos a ver cómo puede evaluarse cada una de las sumas indicadas.
+Consideremos, por ejemplo, la primera de ellas y calculemos la variación del exponente al pasar de un sumando al siguiente.
+
+Resulta entonces, que la diferencia entre dos sumandos consecutivos de cada una de las sumas \eqref{eq:z_gen} es muy pequeña frente al valor de cada uno de los sumandos, pues
+\begin{equation}
+	\abs{\frac{\exp \left[ -\beta \frac{\hbar^2 \pi^2}{2m} \left( \frac{n_x + 1}{L_x} \right)^2 \right] - \exp \left[ -\beta \frac{\hbar^2 \pi^2}{2m} \left( \frac{n_x}{L_x} \right)^2 \right]}{\exp \left[ -\beta \frac{\hbar^2 \pi^2}{2m} \left( \frac{n_x + 1}{L_x} \right)^2 \right]}} = \abs{1 - \exp \left[ -\beta \frac{\hbar^2 \pi^2}{2m} \left( \frac{2n_x + 1}{L_x} \right)^2 \right]} \ll 1
+\end{equation}
+
+La consecuencia es que las sumas pueden sustituirse por integrales, como ya hemos hecho repetidamente, o sea, que podemos escribir
+\begin{equation}
+	\sum_{n_x=1}^{\infty} \exp \left[ -\beta \frac{\hbar^2 \pi^2}{2m} \left( \frac{n_x}{L_x} \right)^2 \right] = \int_{0}^{\infty} \exp \left[ -\beta \frac{\hbar^2 \pi^2}{2m} \left( \frac{n_x}{L_x} \right)^2 \right] = \frac{1}{2}\sqrt{\frac{2\pi m L_x^2}{\beta \hbar^2 \pi^2}}
+\end{equation}
+y análogamente para las sumas respecto de $n_y$ y $n_z$.
+En resumen, sustituyendo estas expresiones en \eqref{eq:z_gen} obtenemos la función de partición de una partícula en el límite clásico
+\begin{equation}
+	\zeta = \frac{V}{(2\pi\hbar)^3}(2\pi m k_B T)^{3/2}= \frac{V}{h^3}(2\pi m k_B T)^{3/2}
+\end{equation}
+donde hemos introducido el volumen $V = L_x L_y L_z$ y hemos escrito $h = \hbar 2 \pi$. Con este resultado llegamos también a Q
+\begin{equation}
+	Q = \frac{\zeta^N}{N!} = \frac{V^N}{h^{3N}N!}(2\pi m k_B T)^{3N/2} = \frac{V^N}{N!} \left[ \frac{2\pi m k_B T}{h^2}\right] ^{\frac{3N}{2}}
+\end{equation}
+
+\section{Número de estados estacionarios}
+
+El problema que vamos a resolver ahora es el siguiente: dado un valor de la energía
+$\varepsilon$, ¿cuántos estados estacionarios corresponden a ese valor? 
+El problema consiste en encontrar todos los valores posibles de $n_x$, $n_y$ y $n_z$ que satisfacen la relación dada.
+Así planteado el problemas es de difícil resolución general; sin embargo, nosotros vamos a estar siempre interesados en volúmenes macroscópicos, de forma que $L_x$, $L_y$ y $L_z$ van a ser muy grandes y en consecuencia los valores de la energía van a estar muy próximos entre sí, permitiéndonos incluso hablar de una distribución continua de energía desde un punto de vista matemático.
+Por ello, vamos a cambiar nuestra pregunta formulándola del modo siguiente: ¿cuántos estados estacionarios pueden encontrarse con una energía comprendida entre $\varepsilon$ y $\varepsilon + d\varepsilon$?
+
+Consideremos los estados que existen en una componente $p_x$ de la cantidad de
+movimiento cuyo valor absoluto esté comprendido entre $\abs{p_x}$ y $\abs{p_x} + d\abs{p_x}$, para valores
+dados de $n_y$ y $n_z$.
+Evidentemente dicho número vendrá dado por
+\begin{equation}
+	D(\abs{p_x}) d\abs{p_x} = \Delta n_x
+\end{equation}
+siendo $\Delta n_x$ el número de valores enteros de $n_x$ para los que $\abs{p_x}$ está dentro del intervalo citado.
+Ahora bien, podemos calcular la expresión de $p_x$ y así
+\begin{equation}
+	p_x = \pm\hbar\frac{n_x\pi}{L_x} \Rightarrow \Delta n_x = \frac{L_x}{n_x\pi}d\abs{p_x}
+\end{equation}
+luego
+\begin{equation}
+	D(\abs{p_x}) d\abs{p_x} = \frac{L_x}{\hbar\pi}d\abs{p_x}
+\end{equation}
+
+Es evidente entonces que el número de estados correspondientes a cantidades de movimiento con componentes cuyo valor absoluto está comprendido entre $\abs{p_x}$ y $\abs{p_x} + d\abs{p_x}$, $\abs{p_y}$ y $\abs{p_y} + d\abs{p_y}$ y $\abs{p_z}$ y $\abs{p_z} + d\abs{p_z}$ será
+\begin{equation}
+	D(\abs{p_x}, \abs{p_y}, \abs{p_z}) \, d\abs{p_x} d\abs{p_y} d\abs{p_z}= \frac{L_xL_yL_z}{(\hbar\pi)^3} d\abs{p_x} d\abs{p_y} d\abs{p_z}
+\end{equation}
+es decir
+\begin{equation}
+	D(\abs{p_x}, \abs{p_y}, \abs{p_z}) \, d\abs{p_x} d\abs{p_y} d\abs{p_z}= \frac{V}{(\hbar\pi)^3} d\abs{p_x} d\abs{p_y} d\abs{p_z}
+\end{equation}
+
+Pasemos ahora a calcular el número de estados con cantidad de movimiento \textbf{p} con un módulo comprendido entre $p$ y $p+dp$.
+De la figura se deduce que\footnote{El volumen de la corteza esférica de anchura $dp$ es $\sfrac{4}{3}\pi[(p + dp)^3 - p^3]=4\pi p^2 dp + \order{(dp)^2}$. El factor 8 proviene de que solo hay que elegir un octante.}
+\begin{equation}
+	D(p)dp = D(\abs{p_x}, \abs{p_y}, \abs{p_z}) \frac{4\pi p^2 dp}{8}
+\end{equation}
+o sea
+\begin{equation}
+	D(p)dp = \frac{V}{(2\hbar\pi)^3}4\pi p^2 dp = \frac{4\pi V}{h^3} p^2 dp
+\end{equation}
+
+De esta distribución de densidades para $p$ ya es fácil pasar a la distribución para la energía.
+Del hecho de que $E = p^2/2m$ tenemos
+\begin{equation}
+	D(\varepsilon) d\varepsilon = D(p)\abs{\frac{dp}{d\varepsilon}}d\varepsilon = D(p) \abs{\frac{d\varepsilon}{dp}}^{-1} d\varepsilon
+\end{equation}
+o sea
+\begin{equation}\label{eq:D_vareps}
+	D(\varepsilon) d\varepsilon = \frac{4\pi V\sqrt{2m^3}}{h^3} d\varepsilon
+\end{equation}
+con lo que hemos obtenido la distribución buscada.
+
+

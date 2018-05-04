@@ -1,0 +1,270 @@
+\newpage
+\section{Colectividad canónica}
+
+Consideremos dos sistemas $A_1$ y $A_2$ en contacto térmico. Este caso fue discutido ya en el capítulo anterior, pero ahora vamos a suponer que uno de los sistemas es mucho más pequeño que el otro, es decir, que posee muchos menos grados de libertad.
+Utilizaremos la misma nomenclatura que en el capítulo anterior identificando además el sistema $A_1$ como el menor.
+La probabilidad de encontrar el sistema $A_1$ en un microestado definido por unas posiciones comprendidas entre $q$ y $q + dq$ y unos momentos comprendidos en el intervalo entre $p$ y $p + dp$ viene dada por
+\begin{equation}
+	\rho(q,p)dqdp = \frac{1}{h^f \Omega(E)} \Omega_2 \left[ E - H_1(q,p;X_\alpha) \right] dqdp
+\end{equation}
+
+Esta probabilidad hemos visto que es prácticamente nula excepto cuando el microestado corresponda a una energía $E$, definida por
+$$\left(  \frac{\partial \Omega_1(E_1)}{\partial E_1}\right)_{E_1 = \widetilde{E_1}} = \left(  \frac{\partial \Omega_2(E_2)}{\partial E_1}\right)_{E_2 = \widetilde{E_2} = E-\widetilde{E_1}}$$
+
+A fin de realizar un análisis cualitativo de esta igualdad recordemos que $\Omega(E) \sim f^{\nu}$ ,con lo que obtenemos la relación entre órdenes de magnitud
+$$\frac{\nu_1 f_1}{\widetilde{E_1}} \sim \frac{\nu_2 f_2}{\widetilde{E_2}} \Rightarrow \frac{\widetilde{E_1}}{\widetilde{E_2}} \sim \frac{f_1}{f_2}$$
+ya que $\nu_1$ y $\nu_2$ son del orden de la unidad.
+
+Nosotros estamos considerando $f_1 \ll f_2$, luego en la región en que $\rho(q,Q,p,P)$ es distinto de cero se cumplirá que
+\begin{equation}
+	H_1(q,p) \ll H_2(Q,P) \simeq H_2(Q,P) + H_1(q,p) = E
+\end{equation}
+
+Este hecho nos permite desarrollar el logaritmo neperiano de $\Omega_2[E - H_1(q, p)]$ en potencias de $H_1$, reteniendo sólo el menor orden
+\begin{equation}
+	\ln \Omega_2[E - H_1(q, p)] \simeq \ln \Omega_2(E) - \left(  \pdv{\Omega_2(E_2)}{E_1} \right)_{E_2 = E}
+\end{equation}
+
+La derivada
+$$\left(  \pdv{\Omega_2(E_2)}{E_1} \right)_{E_2 = E} = \beta$$
+define la temperatura del sistema mayor.
+Obsérvese que la derivada está calculada para $E_2 = E$ y no para $E_2 = \widetilde{E_2}$. Sin embargo, si el sistema $A_2$ es suficientemente grande ambos resultados coincidirán evidentemente.
+Cuando un sistema $A_2$ es tan grande respecto a otro $A_1$, que su parámetro de temperatura permanece esencialmente invariante al, ponerlos en contacto térmico, cualquiera que sea la cantidad de energía que intercambian, se dice que el sistema $A_2$ actúa como \emph{foco térmico} respecto del sistema $A_1$.
+
+Con estos dos últimos resultados obtenemos
+\begin{equation}
+	\Omega_2[E - H_1(q, p)] = \Omega_2(E)\exp \left[ -\beta H_1(q,p) \right]
+\end{equation}
+obteniendo la densidad de probabilidad
+\begin{equation}
+	\rho(q,p) = C \exp \left[ -\beta H_1(q,p) \right] dqdp
+\end{equation}
+donde $C$ es una constante independiente de $q$ y de $p$, que puede determinarse por la condición de normalización
+$$\int dqdp \, \rho(q,p) = 1 \, \Rightarrow \, C^{-1} = \int dqdp \exp \left[ -\beta H_1(q,p) \right]$$
+de modo que podemos escribir
+\begin{equation}
+	\rho(q,p) = \frac{\exp \left[ -\beta H_1(q,p) \right] dqdp}{\int dqdp \exp \left[ -\beta H_1(q,p) \right]}
+\end{equation}
+
+Esta distribución de probabilidades se denomina \emph{canónica}, y un conjunto de microestados con esta distribución de probabilidades se llama \emph{conjunto} o \emph{colectividad canónica}.
+A partir de la densidad de probabilidad puede escribirse la distribución de probabilidades para la energía del sistema, sin más que integrar $\rho(q,p)$ para toda la región del espacio fásico definida por
+$$E_1 \leq H_1(q, p) \leq E_1 + dE_1$$
+
+Los razonamientos son análogos a los que utilizamos en la colectividad microcanónica, resultando
+\begin{equation}
+	\omega_1(E_1)dE_1 = C \Omega_1(E_1) \exp \left[ -\beta H_1(q,p) \right] dE_1
+\end{equation}
+o escribiendo explícitamente el valor de la constante de normalización $C$,
+\begin{equation}
+	\omega_1(E_1)dE_1 = \frac{\Omega_1(E_1) \exp \left[ -\beta H_1(q,p) \right] dE_1}{\int dqdp \exp \left[ -\beta H_1(q,p) \right]}
+\end{equation}
+
+\section{Función de partición y cálculo de valores medios}
+En el apartado anterior hemos introducido la distribución canónica. Vamos a ver ahora que todas las propiedades macroscópicas del sistema se expresan de una manera sencilla en función del denominador de esa expresión, o más concretamente de la denominada \emph{función de partición} que se representa por la letra $Z$ y se define como ---prescindiremos a partir de ahora del subíndice 1---
+\begin{equation}\label{eq:Zdef}
+	Z(T, X_\alpha, N) = \frac{1}{h^f} \int dqdp \, \exp \left[ -\beta H(q,p) \right]
+\end{equation}
+donde hemos introducido el factor $h^f$ para hacer la función de partición una magnitud adimensional (tal y como hicimos con $\Gamma$ anteriormente). La función de partición dependerá en general del parámetro de temperatura y, a través del hamiltoniano, de los parámetros externos $X_\alpha$ como, por ejemplo, el volumen o un campo magnético o eléctrico externo y del número de partículas $N$.
+
+Con \eqref{eq:Zdef}, la distribución canónica se escribe
+\begin{equation}
+	\rho(q,p) = \frac{\exp \left[ -\beta H_1(q,p) \right] dqdp}{h^f Z}
+\end{equation}
+
+Calculemos la energía media del sistema 
+$$\expval{E} = \frac{\int dqdp \, H(q,p) \exp \left[ -\beta H(q,p) \right]}{\int dqdp \exp \left[ -\beta H(q,p) \right]}$$
+relación que puede escribirse en forma más compacta observando que la integral del numerador puede ponerse fácilmente en función de la integral del denominador, que es precisamente la función de partición. En efecto
+$$\int dqdp \, H(q,p) \exp \left[ -\beta H(q,p) \right] = - \int dqdp \, \pdv{\beta} \exp \left[ -\beta H(q,p) \right] = - h^f\left( \pdv{Z}{\beta} \right)_{X_\alpha}$$
+y, por tanto,
+\begin{equation}
+	\expval{E} = -\frac{1}{Z} \left( \pdv{Z}{\beta} \right)_{X_\alpha} = - \left( \pdv{\ln Z}{\beta} \right)_{X_\alpha}
+\end{equation}
+donde se ha indicado explícitamente que las derivadas parciales se calculan a parámetros externos constantes.
+
+Análogamente, para el valor medio de la fuerza generalizada $\expval{Y_\alpha}$ asociada con el parámetro externo $X_\alpha$
+\begin{equation}
+	\expval{Y_\alpha} =  \frac{\int dqdp \, -\pdv{H}{X_\alpha} \exp \left[ -\beta H(q,p) \right]}{\int dqdp \exp \left[ -\beta H(q,p) \right]} = - \frac{1}{\beta} \left( \pdv{\ln Z}{X_\alpha} \right)_{T}
+\end{equation}
+donde ahora se mantiene constante la temperatura.
+En el caso concreto del volumen $X_\alpha = V$, esta relación proporciona una expresión para la presión media, que debe
+considerarse como una \emph{ecuación de estado}.
+
+También se pueden expresar fácilmente mediante la función de partición las dispersiones. En efecto, sabemos que
+$$(\Delta E)^2 = \expval{E^2}  - \expval{E} ^2$$
+y
+\begin{eqnarray}
+	\expval{E^2} = \frac{\int dqdp \, [H(q,p)]^2 \exp \left[ -\beta H(q,p) \right]}{\int dqdp \exp \left[ -\beta H(q,p) \right]} = -\frac{1}{Z^2} \left( \frac{\partial^2 Z}{\partial \beta^2} \right)_{X_\alpha}
+\end{eqnarray}
+que puede reescribirse como 
+$$\expval{E^2} = \pdv{\beta} \left( \frac{1}{Z} \pdv{Z}{\beta} \right)_{X_\alpha} + \frac{1}{Z} \left( \pdv{Z}{\beta} \right)_{X_\alpha}^2$$
+y sustituyendo se obtiene
+\begin{equation}
+	(\Delta E)^2 = \pdv{\beta} \left( \frac{1}{Z} \pdv{Z}{\beta} \right)_{X_\alpha} = \left( \pdv[2]{\ln Z}{\beta} \right)_{X_\alpha} = - \left( \pdv{\expval{E}}{\beta} \right)_{X_\alpha}
+\end{equation}
+
+Obtendremos finalmente una importante propiedad de las funciones de partición de ciertos tipos de sistemas.
+Consideremos un sistema $A$ compuesto de dos sistemas $A_1$ y $A_2$ débilmente interaccionantes (como siempre, en el sentido de que la energía de interacción es \emph{despreciable} frente a la energía de cualquiera de los dos sistemas).
+Sabemos que esta propiedad se traduce en la aditividad de las energías, o sea de los hamiltonianos:
+\begin{equation}
+	H(q,Q,p,P) = H_1(q,p) + H_2(Q,P)
+\end{equation}
+donde hemos utilizado la misma notación que en el capítulo anterior.
+La función de partición del sistema total viene dada por
+\begin{align}
+	Z &= \frac{1}{h^{f_1+f_2}} \int dqdQdpdP \, \exp \left[ -\beta H(q,p,Q,P) \right] \nonumber \\
+	  &= \frac{1}{h^{f_1+f_2}} \int dqdQdpdP \, \exp \left[ -\beta  (H_1(q,p) + H_2(Q,P)) \right] \\
+	  &= \left[ \frac{1}{h^{f_1}} \int dqdp \, \exp \left[ -\beta H_1(q,p) \right]\right]  \left[ \frac{1}{h^{f_2}} \int dQdP \, \exp \left[ -\beta H_2(Q,P) \right] \right] \nonumber
+\end{align}
+o sea
+\begin{equation}
+	\boxed{Z = Z_1 Z_2}
+\end{equation}
+donde $Z_1$ y $Z_2$ son las funciones de partición de $A_1$ y $A_2$, respectivamente.
+Es decir, que la función de partición del sistema total es igual al producto de las funciones de las partes débilmente interaccionantes.
+Esta propiedad de la función de partición es la que garantiza la propiedad de aditividad de las funciones termodinámicas, ya que éstas dependen del logaritmo de la función de partición que cumplirá para sistemas débilmente interaccionantes
+\begin{equation}
+	\ln Z = \ln Z_1 + \ln Z_2
+\end{equation}
+
+\section{Conexión con la termodinámica}
+
+La conexión entre la colectividad canónica y la Termodinámica puede establecerse de un modo directo, análogamente a como se procedió para la colectividad microcanónica.
+En efecto, recordando la dependencia de $Z$ respecto de la temperatura y los parámetros externos, tenemos que
+\begin{equation}
+	d\ln Z(E,X_\alpha) = \left( \pdv{\ln Z}{\beta} \right)_{X_\alpha} d\beta + \sum_{\alpha} \left( \pdv{\ln Z}{X_\alpha} \right)_{E} dX_\alpha
+\end{equation}
+
+Consideremos un proceso cuasiestático en el que $\beta$ y $X_\alpha$ varían tan lentamente que el sistema esté prácticamente en equilibrio, y por consiguiente sea lícito suponerlo distribuido en todo momento de acuerdo con la distribución canónica. En este caso,
+\begin{equation}
+	d\ln Z(E,X_\alpha) = \expval{E} d\beta + \beta \sum_{\alpha} \left\langle Y_\alpha \right\rangle  dX_\alpha
+\end{equation}
+
+Si queremos encontrar una expresión para la entropía hemos de buscar una diferencial exacta que provenga de $đQ$ mediante un factor integrante que ha de ser el inverso de la temperatura absoluta $T$. Para ello basta sumar $d(\beta E)$ a los dos miembros de la igualdad anterior con lo que resulta
+\begin{align}
+	d\ln Z(E,X_\alpha + \beta E) &= d(\beta E) - \expval{E} d\beta + \beta \sum_{\alpha} \left\langle Y_\alpha \right\rangle  dX_\alpha \nonumber \\
+					 			 &=\beta \left(  \expval{E} + \beta \sum_{\alpha} \left\langle Y_\alpha \right\rangle  dX_\alpha \right)  \\
+					 			 &=\beta \left( \expval{E} + đW \right) = \beta đQ \nonumber
+\end{align}
+
+De esta ecuación deducimos para la entropía
+\begin{equation}
+	\boxed{S = k_B (\ln Z  + \beta \expval{E})}
+\end{equation}
+
+Esta definición se corresponde con las definiciones de la entropía en la colectividad microcanónica, y por las mismas razones discutidas entonces no resulta adecuada cuando se considera la dependencia, respecto de los números de partículas de cada una de las especies que constituyen el sistema.
+El mismo tipo de razonamientos utilizado allí nos lleva a la expresión correcta
+\begin{equation}
+	S = k_B \ln \left( \frac{Z}{\prod_i N_i!}  + \beta \expval{E} \right)
+\end{equation}
+
+\section{Gas ideal monoatómico}
+
+A fin de aclarar ideas, vamos a aplicar el colectivo canónico a un caso concreto que ya estudiamos con el microcanónico.
+Consideremos un gas ideal monoatómico en equilibrio, encerrado en un recipiente de volumen $V$ a la temperatura $T$.
+El hamiltoniano del sistema es, llamando $N$ al número de partículas
+$$H(p,q) = \sum_{i=1}^N \frac{p_i^2}{2m}$$
+
+La función de partición del sistema será
+\begin{align}
+	Z &= \frac{1}{h^{3N}N!} \int d^3r_1 \cdots d^3r_N d^3p_1 \cdots d^3p_N \exp \left[ -\beta \frac{p_1^2 + \cdots + p_N^2}{2m}\right] \nonumber \\
+	  &=  \frac{1}{h^{3N}N!} \int d^3p_1\exp \left[ -\beta \frac{p_1^2}{2m} \right] \cdots \int d^3p_N\exp \left[ -\beta \frac{p_N^2}{2m} \right] \underbracket{\int d^3r_1 \cdots d^3r_N}_{V^N} 
+\end{align}
+la integración respecto de las cantidades de movimiento es un producto de $N$ integrales, idénticas todas salvo en la notación de la variable de integración, e iguales a
+$$\int d^3\mathbf{p} \exp \left[ -\beta \frac{\mathbf{p}^2}{2m} \right]$$
+
+En resumen, $Z$ se transforma en un producto de la forma
+\begin{equation}
+	\boxed{Z = \frac{\zeta^N}{N!}}
+\end{equation}
+donde
+$$\zeta = \frac{V}{N} \int_{-\infty}^{\infty} d^3\mathbf{p} \exp \left[ -\beta \frac{\mathbf{p}^2}{2m} \right] $$
+es la \emph{función de partición para una única molécula}. La integral que aparece en esta expresión tiene el valor
+\begin{align}
+	\int_{-\infty}^{\infty} d^3\mathbf{p} \exp \left[ -\beta \frac{\mathbf{p}^2}{2m} \right] &= \iiint_{-\infty}^{\infty} dp_x dp_y dp_z \exp \left[ -\beta \frac{p_x^2 + p_y^2 + p_z^2}{2m} \right] \nonumber \\
+	&= \left( \int_{-\infty}^{\infty} dp \exp \left[ -\beta \frac{p^2}{2m} \right] \right) ^3 = \left( \sqrt{\frac{2\pi m}{\beta}} \right) ^3
+\end{align}
+y. así,
+\begin{align}
+	\ln Z &= N\ln \zeta - \ln N! = N(N\ln \zeta - \ln N - 1 ) \nonumber \\
+	&=  N \left[ \ln \frac{V}{N} - \frac{3}{2}\ln \beta + \frac{3}{2}\ln \left( \frac{2\pi m}{h^2} \right)  + 1 \right] 
+\end{align}
+
+A partir de la función de partición podemos calcular todas las propiedades termodinámicas del sistema. La ecuación de estado la obtendremos a partir de la expresión de la presión media
+\begin{equation}
+	\expval{p} = \frac{1}{\beta} \left( \pdv{\ln Z}{V} \right)_{T,N} = \frac{1}{\beta} \frac{N}{V}
+\end{equation}
+
+Por tanto,
+\begin{equation}
+	\expval{p} V = Nk_BT
+\end{equation}
+la ecuación de estado ya obtenida.
+
+La energía media será
+\begin{equation}
+	\expval{E} = - \left( \frac{\partial \ln Z}{\partial \beta}\right)_{T,V} = \frac{3}{2} \frac{N}{\beta} = \frac{3}{2} N k_B T
+\end{equation}
+
+\section{Teorema de equipartición generalizado}
+
+Vamos a calcular el valor medio sobre la distribución canónica del producto
+$$x_i\pdv{H}{x_j}$$
+donde $x_i$ y $x_j$ pueden ser cualquier coordenada o momento generalizado del sistema.
+Por definición, se tiene
+\begin{equation}
+	\expval{x_i\pdv{H}{x_j}}  = C^{-1} \int dqdp \, x_i\pdv{H}{x_j} e^{-\beta H}
+\end{equation}
+siendo
+$$C = \int dqdp \, e^{-\beta H} = Z$$
+
+Es fácil ver que esta igualdad puede escribirse como \footnote{Escribimos $q_1 \cdots q_f$ como $x_1 \cdots x_f$ y $p_1 \cdots p_f$ como $x_{f+1} \cdots x_{2f}$}
+\begin{equation}
+	\expval{x_i\pdv{H}{x_j}}  = C^{-1} \int dx_1\cdots dx_f d_{f+1} \cdots d_{2f} dx_i \, x_i\left( \frac{1}{\beta}\pdv{x_j} \right) e^{-\beta H}
+\end{equation}
+
+Consideremos en primer lugar la integración respecto de $x_j$ e integremos por partes
+$$\int_{-\infty}^{\infty} dx_j x_i\pdv{x_j}e^{-\beta H} = \left[ x_ie^{-\beta H} \right]_{x_j = -\infty}^{x_j = \infty} - \int_{-\infty}^{\infty} dx_j e^{-\beta H}\pdv{x_i}{x_j}$$
+
+Observemos que los límites de integración respecto de $x_j$ los hemos fijado en $-\infty$ y $+\infty$.
+Es evidente que este es el caso para las cantidades de movimiento, y también para las coordenadas cartesianas, ya que por convenio introducimos siempre los términos de corte en el hamiltoniano.
+Sin embargo, si las coordenadas generalizadas son de tipo angular no es posible esta extensión y nuestros resultados no serán aplicables.
+Limitándonos al tipo de coordenadas fásicas indicado, el primer sumando del segundo miembro es nulo.
+En efecto, el hecho de que los valores medios de las variables dinámicas sobre la distribución canónica hayan de ser finitos (y han de serlo por razones físicas evidentes) implica que
+$$\lim\limits_{x_j\rightarrow \pm \infty} f(x_1,\ldots,x_{2f}) e^{-\beta H} = 0$$
+siendo $f(x_1,\ldots,x_{2f})$ cualquier función que represente una variable del sistema (energía cinética, energía potencial, momento cinético, etc,), ya que en otro caso sería
+$$\int dx_1\cdots x_{2f} \, f(x_1,\ldots,x_{2f})e^{-\beta H} \rightarrow \infty$$
+
+Como caso particular, se tiene evidentemente que
+$$\left[ x_ie^{-\beta H} \right]_{x_j = -\infty}^{x_j = \infty} = 0$$
+y por otro lado,
+$$\frac{\partial x_i}{\partial x_j} = \delta_{ij}$$
+donde $\delta_{ij}$ es la \emph{delta de Kronecker}.
+
+Finalmente, uniendo todos los resultados
+\begin{equation}
+	\expval{x_i\frac{\partial H}{\partial x_j}} = k_B T \delta_{ij}
+\end{equation}
+expresión que constituye el \emph{teorema de equipartición generalizado}. Aunque lo hemos demostrado para el caso de la distribución canónica, este teorema es válido también en el caso de la colectividad microcanónica.
+
+Cuando el resultado se aplica a una coordenada generalizada $x_i = x_j = q_i$ toma la forma
+\begin{equation}
+	\expval{q_i\frac{\partial H}{\partial q_i}} = k_B T
+\end{equation}
+y se le denomina \emph{teorema del virial}, mientras que aplicado a un momento generalizado $x_i = x_j = p_i$
+\begin{equation}
+	\expval{p_i\frac{\partial H}{\partial p_i}} = k_B T
+\end{equation}
+y se le denomina \emph{teorema de equipartición}.Vamos a ver el significado físico de estos
+teoremas, lo que además nos aclarará la razón de estas denominaciones.
+A partir de la definición de hamiltoniano conocida de la Mecánica Analítica y de las ecuaciones de Hamilton, tenemos
+\begin{equation}
+	H = \sum p_i\dot{q_i} - L = \sum_i p_i\frac{\partial H}{\partial p_i} - L
+\end{equation}
+o sea
+\begin{equation}
+	\sum_i \frac{\partial H}{\partial p_i} = H + L = H + K - U = 2K
+\end{equation}
+ya que para el tipo de modelos mecánicos que estamos considerando sabemos que el hamiltoniano es la suma de la energía cinética y la potencial) es decir, $H = K + U$.
+Esta expresión nos dice que la energía cinética asociada con cada grado de libertad $i$ vale
+$$\frac{1}{2}p_i\frac{\partial H}{\partial p_i}$$
+de forma que el teorema de equipartición afirma que, en valor medio, la energía cinética se reparte por igual entre todos los grados de libertad, correspondiéndole a cada uno de ellos un valor $1/2 k_B T$.

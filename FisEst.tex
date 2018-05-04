@@ -1,0 +1,226 @@
+\documentclass[12pt,usenames,dvipsnames,a4paper]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{wrapfig}
+\usepackage{lmodern}
+\usepackage{marginnote}
+\usepackage{fixltx2e}
+\usepackage{cancel}
+\usepackage{tikz}
+\usepackage{pgfkeys} % LATEX
+\usepackage{pgffor}
+\usepackage{empheq}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xfrac}
+\usepackage{fancybox}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{bm}
+\usepackage{siunitx}
+\usepackage{empheq}
+\usepackage{hyperref}
+\usepackage{xfrac}
+\usepackage[italicdiff]{physics}
+\usepackage[bottom=4cm, top = 4cm]{geometry}
+
+\usetikzlibrary{babel,arrows.meta,decorations}
+
+\usepgfplotslibrary{units, fillbetween}
+\setlength\intextsep{0pt}
+
+\renewcommand{\theequation}{\thepart.\arabic{equation}}
+
+%------------------------------------------------------------------------------
+
+%                             Encabezado y pie de página
+
+%------------------------------------------------------------------------------
+
+\usepackage{fancyhdr}
+
+% aqui definimos el encabezado de las paginas pares e impares.
+\lhead[]{\thepage}
+\chead[]{}
+\rhead[\thepage]{}
+\lfoot[]{}
+\cfoot[]{}
+\rfoot[]{}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0pt}
+
+% aqui definimos el encabezado y pie de pagina de la pagina inicial de un capitulo.
+\fancypagestyle{plain}{
+	\fancyhead[L]{}
+	\fancyhead[C]{}
+	\fancyhead[R]{}
+	\fancyfoot[L]{}
+	\fancyfoot[C]{}
+	\fancyfoot[R]{}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+
+\pagestyle{fancy}
+
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+
+
+\begin{document}
+
+\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+\thispagestyle{empty}
+\pagecolor{Cyan!15}
+\newgeometry{centering}
+
+\vspace*{5.75cm}
+\begin{center}
+
+	\vspace*{.5cm}
+	{\huge Física}
+
+	\vspace*{.5cm}
+	{\huge Estadística}
+
+	\vspace*{1cm}
+	{\Large Daniel Alfonso Durán García}
+
+\end{center}
+
+\restoregeometry
+
+
+\pagecolor{White}
+%\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+\renewcommand{\headrulewidth}{0.5pt}
+\cfoot[\textcolor{gray}{\textit{Física estadística}}]{\textcolor{gray}{\textit{Física estadística}}}
+
+%--------------------------------------
+%  Parte I
+%--------------------------------------
+
+\part{Mecánica Estadística Clásica}
+
+%--------------------------------------
+%  Cap 1
+%--------------------------------------
+\chapter{Colectividad microcanónica}
+\chead[\thechapter. \textsc{Colectividad microcanónica}]{\thechapter. \textsc{Colectividad microcanónica}}
+
+\input{./tex/Chapter1.tex}
+
+
+
+
+%--------------------------------------
+%  Cap 2
+%--------------------------------------
+
+\chapter{Colectividad canónica}
+\chead[\thechapter. \textsc{Colectividad canónica}]{\thechapter. \textsc{Colectividad canónica}}
+
+\input{./tex/Chapter2.tex}
+
+
+
+
+%--------------------------------------
+%  Cap 3
+%--------------------------------------
+
+\chapter{Colectividad canónica generalizada}
+\chead[\thechapter. \textsc{Colectividad canónica generalizada}]{\thechapter. \textsc{Colectividad canónica generalizada}}
+
+\input{./tex/Chapter3.tex}
+
+
+
+
+
+%--------------------------------------
+%  Cap 4
+%--------------------------------------
+
+\chapter{Sistemas ideales}
+\chead[\thechapter. \textsc{Sistemas ideales}]{\thechapter. \textsc{Sistemas ideales}}
+
+\input{./tex/Chapter4.tex}
+
+
+
+
+%--------------------------------------
+%  Cap 5
+%--------------------------------------
+
+\chapter{Sistemas reales}
+\chead[\thechapter. \textsc{Sistemas reales}]{\thechapter. \textsc{Sistemas reales}}
+
+\input{./tex/Chapter5.tex}
+
+
+%--------------------------------------
+%  Parte II
+%--------------------------------------
+
+\part{Mecánica Estadística Cuántica}
+
+
+
+%--------------------------------------
+%  Cap 6
+%--------------------------------------
+
+\chapter{Estadísticas Cuánticas}
+\chead[\thechapter. \textsc{Estadísticas Cuánticas}]{\thechapter. \textsc{Estadísticas Cuánticas}}
+
+\input{./tex/Chapter6.tex}
+
+
+%--------------------------------------
+%  Cap 7
+%--------------------------------------
+
+\chapter{Gases de Fermi-Dirac y Bose-Einstein degenerados}
+\chead[\thechapter. \textsc{Gases de Fermi-Dirac y Bose-Einstein degenerados}]{\thechapter. \textsc{Gases de Fermi-Dirac y Bose-Einstein degenerados}}
+
+\input{./tex/Chapter7.tex}
+
+
+
+%--------------------------------------
+%  Cap 8
+%--------------------------------------
+
+\chapter{Radiación electromagnética}
+\chead[\thechapter. \textsc{Radiación electromagnética}]{\thechapter. \textsc{Radiación electromagnética}}
+
+\input{./tex/Chapter8.tex}
+
+
+
+
+%--------------------------------------
+%  Anexos
+%--------------------------------------
+
+\part*{Anexos}
+\chead[\textsc{Anexos}]{\textsc{Anexos}}
+
+\input{./tex/Anx.tex}
+
+\end{document}
+

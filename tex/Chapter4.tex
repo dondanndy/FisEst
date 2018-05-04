@@ -1,0 +1,247 @@
+Los modelos mecánicos más sencillos que se pueden considerar son aquellos en que se desprecian las interacciones entre las partículas que los componen.
+Más exacta mente, lo que se hace es despreciar los valores de las energías de interacción frente a la energía cinética o potencial ---debida a un campo externo--- de las partículas, pues como ya hemos señalado en el Capítulo 1, las energías de interacción son conceptualmente imprescindibles para poder garantizar la tendencia del sistema a un estado de equilibrio.
+
+A estos modelos se les denomina ideales y, aun cuando solo representan el comportamiento de los sistemas físicos reales en condiciones muy extremas, su estudio es de gran utilidad, ya que por un lado presentan aspectos comunes con los sistemas reales y por otro al poderse resolver exactamente sirven de punto de partida para el estudio de modelos en los que se tienen explícitamente en cuenta las interacciones y que por ello son matemáticamente muy complejos.
+Este capítulo está dedicado al estudio de modelos ideales, mientras que en el siguiente consideraremos, desde un punto de vista elemental, el caso de los gases reales, en los que hay que tener en cuenta las interacciones.
+El modelo ideal por excelencia lo constituye el gas ideal, del cual ya tratamos al estudiar el colectivo microcanónico. 
+
+El objetivo fundamental de este capítulo es el análisis de este modelo en el colectivo canónico, pero profundizando mucho más en sus propiedades. 
+No obstante, al final del mismo consideraremos otro modelo ideal: la llamada \emph{teoría clásica del paramagnetismo}.
+
+\newpage
+
+\section{Distribución de velocidades de Maxwell}
+
+Consideremos de nuevo un gas ideal en equilibrio, pero ahora, con objeto de dar la mayor generalidad posible a los resultados, consideraremos al gas constituido por varios tipos distintos de moléculas, a las que, además, no exigiremos que sean monoatómicas.
+Representaremos por $\mathbf{r}$ y $\mathbf{p}$ la posición y momento del centro de masas de una molécula y por $(q_{int}, p_{int})$ las coordenadas y momentos generalizados asociados con los grados internos de libertad. Admitiendo que no existen campos externos, el hamiltoniano de una molécula dada es igual a\footnote{No utilizaremos subíndices para caracterizar el tipo de molécula de que se trata, ya que como veremos en nuestros razonamientos, solo es necesario considerar cada clase de moléculas separadamente aunque los resultados son válidos para todas ellas.}
+\begin{equation}
+	H = \frac{\mathbf{p}^2}{2m} + H^{int}(q_{int}, p_{int})
+\end{equation}
+donde $H^{int}$ representa la energía interna de rotación y vibración de los átomos que componen la molécula respecto de su centro de masas.
+Este término es nulo si la molécula es monoatómica.
+Además, al suponer que el gas es ideal estamos admitiendo que $H^{int}$ es independiente de $\mathbf{r}$.
+
+Supongamos que el sistema se encuentra en equilibrio a la temperatura absoluta $T$ y fijemos nuestra atención en una molécula dada.
+Como la energía del sistema es igual a la suma de las energías de cada una de sus partículas, se cumple la condición de aditividad enunciada en el capítulo 2 y podemos considerar a todas las moléculas restantes como un foco térmico a la temperatura absoluta $T$.
+La distribución de estados de la molécula obedecerá la distribución canónica, y, por consiguiente, la probabilidad $P(\mathbf{r}, \mathbf{p}, q_{int}, p_{int}) \, d^3 \mathbf{r} \, d^3 \mathbf{p} \, dq_{int} dp_{int}$ de encontrar la molécula con variables del centro de masas en los intervalos $(\mathbf{r}, \mathbf{r} + d\mathbf{r})$ y $(\mathbf{p}, \mathbf{p} +d\mathbf{p})$ y con un estado interno correspondiente a los intervalos $(q_{int}, q_{int} + dq_{int})$ y $(P_{int}, P_{int} + dP_{int})$ viene dada por\footnote{Nótese que no se trata de una probabilidad en el espado de las fases del sistema completo ---espacio $\Gamma$---, sino de una probabilidad en el espacio de las fases de una molécula, también denominado espacio $\mu$}
+\begin{align} \label{eq:Prob4}
+	& P(\mathbf{r}, \mathbf{p}, q_{int}, p_{int}) \, d^3 \mathbf{r} \, d^3 \mathbf{p} \, dq_{int} dp_{int} \nonumber \\
+	& \propto \exp \left[ -\beta\left( \frac{\mathbf{p}^2}{2m} + H^{int} \right)  \right] \, d^3 \mathbf{r} \, d^3 \mathbf{p} \, dq_{int} dp_{int} \\
+	&= \left[ \exp \left[ -\beta\frac{\mathbf{p}^2}{2m} \right] \, d^3 \mathbf{r} \, d^3 \mathbf{p} \right] \left[ \exp \left[ -\beta H^{int} \right] \, dq_{int} dp_{int} \right] \nonumber
+\end{align}
+
+La probabilidad $P(\mathbf{r}, \mathbf{p}) d^3 \mathbf{r} \, d^3 \mathbf{p}$ de encontrar la molécula con variables del centro de masas en los intervalos $(\mathbf{r}, \mathbf{r} + d\mathbf{r})$ y $(\mathbf{p}, \mathbf{p} +d\mathbf{p})$, independientemente del estado interno se obtendrá integrando \eqref{eq:Prob4} respecto de todos los posibles valores de $q_{int}$ y $p_{int}$. Teniendo en cuenta la forma de \eqref{eq:Prob4} resulta evidentemente
+\begin{equation}\label{eq:Prob4.3}
+	P(\mathbf{r}, \mathbf{p}) \, d^3 \mathbf{r} \, d^3 \mathbf{p} \propto \exp \left[ -\beta\frac{\mathbf{p}^2}{2m} \right] \, d^3 \mathbf{r} \, d^3 \mathbf{p}
+\end{equation}
+siendo la constante de proporcionalidad independiente de todas las coordenadas y cantidades de movimiento generalizadas.
+
+Si multiplicamos la probabilidad \eqref{eq:Prob4.3} por el número total de moléculas $N$ del tipo que estamos considerando que existen en el sistema, se obtendrá el número medio de moléculas de esa clase en ese intervalo de posiciones y cantidades de movimiento.
+Definamos para el tipo de moléculas en consideración
+\begin{align}
+	f(\mathbf{r}, \mathbf{v}) \, d^3 \mathbf{r} \, d^3 \mathbf{v} \equiv & \text{ número medio de moléculas cuyo centro de masas} \nonumber \\
+				& \text{ ocupa una posición dentro del intervalo}  \\
+				& \text{ (\textbf{r}, \textbf{r} + d\textbf{r}) y tiene una velocidad entre \textbf{v} y \textbf{v} + d\textbf{v}}. \nonumber
+\end{align}
+
+La función $f(\mathbf{r}, \mathbf{v})$ recibe el nombre de \emph{función de distribución de una partícula} o
+simplemente \emph{función de distribución}.
+Obsérvese, que utilizamos como variable la velocidad $\mathbf{v} = \sfrac{\mathbf{p}}{m}$ del centro de masas en lugar del momento $\mathbf{p}$.
+A partir de \eqref{eq:Prob4.3} obtenemos
+\begin{equation}
+f(\mathbf{r}, \mathbf{v}) \, d^3 \mathbf{r} \, d^3 \mathbf{v} = C N \exp \left[ -\beta\frac{\mathbf{p}^2}{2m} \right] \, d^3 \mathbf{r} \, d^3 \mathbf{v}
+\end{equation}
+
+La constante $C$ puede determinarse por la condición de normalización
+\begin{equation}
+\int d^3 \mathbf{r} \int d^3 \mathbf{v} \, f(\mathbf{r}, \mathbf{v}) = N
+\end{equation}
+o sea
+\begin{equation}
+	C N \int d^3 \mathbf{r} \int d^3 \mathbf{v} \exp \left[ -\beta\frac{m\mathbf{v}^2}{2} \right] = N \label{eq:Norm4}
+\end{equation}
+
+Como el integrando no depende de $\mathbf{r}$, la integración respecto de esta variable da simplemente $V$, volumen del sistema.
+Con esto \eqref{eq:Norm4} se reduce a 
+\begin{equation}
+	C V \int d^3 \mathbf{v} \exp \left[ -\beta\frac{m\mathbf{v}^2}{2} \right] = C V \left[ \int dv_x \exp \left[ -\beta\frac{mv_x^2}{2} \right]\right]^3 = CV \left( \frac{2\pi}{m\beta} \right) ^{\frac{3}{2}} = 1
+\end{equation}
+Despejando la constante $C$ resulta
+\begin{equation}
+	C = \frac{1}{V} \left( \frac{m\beta}{2\pi} \right) ^{\frac{3}{2}}
+\end{equation}
+y, por lo tanto,
+\begin{equation}\label{eq:f_def}
+	f(\mathbf{r}, \mathbf{v}) \, d^3 \mathbf{r} \, d^3 \mathbf{v} = n \left( \frac{m\beta}{2\pi} \right) ^{\frac{3}{2}} \exp \left[ -\beta\frac{m\mathbf{v}^2}{2} \right] \, d^3 \mathbf{r} \, d^3 \mathbf{v}
+\end{equation}
+siendo $n$ el número medio de moléculas del tipo considerado por unidad de volumen, o sea
+$$n = \frac{N}{V}$$
+
+Dado que $f$ no depende de $\mathbf{r}$, podemos omitir esta variable en el argumento de $f$ y escribir \eqref{eq:f_def} como
+\begin{equation}\label{eq:Maxw}
+f(\mathbf{v}) \, d^3 \mathbf{r} \, d^3 \mathbf{v} = n \left( \frac{m}{2\pi k_B T} \right) ^{\frac{3}{2}} \exp \left[ -\beta\frac{m\mathbf{v}^2}{2} \right] \, d^3 \mathbf{r} \, d^3 \mathbf{v}
+\end{equation}
+
+Esta es la famosa \emph{distribución de velocidades de Maxwell} para un gas diluido en equilibrio.
+Obsérvese que $f$ tampoco depende de la dirección de $\mathbf{v}$, sino únicamente de su módulo.
+La independencia de la función de distribución del sistema respecto del vector de posición y de la dirección de la velocidad traduce las propiedades de homogeneidad e isotropía del sistema.
+
+\section{Cálculo de valores medios y fluctuaciones}
+
+A partir del conocimiento de $f(\mathbf{v})$ es fácil determinar otras funciones de distribución y ciertas propiedades de los gases ideales. En primer lugar podemos obtener fácilmente la función de distribución de una componente de la velocidad, $g(v_x)$, $g(v_y)$ o $g(v_z)$, que se define del modo siguiente
+\begin{align}
+	g(v_x) \, dv_x \equiv & \text{ número medio de moléculas, por unidad de volumen,} \nonumber \\
+		& \text{ tienen una velocidad \textbf{v}, cuya componente $x$ } \nonumber\\
+		& \text{ tiene un valor comprendido entre $v_x$ y $v_x + dv_x$, }  \\
+		& \text{ independientemente del valor que tomen las otras } \nonumber \\
+		& \text{ dos componentes en este caso $v_y$ y $v_z$} \nonumber
+\end{align}
+
+Como es natural $g(v_y)$ y $g(v_z)$ se definen de modo semejante para las componentes respectivas de la velocidad vectorial \textbf{v}.
+
+El cálculo de $g(v_x)$ es sencillo a partir de $f(\mathbf{v})$, si nos damos cuenta que para ello basta sumar todas las moléculas, por unidad de volumen, que tiene una componente $v_x$ en el intervalo considerado, independientemente de cuál sea el valor de las componentes $v_y$ y $v_z$.
+En la práctica, esta suma se realiza integrando $f(\mathbf{v})$ para todos los valores de $v_y$ y $v_z$.
+Por tanto, es
+\begin{align}
+	g(v_x)dv_x &= \frac{1}{V} \int d^3 \mathbf{r} \int_{v_y} \int_{v_z} d^3 \mathbf{v} \, f(\mathbf{v}) \nonumber \\
+			   &= n \left( \frac{m}{2\pi k_B T} \right) ^{3/2} e^{-\beta\frac{mv_x^2}{2 k_B T}} dv_x \int_{-\infty}^{\infty} dv_y e^{-\beta\frac{mv_y^2}{2 k_B T}} \int_{-\infty}^{\infty} dv_z e^{-\beta\frac{mv_z^2}{2 k_B T}}
+\end{align}
+
+Las dos últimas integrales son iguales y cada una de ellas vale $(2\pi k_B T/m)^{1/2}$.
+Sustituyendo y simplificando se obtiene
+\begin{equation}\label{eq:gvx}
+	g(v_x) \, dv_x = n \left( \frac{m}{2\pi k_B T} \right) ^{1/2} \exp \left[ -\beta\frac{mv_x^2}{2 k_B T} \right] dv_x
+\end{equation}
+
+Resulta entonces que la distribución de probabilidades de una componente de la velocidad es una distribución de Gauss de valor medio nulo
+\begin{equation}
+	\left\langle v_x \right\rangle = n \left( \frac{m\beta}{2\pi} \right) ^{1/2} \int dv_x \, v_x \exp \left[ -\beta\frac{mv_x^2}{2 k_B T} \right] = 0
+\end{equation}
+ya que nos encontramos con un integrando impar.
+Así, la dispersión será
+\begin{equation}
+	(\Delta v_x)^2 = \left\langle v_x^2 \right\rangle = n \left( \frac{m\beta}{2\pi} \right) ^{1/2} \int dv_x \, v_x^2 \exp \left[ -\beta\frac{mv_x^2}{2 k_B T} \right] = \frac{k_B T}{m}
+\end{equation}
+
+Este último resultado coincide desde luego con el obtenido en el capítulo anterior aplicando el teorema de equipartición, los mismos resultados son válidos si sustituimos $v_x$ por $v_y$ o $v_z$, de manera que comparando \eqref{eq:Maxw} con \eqref{eq:gvx} podemos observar que
+\begin{equation}
+	\left[ \frac{f(\mathbf{v}) \, d^3 \mathbf{v}}{n} \right]  = \left[ \frac{g(v_x)dv_x}{n} \right] \left[ \frac{g(v_y)dv_y}{n} \right] \left[ \frac{g(v_z)dv_z}{n} \right] 
+\end{equation}
+lo cual expresa la independencia estadística de las componentes de la velocidad de una partícula.
+La razón por la que aparece un divisor $n$ en cada una de las distribuciones es que no están normalizadas a la unidad, sino al número de partículas $N$, o si se prefiere podemos decir que están normalizados a $n$ cuando se integran respecto de las velocidades
+\begin{equation}
+	\int_{-\infty}^{\infty} dv_x \, g(v_x) = \int d^3 \mathbf{v} \, f(\mathbf{v}) = n
+\end{equation}
+
+Otra distribución de gran interés, relacionada con el módulo de la velocidad $v = |\mathbf{v}|$, es
+\begin{align}
+	F(v) \, dv \equiv & \text{ número medio de moléculas por unidad de volumen} \nonumber \\
+		& \text{ con una velocidad cuyo módulo $v$ está comprendido}  \\
+		& \text{ entre $v$ y $v$ + d$v$}. \nonumber
+\end{align}
+
+Este número se obtendrá sumando todas las moléculas por unidad de volumen con velocidades cuyo módulo esté en este intervalo, independientemente de la dirección.
+Así, pues, será
+\begin{equation}
+	F(v)dv = \frac{1}{V} \int_{-\infty}^{\infty} d^3\mathbf{r} \int\limits_{v \le | \mathbf{v} | \le v+dv} \mkern-10mu d^3\mathbf{v} \, f(\mathbf{v}) = \int\limits_{v \le | \mathbf{v} | \le v+dv} \mkern-10mu d^3\mathbf{v} \, f(\mathbf{v})
+\end{equation}
+
+Como $f(\mathbf{v})$ depende únicamente de $\mathbf{v}$ resulta que es constante en todo el volumen (del espacio de velocidades) de integración. Este volumen vale $4\pi v^2 dv$ y, por lo tanto
+\begin{equation}
+	F(v)dv = 4\pi f(v) v^2 dv
+\end{equation}
+que utilizando \eqref{eq:f_def} toma la forma explícita
+\begin{equation}
+	F(v)dv = 4\pi n \left( \frac{m\beta}{2\pi} \right) ^{3/2}  v^2 \exp \left[ -\beta\frac{mv_x^2}{2} \right] dv
+\end{equation}
+
+Esta distribución presenta un máximo cuya existencia puede ponerse de manifiesto mediante un razonamiento cualitativo del tipo que hemos realizado repetidamente.
+Cuando $v$ aumenta, el factor exponencial disminuye mientras que el factor $v^2$ aumenta; el resultado es un máximo en la distribución para un cierto valor $\widetilde{v}$ del módulo de la velocidad, denominada \emph{velocidad más probable}.
+Para calcularla seguimos el procedimiento usual de igualar a cero la primera derivada
+\begin{equation*}
+	\left( \frac{d F(v)}{dv} \right)_{v=\widetilde{v}} = 0
+\end{equation*}
+es decir,
+\begin{equation}
+	2\widetilde{v} \exp \left[ -\frac{mv_x^2}{2 k_B T} \right] +\widetilde{v}^2 \frac{m\widetilde{v}}{2 k_B T} \exp \left[ -\frac{m\widetilde{v}^2}{2 k_B T} \right] = 0
+\end{equation}
+de donde
+\begin{equation}
+	\widetilde{v}^2 = 2\frac{k_B T}{m} \Rightarrow \widetilde{v} = \sqrt{2\frac{k_B T}{m}}
+\end{equation}
+
+\section{Teoría clásica del paramagnetismo}
+
+Consideremos un modelo de gas ideal paramagnético corno un conjunto de dipolos magnéticos iguales, no interaccionantes entre sí, de momento magnético $\mu$.
+El sistema se encuentra dentro de un campo magnético de intensidad $\mathbf{B}$ de forma que la energía potencial de cada dipolo vale
+\begin{equation}\label{eq:u_def}
+	u = -\mu \mathbf{B} = -\mu B \cos\theta
+\end{equation}
+donde el ángulo $\theta$ puede variar de un modo continuo de 0 a $2\pi$.
+
+Como la interacción entre los dipolos magnéticos se considera despreciable, podemos fijar nuestra atención sobre uno de ellos, considerando entonces el resto como un foco térmico a la temperatura absoluta $T$.
+Como además se cumple la condición de aditividad de la energía, podemos utilizar la distribución canónica, análogamente a lo que hicimos en el caso del gas ideal.
+La probabilidad $P(\theta, \varphi) d\Omega$ de que la orientación del dipolo respecto del campo magnético aplicado esté comprendida dentro de un elemento de ángulo sólido $d\Omega = \sin \theta d\theta d\varphi$ alrededor de la dirección definida por $\theta$ y $\varphi$ se obtendrá integrando la distribución canónica respecto de todos los valores posibles de las restantes variables fásicas. 
+El resultado es, evidentemente,
+\begin{equation}
+	P(\theta, \varphi) d\Omega \propto e^{-\beta u} d\Omega
+\end{equation}
+
+El valor medio de $\cos \theta$ vendrá entonces dado por
+\begin{equation}
+	\left\langle \cos \theta \right\rangle = \frac{\int \cos \theta d\Omega e^{-\beta u}}{\int d\Omega e^{-\beta u}}
+\end{equation}
+donde teniendo en cuenta los valores de $u$ y de $d\Omega$ resulta
+\begin{equation}
+	\left\langle \cos \theta \right\rangle = \frac{2\pi \int_0^{\pi} d\theta \sin \theta \cos \theta \, e^{\beta \mu B \cos\theta}}{2\pi \int_0^{\pi} d\theta \sin \theta \, e^{\beta \mu B \cos\theta}}
+\end{equation}
+y efectuando el cambio de variables $x = \cos \theta$,
+\begin{equation}\label{eq:cos_med}
+	\left\langle \cos \theta \right\rangle = \frac{\int_{-1}^{+1} x e^{\alpha x} dx}{\int_{-1}^{+1} e^{\alpha x} dx}
+\end{equation}
+donde
+$$\alpha = \mu\beta B$$
+
+Las integrales que aparecen en \eqref{eq:cos_med} se calculan fácilmente obteniéndose
+\begin{equation}\label{eq:lang}
+	\left\langle \cos \theta \right\rangle = \coth \alpha - \frac{1}{\alpha} \equiv L(\alpha)
+\end{equation}
+
+La función $L(\alpha)$ definida en \eqref{eq:lang} se denomina \emph{función de Langevin}, más ampliada en el \hyperref[Anx3]{Anexo 3}.
+
+El momento magnético por unidad de volumen o \emph{imanación} vendrá dado si $n$ es el número de dipolos magnéticos por unidad de volumen, por\footnote{Obsérvese que solo aparece imanación en la dirección del campo, ya que los valores medios de $\sin \varphi$ y $\cos \varphi$ son nulos.}
+\begin{equation}
+	 M = n\mu \left\langle \cos \theta \right\rangle = n\mu L(\alpha)
+\end{equation}
+
+Para campos magnéticos muy intensos y temperaturas bajas $\alpha$ es muy grande, $\coth \simeq 1$ y $\sfrac{1}{\alpha}$ puede despreciarse.
+En este caso, $L(\alpha) = 1$ y
+\begin{equation}
+	M(\alpha \gg 1) = n\mu
+\end{equation}
+que es la \emph{imanación de saturación} y, como es evidente, corresponde a todos los dipolos orientados paralelamente al campo ($	\left\langle \cos \theta \right\rangle = 1$).
+
+En cambio, en campos débiles y altas temperaturas $\alpha$ es pequeño, $\coth \alpha \simeq \sfrac{1}{\alpha} + \sfrac{\alpha}{3} + \cdots$ y por tanto, $L(\alpha) \simeq \sfrac{\alpha}{3}$, con lo que
+\begin{equation}
+	M(\alpha \ll 1) = \frac{n\mu\alpha}{3} = \frac{n\mu^ 2B}{3 k_B T}
+\end{equation}
+
+Haciendo $B = \mu_0 H$, lo cual representa una excelente aproximación en el caso de las sustancias paramagnéticas, donde la imanación es muy pequeña frente al campo aplicado, resulta
+\begin{equation}
+	M = \frac{n\mu^2\mu_0}{3 k_B}\frac{H}{T}
+\end{equation}
+que comparada con la \emph{ley de Curie} de las sustancias paramagnéticas
+\begin{equation}
+	M = C\frac{H}{T}
+\end{equation}
+nos da una expresión para la \emph{constante de Curie}
+\begin{equation}
+	C = \frac{n\mu^2\mu_0}{3 k_B}
+\end{equation}
+
+Como hemos visto, el parámetro característica de la teoría es
+$$\alpha = \beta\mu B = \frac{\mu B}{k_B T}$$
+que teniendo en cuenta \eqref{eq:u_def} y el teorema de equipartición de la energía viene a ser del orden del cociente entre la energía magnética máxima y la energía de agitación térmica.
+El límite $\alpha \gg 1$ corresponde entonces al caso en que la energía de agitación térmica es pequeña, los dipolos pueden alinearse paralelamente al campo con facilidad y la imanación es máxima.
+Al ir aumentando la temperatura la energía térmica de los dipolos va aumentando y es más difícil orientarlos, es decir, hacen falta campos magnéticos más intensos: la imanación va disminuyendo.
+Estos razonamientos explican físicamente los resultados obtenidos.
