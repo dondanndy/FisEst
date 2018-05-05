@@ -157,8 +157,54 @@ En los sistemas en los que vamos a estudiar, que tendrán moléculas en el orden
 \renewcommand{\theequation}{A\textsubscript{3}.\arabic{equation}}
 \setcounter{equation}{0}
 
+Este tercer Anexo está dedicado a la \emph{función de Langevin}, que procede de la función de Brillouin y Langevin.
+Esta ecuación tiene la forma
+\begin{equation}
+	B_J(x) = \frac{2J + 1}{2J} \coth \left ( \frac{2J + 1}{2J} x \right )- \frac{1}{2J} \coth \left ( \frac{1}{2J} x \right )
+\end{equation}
+donde $J$ es un número entero o semientero que indica el número cuántico de momento angular total y $x$ viene dada por la relación
+\begin{equation}
+	x = \frac{g \mu_B J B}{k_B T}
+\end{equation}
+
+Cuando nos acercamos al límite clásico podemos asumir los momentos alineados con el campo y así, $J \rightarrow \infty$, tomando todos los valores posibles, con lo que llegamos a la \emph{función de Langevin}
+\begin{equation}
+	\boxed{L(x) = \coth x - \frac{1}{x}}
+\end{equation}
+
+% Figura de la función---------------------------------------------------------
+\begin{wrapfigure}{r}{0.4\textwidth}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			scale = 0.8,
+			xmin = 0.1, xmax = 30,
+			ymin = 0.05, ymax = 1.2
+			]
+			\addplot [thick, black, dashed, forget plot]
+				table {%
+				0 1
+				30 1
+				};
+							
+			\addplot[name path=f, NavyBlue, ultra thick, domain=0:30, samples=200] {1/tanh(x) - 1/x};
+			\node[NavyBlue] at (25,0.8) {$\bm{L(x)}$};
+		
+		\end{axis}
+	\end{tikzpicture}
+\end{wrapfigure}
+Para pequeños valores de $x$, podemos desarrollar la función en serie de Taylor
+\begin{equation}
+	L(x) = \tfrac{1}{3} x - \tfrac{1}{45} x^3 + \tfrac{2}{945} x^5 - \tfrac{1}{4725} x^7 + \cdots
+\end{equation}
+
+Cuando tomamos el límite $x \rightarrow \infty$, podemos ver que
+\begin{equation}
+	\lim_{x\rightarrow \infty} L(x) = 1
+\end{equation}
 
 \newpage
+\clearpage
 \section*{Anexo 4}\label{Anx4}
 \renewcommand{\theequation}{A\textsubscript{4}.\arabic{equation}}
 \setcounter{equation}{0}
