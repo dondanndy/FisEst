@@ -98,7 +98,7 @@ Restringiéndonos al campo eléctrico ---el campo magnético en cada punto es fu
 La especificación de una onda plana exige, en principio, la determinación de $\vb{E}_0$, $\bm{\kappa}$ y $\omega$.
 Ahora bien, una vez dado $\bm{\kappa}$, resulta que, por \eqref{eq:valor_kappa_t8}, también está dada su frecuencia,\footnote{ Esta no es una propiedad general de las ondas, sino solo de aquellas en las que la velocidad de todas las ondas planas es la misma ---onda no dispersiva---, como sucede con las ondas electromagnéticas.} luego sólo son independientes $\vb{E}_0$ Y $\bm{\kappa}$.
 Por otro lado, si utilizamos el hecho de que las ondas son transversales, o sea que $\vb{E}_0$ es perpendicular a $\bm{\kappa}$ podemos tomar dos vectores unitarios $\vb{e}_1$ y $\vb{e}_2$ en el plano perpendicular a $\bm{\kappa}$, y escribir
-\begin{equation}
+\begin{equation}\label{eq:E_1_t8}
 	\vb{E}(\vb{r}, t) = E_{01} \vb{e}_1 e^{i(\bm{\kappa}\cdot\vb{r}-\omega t)} + E_{02} \vb{e}_2 e^{i(\bm{\kappa}\cdot\vb{r}-\omega t)}
 \end{equation}
 con lo que resulta que, una vez fija la dirección de $\bm{\kappa}$ únicamente son posibles dos direcciones independientes de polarización de \textbf{E}. Cualquier otra dirección es combinación de estas dos.
@@ -129,3 +129,97 @@ En resumen, se obtiene la conclusión de que \emph{un gas de fotones constituye 
 Este resultado puede entenderse como un postulado basado en las propiedades del campo electromagnéticos, es decir, en las ecuaciones de Maxwell.
 
 \section{Distribución de Plank: Ley de Rayleigh-Jeans y ley de Wien}
+
+La radiación electromagnética que existe en equilibrio dentro de un recinto de volumen $V$, cuyas paredes se mantienen a la temperatura $T$, puede tratarse como un sistema termodinámico en equilibrio, al que le son aplicables las leyes de la Termodinámica y de la Mecánica Estadística.
+De hecho, hemos visto en el apartado anterior que la radiación puede considerarse corno un gas de fotones.
+Hay que señalar, sin embargo, que existen profundas diferencias entre un gas molecular y un gas de fotones.
+En un gas molecular sabemos que la distribución de velocidades que caracteriza el equilibrio es la de Maxwell-Boltzmann, mientras que en un gas de fotones la situación será evidentemente distinta, ya que todos los fotones se mueven con la velocidad de la luz, independientemente de las condiciones en que se encuentre el gas.
+Veremos que lo que caracteriza el equilibrio en el caso de los fotones es la distribución existente entre las frecuencias $\omega$.
+Entonces, si se consideran, por ejemplo, dos estados de equilibrio de un mismo recinto a dos temperaturas diferentes, lo que se modifica al pasar de uno a otro es la distribución de frecuencias, es decir el número de fotones existentes en cada intervalo de frecuencias.
+
+Otra importante diferencia de principio surge si se considera el mecanismo que permite alcanzar y mantener la situación de equilibrio.
+En el caso de los gases moleculares, dicho mecanismo lo constituyen las colisiones entre las moléculas.
+A este respecto conviene recordar que cuando hablábamos de un gas ideal, nos referíamos a un sistema de partículas cuyas energías de interacción eran cuantitativamente despreciables.
+
+El estudio detallado de la interacción de la radiación con la materia, es decir, la absorción y emisión de fotones, constituye un problema en el que intervienen de modo fundamental las propiedades de los átomos que constituyen el cuerpo emisor.
+Sin embargo, aquí lo único que vamos a necesitar es admitir que la materia presente, constituida por las paredes del sistema o por cualquier otro cuerpo, emite y absorbe fotones, de manera que se establece una situación de equilibrio, la cual se mantiene mientras no se alteren las condiciones externas del sistema.
+Un gas de fotones en equilibrio en el interior de un recinto se denomina \emph{radiación negra} o \emph{radiación del cuerpo negro}
+
+El hecho de que el número de fotones que existen en el sistema varíe en virtud de un proceso que tiene lugar en el interior del mismo, y no como consecuencia de un intercambio con otro sistema, hace que la distribución estadística de los fotones sea un caso muy especial de la distribución de Bose.
+En efecto, hemos admitido que se establece una situación de equilibrio, la cual depende de las condiciones externas en que se encuentra el sistema.
+Esto quiere decir que el número de partículas que existen en el sistema, cuando está en equilibrio, no es una variable independiente, sino que será una función de las condiciones externas.
+En el colectivo canónico estas condiciones externas son la temperatura y el volumen, de manera que resulta que si ambas se mantienen constantes ha de cumplirse en el equilibrio que
+\begin{equation}\label{eq:dF_t8}
+	(dF)_{T,V} = 0
+\end{equation}
+ya que en general se tiene $dF = -SdT - pdV$.
+
+Consideremos ahora una situación general en la que modificaremos el número de partículas, manteniendo constantes la temperatura y el volumen.
+Entonces,
+\begin{equation}\label{eq:dF_2_t8}
+	(dF)_{T,V} = \left( \pdv{F}{N} \right)_{T,V} dN
+\end{equation}
+
+Comparando \eqref{eq:dF_t8} y \eqref{eq:dF_2_t8}, resulta
+\begin{equation}
+	\left( \pdv{F}{N} \right)_{T,V, \expval{N}} = 0
+\end{equation}
+donde, al indicar que la derivada se calcula a $N = \expval{N}$, estamos explicitando que se trata de un estado de equilibrio.
+
+Dado que $\left( \pdv{F}{N} \right)_{T,V, \expval{N}}$ es el potencial químico $\mu$ resulta que, para un gas de fotones, se tiene que
+\begin{equation}
+	\mu = 0
+\end{equation}
+
+Esta es la característica especial a que nos hemos referido antes.
+Si tenemos en cuenta que la energía de un fotón en el estado $r$ es, de acuerdo con \eqref{eq:eps_t8}
+\begin{equation}
+	\varepsilon_r = h\nu_r = \hbar\omega_r
+\end{equation}
+obtenemos, a partir de \eqref{eq:Q_BE}
+\begin{equation}
+	\ln Q_F = -\sum_r \ln (1 - e^{-\beta\hbar\omega_r})
+\end{equation}
+y a partir de \eqref{eq:n_r_BE}
+\begin{equation}\label{eq:n_r_Fot}
+	\expval{n_r} = \frac{1}{e^{-\beta\hbar\omega_r} - 1}
+\end{equation}
+La ecuación \eqref{eq:n_r_Fot} se conoce con el nombre de \emph{distribución de Planck} para el gas de fotones.
+
+El paso siguiente consiste en la determinación de los estados cuánticos accesibles a un fotón.
+El estudio es completamente análogo al realizado en la sección 6.5.
+Si admitimos que la longitud de onda de las ondas electromagnéticas es mucho menor que la dimensión lineal más pequeña del recinto, podremos despreciar los efectos de las paredes y escoger las condiciones en los límites más convenientes para nuestros cálculos.
+Vamos entonces a considerar un paralelepípedo de dimensiones $L_x$, $L_y$ y $L_z$, y a tomar condiciones periódicas en los límites, o sea vamos a admitir que se cumple que
+\begin{equation}
+	\mathbf{E}(x, y, z) = \mathbf{E}(x + L_x, y, z) = \mathbf{E}(x, y + L_y, z) = \mathbf{E}(x, y, z + L_z)
+\end{equation}
+
+Al exigir que \eqref{eq:E_1_t8} verifique estas condiciones, resulta que han de satisfacerse las relaciones siguientes:
+\begin{equation}
+	\kappa_x L_x = 2\pi n_x \qquad | \qquad \kappa_y L_y = 2\pi n_y \qquad | \qquad \kappa_z L_z = 2\pi n_z
+\end{equation}
+siendo $n_x$, $n_y$ y $n_z$ enteros.
+Consecuentemente, el número de ondas planas con polarización $\alpha$ y vector de onda comprendido entre $\kappa$ y $\kappa+d\kappa$, vendrá dado por
+\begin{equation}
+	D(\bm{\kappa}, \alpha) \dd[3]{\bm{\kappa}} = \left( \frac{L_x d\kappa_x}{2\pi}\right) \left( \frac{L_y d\kappa_y}{2\pi}\right) \left( \frac{L_z d\kappa_z}{2\pi}\right) = \frac{V}{(2\pi)^3} \dd[3]{\bm{\kappa}}
+\end{equation}
+y a partir de aquí obtenemos para el número de ondas planas con polarización $\alpha$ y vector de onda cuyo módulo esté comprendido entre $\kappa$ y $\kappa+d\kappa$,
+\begin{equation}
+	D(\kappa, \alpha) \dd{\kappa} = 4\pi \kappa^2 \dd{\kappa} D(\bm{\kappa}, \alpha) = \frac{V}{(2\pi)^2} \kappa^2 \dd{\kappa}
+\end{equation}
+
+Finalmente, si introducimos la frecuencia angular $\omega = \kappa c$ y multiplicamos por 2 para tener en cuenta las dos direcciones independientes de polarización de una onda plana, obtenemos para el número de estados cuánticos de fotón con frecuencia comprendida en el intervalo entre $\omega$ y $\omega + d\omega$ la expresión
+\begin{equation}\label{eq:d_omega_t8}
+	D(\omega) \dd{\omega} = \frac{V}{\pi^2}\frac{\omega^2 dd{\omega}}{c^3}
+\end{equation}
+
+A partir de \eqref{eq:n_r_BE} y \eqref{eq:d_omega_t8} se obtiene que el número medio de fotones en el intervalo de frecuencias considerado es
+\begin{equation}\label{eq:f_omega_t8}
+	f(\omega) \dd{\omega} = \expval{n_r}(\omega) D(\omega) \dd{\omega} = \frac{V}{\pi^2 c^3}\frac{\omega^2 dd{\omega}}{e^{\hbar\omega / k_BT} - 1}
+\end{equation}
+y, en consecuencia, la distribución espectral de energía resulta finalmente
+\begin{equation}\label{eq:E_med_t8}
+	\expval{E} = \frac{V}{\pi^2 c^3}\frac{\omega^3 dd{\omega}}{e^{\hbar\omega / k_BT} - 1}
+\end{equation}
+expresión que suele denominarse \emph{fórmula de Planck para la distribución espectral de energía de la radiación del cuerpo negro}.
+A continuación vamos a estudiar, como siempre, el comportamiento de esta expresión en algunos casos límites.
