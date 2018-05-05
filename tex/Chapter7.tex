@@ -44,14 +44,14 @@ La justificación para ello es la proximidad de los niveles energéticos, que fu
 A partir de \eqref{eq:f_e} podemos escribir para el número de electrones que constituyen el sistema y para la energía media del gas las expresiones
 \begin{align}
 	N &= \int_{0}^{\infty} \dd{\varepsilon} f(\varepsilon) = \frac{8\pi V}{h^3} (2m^3)^{1/2} \int_{0}^{\infty} \dd{\varepsilon} \frac{\varepsilon^{1/2}}{e^{\beta\varepsilon_r + \alpha} + 1} \label{eq:N_FD}\\
-	\expval{E} &= \int_{0}^{\infty} \dd{\varepsilon} \varepsilon f(\varepsilon) = \frac{8\pi V}{h^3} (2m^3)^{1/2} \int_{0}^{\infty} \dd{\varepsilon} \frac{\varepsilon^{3/2}}{e^{\beta\varepsilon_r + \alpha} + 1}
+	\expval{E} &= \int_{0}^{\infty} \dd{\varepsilon} \varepsilon f(\varepsilon) = \frac{8\pi V}{h^3} (2m^3)^{1/2} \int_{0}^{\infty} \dd{\varepsilon} \frac{\varepsilon^{3/2}}{e^{\beta\varepsilon_r + \alpha} + 1} \label{eq:E_med_FD}
 \end{align}
 
 Nosotros consideraremos siempre un sistema cerrado, de manera que la primera de estas ecuaciones es precisamente la que define el valor del nivel de Fermi $\mu_F$.
 
 Si particularizamos estas dos ecuaciones para $T = 0 K$ resulta, en virtud de lo que acabamos de decir
 \begin{align}
-	N &=  \frac{8\pi V}{h^3} (2m^3)^{1/2} \int_{0}^{\mu_F} \dd{\varepsilon} \varepsilon^{1/2} = \frac{16\pi V}{3h^3} (2m^3)^{1/2} \mu_F^{3/2}\\
+	N &= \frac{8\pi V}{h^3} (2m^3)^{1/2} \int_{0}^{\mu_F} \dd{\varepsilon} \varepsilon^{1/2} = \frac{16\pi V}{3h^3} (2m^3)^{1/2} \mu_F^{3/2}\\
 	\expval{E} &=  \frac{8\pi V}{h^3} (2m^3)^{1/2} \int_{0}^{\mu_F} \dd{\varepsilon} \varepsilon^{3/2} = \frac{16\pi V}{5h^3} (2m^3)^{1/2} \mu_F^{5/2}
 \end{align}
 
@@ -60,15 +60,52 @@ De la primera de estas ecuaciones se obtiene para la energía de Fermi
 	\mu_F = \frac{h^2}{8m} \left( \frac{3N}{\pi V}\right)^{3/2}
 \end{equation}
 mientras que de la comparación de ambas resulta
-\begin{equation}
+\begin{equation}\label{eq:E_med_FD}
 	\expval{E} = \frac{3}{5} N \mu_F
 \end{equation}
 
-\textit{[TBC]}
-
 \section{Propiedades termodinámicas}
 
-\section{Gas de Fermi-Dirac para T<0K. Cálculo de valores medios}
+Si ahora utilizamos las relaciones \eqref{eq:E_med_FD} y \eqref{eq:pv_t6} resulta la ecuación de la isoterma correspondiente a $T=0K$
+\begin{equation}\label{eq:pv_t7}
+	\expval{p}V = \frac{2}{3}\expval{E} = \frac{2}{5} N \mu_F
+\end{equation}
+que puede escribirse, al sustituir el valor de $\mu_F$, \eqref{eq:pv_t7}
+\begin{equation}\label{eq:pv_t7}
+	\expval{p} = \frac{1}{20} \left( \frac{3}{\pi} \right)^{2/3} \frac{h^2}{m} \left( \frac{N}{V} \right)^{5/3} \propto \left( \frac{N}{V} \right)^{5/3} 
+\end{equation}
+
+Así, pues, en el cero absoluto la presión de un gas de Fermi es proporcional a la potencia $\sfrac{5}{3}$ de la densidad.
+
+Es fácil comprobar que, por existir un único estado accesible al sistema, la entropía de un gas de Fermi en el cero absoluto es nula.
+En efecto, tenemos que\footnote{Esta demostración resulta más sencilla en el colectivo canónico generalizado. es decir, considerado a $\mu_0$ como definido por el foco con el que el sistema está en contacto, y sustituyendo a $N$ por $\expval{N}$. Con esta sustitución todas las fórmulas obtenidas siguen siendo válidas.
+Desde luego pueden utilizarse también el colectivo canónico.}
+\begin{align}
+	S &= k_B(\ln Q + \beta \expval{E} - \beta \expval{N} \mu_F)= k_B \left( \frac{\expval{p}V}{k_B T} + \beta \expval{E} - \beta \expval{N} \mu_F \right) \nonumber \\
+	  &= k_B \left( \frac{2}{5} \frac{\expval{N}\mu_F}{k_B T} + \frac{3}{5}\expval{N}\mu_F \beta - \beta \expval{N} \mu_F \right) = 0
+\end{align}
+
+\textit{[Y algo más, TBD]}
+
+\section{Gas de Fermi-Dirac para T>0K. Cálculo de valores medios}
+
+Para el cálculo del número de partículas recurrimos a la relación \eqref{eq:N_FD} y al desarrollo del \hyperref[Anx4]{Anexo 4} para ver que
+\begin{align}
+	N &= \frac{8\pi V}{h^3} (2m^3)^{1/2} \int_{0}^{\infty} \dd{\varepsilon} \frac{\varepsilon^{1/2}}{e^{\beta\varepsilon_r + \alpha} + 1}  \nonumber \\
+	&= \frac{8\pi V}{h^3} (2m^3)^{1/2} \left[ \int_0^{\mu} \varepsilon^{1/2} + \frac{\pi^2}{6}\frac{1}{\beta^2}\frac{\mu^{-1/2}}{2} + \cdots \right] \nonumber \\
+	&= \frac{8\pi V}{h^3} (2m^3)^{1/2} \left[ \frac{2}{3}\mu^{3/2} + \frac{\pi^2}{6}\frac{1}{\beta^2}\frac{\mu^{-1/2}}{2} + \cdots \right]  \nonumber \\
+	&= \frac{8\pi V}{h^3} (2m^3)^{1/2} \left[ \frac{2}{3}\mu^{3/2} + \frac{\pi^2}{6}\frac{1}{\beta^2}\mu^{3/2}\mu^{-2} + \cdots \right] \\
+	&= \frac{16\pi V}{3h^3} (2m^3)^{1/2} \mu^{3/2} \left[ 1 + \frac{\pi^2}{8}\left( \frac{k_B T}{\mu} \right)^2+ \cdots \right]  \nonumber
+\end{align}
+y de la misma forma con \eqref{eq:E_med_FD}
+\begin{align}
+	\expval{E} &= \frac{8\pi V}{h^3} (2m^3)^{1/2} \int_{0}^{\infty} \dd{\varepsilon} \frac{\varepsilon^{3/2}}{e^{\beta\varepsilon_r + \alpha} + 1} \nonumber \\
+	&= \frac{8\pi V}{h^3} (2m^3)^{1/2} \left[ \int_0^{\mu} \varepsilon^{3/2} + \frac{\pi^2}{6}\frac{1}{\beta^2}\frac{\mu^{-1/2}}{2} + \cdots \right] \nonumber \\
+	&= \frac{8\pi V}{h^3} (2m^3)^{1/2} \left[ \frac{2}{5}\mu^{5/2} + \frac{\pi^2}{6}\frac{1}{\beta^2}\frac{\mu^{-1/2}}{2} + \cdots \right]  \nonumber \\
+	&= \frac{8\pi V}{h^3} (2m^3)^{1/2} \left[ \frac{2}{3}\mu^{3/2} + \frac{\pi^2}{6}\frac{1}{\beta^2}\mu^{3/2}\mu^{-2} + \cdots \right] \\
+	&= \frac{16\pi V}{5h^3} (2m^3)^{1/2} \mu^{5/2} \left[ 1 + \frac{5\pi^2}{8}\left( \frac{k_B T}{\mu} \right)^2+ \cdots \right] \nonumber
+\end{align}
+\textit{[Revisar la ecuación]}
 
 \section{Gas de Bose-Einstein degenerado. Condensación de Bose-Einstein}
 
@@ -81,7 +118,7 @@ El número medio de partículas en un estado cuántico $r$ es en el caso de boso
 \begin{equation}\label{eq:n_r_BE}
 	\expval{n_r} = \frac{1}{e^{\beta(\varepsilon_r -\mu)} - 1}
 \end{equation}
-y, por lo tanto, si el sistema contiene N partículas debe cumplirse
+y, por lo tanto, si el sistema contiene $N$ partículas debe cumplirse
 \begin{equation}\label{eq:N_BE}
 	N = \sum_r \frac{1}{e^{\beta(\varepsilon_r -\mu)} - 1}
 \end{equation}
@@ -145,7 +182,7 @@ En particular, mientras no sea $T$ idénticamente cero es evidente que $\mu \rig
 Resulta entonces que la.s dificultades han aparecido al pasar de \eqref{eq:N_BE} a \eqref{eq:N_2_BE}, es decir, al introducir la densidad de estados $D(\varepsilon)$ que es todo lo que necesitamos para pasar de una a otra.
 En este paso se ha utilizado el valor
 \begin{equation}\label{eq:D_vareps_BE}
-	D(\varepsilon) dd{\varepsilon} = g \frac{4\pi V\sqrt{2m^3}}{h^3} (2m^3)^{1/2} \varepsilon^{1/2} dd{\varepsilon}
+	D(\varepsilon) \dd{\varepsilon} = g \frac{4\pi V\sqrt{2m^3}}{h^3} (2m^3)^{1/2} \varepsilon^{1/2} \dd{\varepsilon}
 \end{equation}
 que se obtiene al sustituir los niveles discretos de energía por una distribución continua sobre toda la recta real.
 Si en esta ecuación tomamos el límite $\varepsilon \rightarrow 0$, Y debido al factor $\varepsilon^{1/2}$, obtenemos
@@ -203,17 +240,16 @@ o utilizando \eqref{eq:N/N_max}
 	N_0 = N  \left[ 1 - \left( \frac{T}{T_0} \right)^{3/2} \right]
 \end{equation}
 
-\begin{wrapfigure}[6]{l}{0.4\textwidth}
+\begin{wrapfigure}{l}{0.4\textwidth}
 	\centering
 	\input{./graph/N_0_N.tex}
-	\vspace{-0.65cm}
+	\vspace{-0.3cm}
 \end{wrapfigure}
 
 Además, a estas temperaturas el potencial químico $\mu$ es ya prácticamente nulo.
 Cuando más se disminuye la temperatura más y más partículas se agrupan en el nivel fundamental ---$\varepsilon = 0$---.
 En la figura se representa el comportamiento de $\sfrac{N_0}{N}$ frente a $\sfrac{T}{T_0}$.
 
-\newpage
 Este fenómeno recibe el nombre de \emph{condensación de Bose-Einstein}, denominándose a $T_0$ \emph{temperatura de condensación}, ya que en cierto sentido recuerda el proceso de condensación de un vapor en la fase líquida.
 Sin embargo, estos dos procesos son conceptualmente muy diferentes.
 En la condensación normal de un gas, las partículas se agrupan en un cierto volumen que depende de la densidad del líquido y de la cantidad de gas condensado, lo que se traduce en una acumulación de puntos representativos en el espacio de las fases en una zona correspondiente a un intervalo limitado de posiciones.
