@@ -177,7 +177,7 @@ Si tenemos en cuenta que la energía de un fotón en el estado $r$ es, de acuerd
 	\varepsilon_r = h\nu_r = \hbar\omega_r
 \end{equation}
 obtenemos, a partir de \eqref{eq:Q_BE}
-\begin{equation}
+\begin{equation}\label{eq:Q_Fot}
 	\ln Q_F = -\sum_r \ln (1 - e^{-\beta\hbar\omega_r})
 \end{equation}
 y a partir de \eqref{eq:n_r_BE}
@@ -215,11 +215,105 @@ Finalmente, si introducimos la frecuencia angular $\omega = \kappa c$ y multipli
 
 A partir de \eqref{eq:n_r_BE} y \eqref{eq:d_omega_t8} se obtiene que el número medio de fotones en el intervalo de frecuencias considerado es
 \begin{equation}\label{eq:f_omega_t8}
-	f(\omega) \dd{\omega} = \expval{n_r}(\omega) D(\omega) \dd{\omega} = \frac{V}{\pi^2 c^3}\frac{\omega^2 dd{\omega}}{e^{\hbar\omega / k_BT} - 1}
+	f(\omega) \dd{\omega} = \expval{n_r}(\omega) D(\omega) \dd{\omega} = \frac{V}{\pi^2 c^3}\frac{\omega^2 \dd{\omega}}{e^{\hbar\omega / k_BT} - 1}
 \end{equation}
 y, en consecuencia, la distribución espectral de energía resulta finalmente
-\begin{equation}\label{eq:E_med_t8}
-	\expval{E} = \frac{V}{\pi^2 c^3}\frac{\omega^3 dd{\omega}}{e^{\hbar\omega / k_BT} - 1}
+\begin{equation}\label{eq:E_med_2_t8}
+	\expval{E} = \frac{V}{\pi^2 c^3}\frac{\omega^3 \dd{\omega}}{e^{\hbar\omega / k_BT} - 1}
 \end{equation}
 expresión que suele denominarse \emph{fórmula de Planck para la distribución espectral de energía de la radiación del cuerpo negro}.
 A continuación vamos a estudiar, como siempre, el comportamiento de esta expresión en algunos casos límites.
+\begin{enumerate}
+	\item Frecuencias suficientemente bajas a una temperatura dada para que se cumpla que Podemos entonces aproximar con lo que resulta
+	\begin{equation}
+		\hbar\omega/k_B T \ll 1
+	\end{equation}
+
+	Podemos entonces aproximar con lo que resulta
+	\begin{equation}
+		e^{\hbar\omega / k_BT} \approx 1 + \frac{\hbar\omega}{k_B T}
+	\end{equation}
+	con lo que resulta
+	\begin{equation}
+		\expval{E} = \frac{V}{\pi^2 c^3} k_B T \omega^2 \dd{\omega}
+	\end{equation}
+	que coincide con la fórmula derivada clásicamente por Rayleigh y Jeans \eqref{eq:E_med_t8}.
+
+	\item Frecuencias suficientemente altas a una temperatura dada para que sea
+	\begin{equation}
+		\hbar\omega/k_B T \gg 1
+	\end{equation}
+
+	Podemos entonces despreciar la unidad frente a $\exp[\hbar\omega / k_bT]$ en el denominador de \eqref{eq:E_med_2_t8}, con lo que esta expresión toma la forma
+	\begin{equation}\label{eq:E_med_Wien_t8}
+		\expval{E} = \frac{V}{\pi^2 c^3} \omega^3 e^{-\hbar\omega / k_BT} \dd{\omega}
+	\end{equation}
+
+	Es decir, que en el límite de altas frecuencias $\expval{E}(\omega)$ presenta un decrecimiento exponencial, de acuerdo con 108 resultados experimentales citados en el apartado anterior.
+	La expresión \eqref{eq:E_med_Wien_t8} se suele denominar \emph{fórmula de Wien}.
+\end{enumerate}
+
+Volviendo a la expresión general \eqref{eq:E_med_2_t8}, vemos que a una temperatura dada la densidad espectral de energía es proporcional a la función
+\begin{equation}
+	\frac{\eta^3}{e^{\eta} - 1}
+\end{equation}
+siendo $\eta = \hbar\omega / k_BT$.
+
+%\begin{wrapfigure}{r}{\textwidth}
+%	\centering
+%	\input{./graph/Planck.tex}
+%	\vspace{-0.1cm}
+%\end{wrapfigure}
+Esta función, que se ha representado en la figura adyacente, presenta un máximo para $\eta = 2,8214$, lo que equivale a decir que la densidad espectral de energía presenta un máximo a una frecuencia $\widetilde{\omega}$ dada por
+\begin{equation}
+	\hbar\widetilde{\omega}/k_B T \approx 2.8214
+\end{equation}
+
+Por otro lado, si a una temperatura $T_1$ el máximo se presenta a un frecuencia $\widetilde{\omega}_1$ ya otra temperatura $T_2$ se presenta a $\widetilde{\omega}_2$ se cumplirá que
+\begin{equation}
+	\frac{\hbar\widetilde{\omega}_1}{k_B T_1} = \frac{\hbar\widetilde{\omega}_2}{k_B T_2}
+\end{equation}
+o sea
+\begin{equation}
+	\frac{\widetilde{\omega}_1}{T_1} = \frac{\widetilde{\omega}_2}{T_2}
+\end{equation}
+resultado que constituye la \emph{ley del desplazamiento de Wien} y que indica que al aumentar la temperatura $T$ la frecuencia $\widetilde{\omega}$ que hace máxima la distribución de Planck se desplaza hacia valores más altos.
+Por ello, a veces también se conoce este fenómeno con el nombre de \emph{corrimiento hacía el azul}.
+
+\section{Propiedades de la radiación del cuerpo negro: ley de Stefan – Boltzmann}
+
+Calculemos ahora la función de partición generalizada \eqref{eq:Q_Fot} para lo cual sustituimos la suma respecto de todos los estados $r$ por una integral extendida a todas las frecuencias posibles, del producto de la densidad de estados $D(\omega)$ por la función $\ln [1 - \exp(-\beta\hbar\omega)]$.
+Tenemos entonces
+\begin{align}
+	\ln Q_F &= -\frac{V}{\pi^2 c^3} \int_0^\infty \dd{\omega} \omega^2 \ln [1 - e^{-\beta\hbar\omega}] \nonumber \\
+			&= -\frac{V}{\pi^2 c^3} \left( \frac{k_B T}{\hbar} \right)^3 \int_0^\infty \dd{\eta} \eta^2 \ln [1 - e^{-\eta}]
+\end{align}
+donde de nuevo hemos introducido $\eta = \hbar\omega / k_BT$.
+Integrando por partes se encuentra
+\begin{equation}
+	\int_0^\infty \dd{\eta} \eta^2 \ln [1 - e^{-\eta}] = \eval{\frac{\eta^3}{3} - \ln [1 - e^{-\eta}]}_{0}^{\infty} - \frac{1}{3} \int_0^\infty \dd{\eta} \frac{\eta^3}{e^{\eta} - 1}
+\end{equation}
+
+El primer sumando del segundo miembro es nulo, mientras que la integral que aparece en el segundo se encuentra resuelta en el \hyperref[Anx5]{Anexo 5} y vale
+\begin{equation}
+	\int_0^\infty \dd{\eta} \frac{\eta^3}{e^{\eta} - 1} = \Gamma(4)\zeta(4) = \frac{\pi^4}{15}
+\end{equation}
+
+En resumen, resulta que
+\begin{equation}
+	\ln Q_F = \frac{\pi^2 V}{45 c^3 \hbar^3} (k_B T)^3 = \frac{\pi^2 V}{45 c^3 \hbar^3} \frac{1}{\beta^3}
+\end{equation}
+
+Una vez conocido $\ln Q_F$, las propiedades termodinámicas surgen por aplicación de las fórmulas usuales.
+Así, para la energía media tenemos
+\begin{equation}
+	\expval{E} = - \left( \pdv{\ln Q_F}{\beta} \right)_V = \frac{1}{15} \frac{\pi^2 V}{45 c^3 \hbar^3} \frac{1}{\beta^4}
+\end{equation}
+que suele escribirse en la forma
+\begin{equation}
+	\expval{E} =  \frac{4\sigma}{c} V T^4
+\end{equation}
+donde se ha introducido la constante
+\begin{equation}
+	\sigma = \frac{\pi^2 k_B^4}{60 c^2 \hbar^3} = 5.67 \cdot 10^{-8} \si{\watt\per\square\m\per\kelvin\tothe{4}}
+\end{equation}

@@ -67,7 +67,7 @@ Dicho de otro modo, cada $n_r$ toma valores en \eqref{eq:Q_cuant} con independen
 
 Es fácil ver ahora que esta expresión puede escribirse también en la forma
 \begin{equation}\label{eq:Q_cuant2}
-	Q = \prod_r \sum_{n=0}^{n_{max}} \exp \left[  -(\alpha  + \beta \varepsilon_r) n \right]
+	Q = \prod_r \sum_{n=0}^{n_{max}} \exp \left[  -(\alpha  + \beta \varepsilon_r) n_r \right]
 \end{equation}
 donde $n_{max}$ representa el valor máximo que pueden tomar los números de ocupación.
 
@@ -154,9 +154,9 @@ Esta expresión puede escribirse equivalentemente en función del potencial quí
 \end{equation}
 
 Es usual en la bibliografía referirse a \eqref{eq:n_r_1} y \eqref{eq:n_r_2} como la \emph{distribución de Fermi}, reflejando el hecho de que indica el modo de distribuirse en valor medio las partículas entre los distintos estados.
-Además, $\mu (T)$ recibe el nombre de \emph{nivel de Fermi} y su valor para $T = 0$, que representaremos por $\mu_0$, el de \emph{energía de Fermi} ---recordemos que el potencial químico tiene dimensiones de energía, como es fácil de comprobar---.
+Además, $\mu (T)$ recibe el nombre de \emph{nivel de Fermi} y su valor para $T = 0$, que representaremos por $\mu_F$, el de \emph{energía de Fermi} ---recordemos que el potencial químico tiene dimensiones de energía, como es fácil de comprobar---.
 Así pues, escribiremos a partir de ahora
-$$\mu_0 \equiv \mu(T=0)$$
+$$\mu_F \equiv \mu(T=0)$$
 
 \begin{wrapfigure}{r}{0.4\textwidth}
 	\centering
@@ -165,7 +165,7 @@ $$\mu_0 \equiv \mu(T=0)$$
 	\vspace{-0.5cm}
 \end{wrapfigure}
 En la figura adyacente se representa la forma de $\expval{n_r}$ para distintos valores de la temperatura.
-En el cero absoluto $(T = 0K)$, $\expval{n_r}$ es una función escalón y vale 1 para $\varepsilon_r \leq \mu_0$ y 0 para $\varepsilon_r > \mu_0$ de forma que todos los estados que correspondan a una energía menor o igual que la energía de Fermi están ocupados, mientras que los estados de energía superior están vacíos.
+En el cero absoluto $(T = 0K)$, $\expval{n_r}$ es una función escalón y vale 1 para $\varepsilon_r \leq \mu_F$ y 0 para $\varepsilon_r > \mu_F$ de forma que todos los estados que correspondan a una energía menor o igual que la energía de Fermi están ocupados, mientras que los estados de energía superior están vacíos.
 A temperaturas superiores, los niveles con energía inferior a $\mu$, pero próxima a él, comienzan a despoblarse en beneficio de los que poseen una energía superior.
 Desde luego, en rigor, las curvas de la figura solo poseen significado para ciertos valores de $\varepsilon_r$ pues, como sabemos, los posibles valores de la energía de una partícula localizada en una cierta región del espacio tienen espectro discreto.
 

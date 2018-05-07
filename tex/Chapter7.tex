@@ -60,18 +60,18 @@ De la primera de estas ecuaciones se obtiene para la energía de Fermi
 	\mu_F = \frac{h^2}{8m} \left( \frac{3N}{\pi V}\right)^{3/2}
 \end{equation}
 mientras que de la comparación de ambas resulta
-\begin{equation}\label{eq:E_med_FD}
+\begin{equation}\label{eq:E_med_2_FD}
 	\expval{E} = \frac{3}{5} N \mu_F
 \end{equation}
 
 \section{Propiedades termodinámicas}
 
-Si ahora utilizamos las relaciones \eqref{eq:E_med_FD} y \eqref{eq:pv_t6} resulta la ecuación de la isoterma correspondiente a $T=0K$
+Si ahora utilizamos las relaciones \eqref{eq:E_med_2_FD} y \eqref{eq:pv_t6} resulta la ecuación de la isoterma correspondiente a $T=0K$
 \begin{equation}\label{eq:pv_t7}
 	\expval{p}V = \frac{2}{3}\expval{E} = \frac{2}{5} N \mu_F
 \end{equation}
 que puede escribirse, al sustituir el valor de $\mu_F$, \eqref{eq:pv_t7}
-\begin{equation}\label{eq:pv_t7}
+\begin{equation}\label{eq:pv_2_t7}
 	\expval{p} = \frac{1}{20} \left( \frac{3}{\pi} \right)^{2/3} \frac{h^2}{m} \left( \frac{N}{V} \right)^{5/3} \propto \left( \frac{N}{V} \right)^{5/3} 
 \end{equation}
 
@@ -115,7 +115,7 @@ Esta diferencia es previsible, pues en un gas de Bose, al disminuir la temperatu
 Más concretamente, sabemos que en el cero absoluto el límite superior de energías es la energía de Fermi.
 
 El número medio de partículas en un estado cuántico $r$ es en el caso de bosones
-\begin{equation}\label{eq:n_r_BE}
+\begin{equation}\label{eq:n_r_BE_t7}
 	\expval{n_r} = \frac{1}{e^{\beta(\varepsilon_r -\mu)} - 1}
 \end{equation}
 y, por lo tanto, si el sistema contiene $N$ partículas debe cumplirse
@@ -126,12 +126,12 @@ y, por lo tanto, si el sistema contiene $N$ partículas debe cumplirse
 Recordemos que por considerar un sistema cerrado esta ecuación es precisamente la que nos determina el potencial químico $\mu$.
 
 Supongamos ahora que el nivel más bajo de energía accesible a una partícula es $\varepsilon = 0$.\footnote{Esto no es una hipótesis, sino que coincide con nuestros resultados. En efecto, la energía asociada con el movimiento de traslación es la única energía que poseen las partículas de un gas ideal aislado. Cuando consideramos un sistema suficientemente grande es claro que el nivel más bajo de energía tiende a cero.}
-A partir de \eqref{eq:n_r_BE} obtenemos que
+A partir de \eqref{eq:n_r_BE_t7} obtenemos que
 \begin{equation}\label{eq:mu_t_BE}
 	\mu(T) \leq 0
 \end{equation}
 ya que en otro caso existirán estados ---en particular el o los correspondientes a $\varepsilon_r = 0$--- para los que $\varepsilon_r -\mu < 0$ y $\exp[\beta(\varepsilon_r -\mu)] < 1$, de manera que resultaría $\expval{n_r} < 0$, que no tiene sentido.
-De hecho, para obtener \eqref{eq:n_r_BE} nos fue necesario admitir que se cumplía \eqref{eq:cond_FD}, que se convierte en \eqref{eq:mu_t_BE}, al considerar que el valor mínimo de $\varepsilon_r$ es cero.
+De hecho, para obtener \eqref{eq:n_r_BE_t7} nos fue necesario admitir que se cumplía \eqref{eq:cond_FD}, que se convierte en \eqref{eq:mu_t_BE}, al considerar que el valor mínimo de $\varepsilon_r$ es cero.
 
 Vamos a tratar de estudiar el gas de Bose degenerado de manera análoga a como hemos realizado el análisis del gas de Fermi.
 Para ello consideremos la expresión que se obtiene al explicitar en \eqref{eq:N_BE} la suma respecto de los estados de traslación, o sea la expresión análoga a \eqref{eq:N_FD}
@@ -171,7 +171,7 @@ Es decir, que el valor del número máximo de partículas que según \eqref{eq:N
 \end{equation}
 
 Resultaría, según esto, que en un gas de bosones el número de partículas estaría acotado y, además, sería proporcional a $T^{3/2}$, lo que en particular implicaría que no podría existir un gas de bosones en el límite $T \rightarrow 0$.
-Tratemos de entender lo que ha sucedido y volvamos a \eqref{eq:n_r_BE} y \eqref{eq:N_BE}, haciendo tender $T$ a cero. Es evidente que
+Tratemos de entender lo que ha sucedido y volvamos a \eqref{eq:n_r_BE_t7} y \eqref{eq:N_BE}, haciendo tender $T$ a cero. Es evidente que
 $$\expval{n_r}(\varepsilon_r - \mu) \rightarrow 0$$
 y
 $$N = g\expval{n_r} = g \frac{1}{e^{-\beta\mu} - 1}$$
@@ -243,7 +243,7 @@ o utilizando \eqref{eq:N/N_max}
 \begin{wrapfigure}{l}{0.4\textwidth}
 	\centering
 	\input{./graph/N_0_N.tex}
-	\vspace{-0.3cm}
+	\vspace{-0.1cm}
 \end{wrapfigure}
 
 Además, a estas temperaturas el potencial químico $\mu$ es ya prácticamente nulo.
