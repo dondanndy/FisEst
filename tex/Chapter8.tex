@@ -244,7 +244,7 @@ A continuación vamos a estudiar, como siempre, el comportamiento de esta expres
 		\hbar\omega/k_B T \gg 1
 	\end{equation}
 
-	Podemos entonces despreciar la unidad frente a $\exp[\hbar\omega / k_bT]$ en el denominador de \eqref{eq:E_med_2_t8}, con lo que esta expresión toma la forma
+	Podemos entonces despreciar la unidad frente a $\exp[\hbar\omega / k_BT]$ en el denominador de \eqref{eq:E_med_2_t8}, con lo que esta expresión toma la forma
 	\begin{equation}\label{eq:E_med_Wien_t8}
 		\expval{E} = \frac{V}{\pi^2 c^3} \omega^3 e^{-\hbar\omega / k_BT} \dd{\omega}
 	\end{equation}
@@ -309,10 +309,46 @@ Así, para la energía media tenemos
 	\expval{E} = - \left( \pdv{\ln Q_F}{\beta} \right)_V = \frac{1}{15} \frac{\pi^2 V}{45 c^3 \hbar^3} \frac{1}{\beta^4}
 \end{equation}
 que suele escribirse en la forma
-\begin{equation}
+\begin{equation}\label{eq:Ley_SB}
 	\expval{E} =  \frac{4\sigma}{c} V T^4
 \end{equation}
 donde se ha introducido la constante
 \begin{equation}
 	\sigma = \frac{\pi^2 k_B^4}{60 c^2 \hbar^3} = 5.67 \cdot 10^{-8} \si{\watt\per\square\m\per\kelvin\tothe{4}}
 \end{equation}
+
+La expresión \eqref{eq:Ley_SB} es la \emph{ley de Stefan-Boltzmann}, correspondiente a la energía media de un gas de fotones en equilibrio a la temperatura $T$, y la constante $\sigma$ es la \emph{constante de Stefan-Boltzmann}.
+
+Procediendo de manera análoga se encuentran sin dificultad
+\begin{equation}
+	S = k_B (\ln Q_F + \beta\expval{E}) = \frac{16}{3}\frac{\sigma}{c}TV^3 = \frac{4}{3}\frac{\expval{E}}{T}
+\end{equation}
+y
+\begin{equation}
+	\expval{p}V = k_B  T \ln Q_F = \frac{4}{3}\frac{\sigma}{c}TV^4 = \frac{1}{3} \expval{E}
+\end{equation}
+pudiéndose comprobar que $G = \expval{E} + \expval{p}V - TS = 0$ como debía ser, ya que $G = \expval{N}\mu$ y para un gas de fotones $\mu = 0$. 
+
+Por último, vamos a calcular el número medio de- fotones que existen en el equilibrio.
+El cálculo resulta más sencillo si en vez de la expresión general se utiliza la relación
+\begin{equation}
+	\expval{N} = \sum_r \expval{n_r} = \int_0^\infty \dd{\omega} f(\omega)
+\end{equation}
+
+En efecto, sustituyendo la expresión \eqref{eq:f_omega_t8} de $f(\omega)$, se encuentra
+\begin{equation}
+	\expval{N} = \frac{V}{\pi^2 c^3 } \int_0^\infty \frac{\dd{\omega} \omega^2}{e^{-\hbar\omega / k_BT} - 1} = \frac{V}{\pi^2 c^3 } \left( \frac{k_B T}{\hbar} \right)^3 \int_0^\infty \dd{\eta} \frac{\eta^2}{e^\eta - 1}
+\end{equation}
+
+La integral puede calcularse con el \hyperref[Anx5]{Anexo 5}, y vale
+\begin{equation}
+	\int_0^\infty \dd{\eta} \frac{\eta^2}{e^\eta - 1} = \Gamma(3)\zeta(3) \approx 2.404
+\end{equation}
+con lo cual obtenemos
+\begin{equation}
+	\expval{N} = \approx \frac{0.244}{c^3 } V \left( \frac{k_B T}{\hbar} \right)^3 
+\end{equation}
+
+Vemos entonces que al aumentar la temperatura $T$, la densidad de fotones $\sfrac{\expval{N}}{V}$ aumenta, y al disminuir $T$, disminuye.
+En el límite $T \rightarrow 0$, también $\sfrac{\expval{N}}{V} \rightarrow 0$.
+Este resultado indica que no existe condensación de Base, como sucedía en el caso de bosones con potencial químico distinto a cero y masa en reposo no nula.

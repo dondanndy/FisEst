@@ -161,16 +161,16 @@ y aprovechando los resultados anteriores
 	d\ln Q = -\expval{E} d\beta + \sum_i \expval{N_i} d\alpha_i + \sum_k \expval{Y_k} dX_k
 \end{equation}
 
-Si queremos hallar una expresión para la entropía hemos de buscar, igual que hicimos en el capítulo anterior, una diferencial exacta que provenga de $đQ$\footnote{Por el contexto se deduce cuándo $Q$ se refiere al calor o a la gran función de partición.} mediante el inverso de la temperatura como factor integrante.
+Si queremos hallar una expresión para la entropía hemos de buscar, igual que hicimos en el capítulo anterior, una diferencial exacta que provenga de $\dj Q$\footnote{Por el contexto se deduce cuándo $Q$ se refiere al calor o a la gran función de partición.} mediante el inverso de la temperatura como factor integrante.
 Es fácil obtener que
 \begin{equation}
-	d\left( \ln Q  + \beta \expval{E} -\sum_i \alpha_i \expval{N_i} \right) = \beta \left( d\expval{E} - \sum_i \alpha_i  d\expval{N_i} + đW \right)
+	d\left( \ln Q  + \beta \expval{E} -\sum_i \alpha_i \expval{N_i} \right) = \beta \left( d\expval{E} - \sum_i \alpha_i  d\expval{N_i} + \dj W \right)
 \end{equation}
 donde hemos introducido
-$$đW = \sum_k \expval{Y_k} dX_k$$
+$$\dj W = \sum_k \expval{Y_k} dX_k$$
 
 Considerando que la variación de la energía de un sistema puede provenir de la realización de un trabajo, de un intercambio de partículas, o de una transferencia de calor, parece lógico identificar
-$$đQ = d\expval{E} - \sum_i \alpha_i  d\expval{N_i} + đW$$
+$$\dj Q = d\expval{E} - \sum_i \alpha_i  d\expval{N_i} + \dj W$$
 y, consecuentemente, identificamos
 \begin{equation}\label{eq:S_T3}
 	S = k_B \left( \ln Q  + \beta \expval{E} -\beta \sum_i \mu_i \expval{N_i} \right)
